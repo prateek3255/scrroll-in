@@ -1,0 +1,27 @@
+{
+    "name": "Scroll Mark",
+    "version": "1.0",
+    "description": "Never forget where you last left the page",
+    "permissions": [
+        "storage",
+        "activeTab",
+        "declarativeContent"
+    ],
+    "page_action": {
+        "default_popup": "popup.html",
+        "default_icon": {
+            "16": "images/favicon-16x16.png",
+            "32": "images/favicon-32x32.png",
+            "96": "images/favicon-192x192.png",
+            "256": "images/favicon-384x384.png"
+        },
+        "icons": {
+            "16": "images/favicon-16x16.png",
+            "32": "images/favicon-32x32.png",
+            "96": "images/favicon-192x192.png",
+            "256": "images/favicon-384x384.png"
+        }
+    },
+    "options_page": "options.html",
+    "manifest_version": 2
+}
