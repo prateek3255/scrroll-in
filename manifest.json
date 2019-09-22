@@ -1,7 +1,7 @@
 {
-    "name": "Scroll Mark",
+    "name": "Scrroll In",
     "version": "1.0",
-    "description": "Never forget where you last left the page",
+    "description": "Never forget where you left a page",
     "permissions": [
         "tabs",
         "storage",
@@ -28,6 +28,5 @@
             "256": "images/favicon-384x384.png"
         }
     },
-    "options_page": "options.html",
     "manifest_version": 2
 }

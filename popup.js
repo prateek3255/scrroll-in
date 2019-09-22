@@ -3,7 +3,7 @@ root.innerHTML = "<div> Loading...</div>";
 
 chrome.tabs.query({ active: true, currentWindow: true }, tabs => {
   const url = tabs[0].url;
-  chrome.storage.sync.get("scroll-mark", data => {
+  chrome.storage.local.get("scroll-mark", data => {
     const scrollMarkData = data["scroll-mark"];
     if (scrollMarkData && scrollMarkData.hasOwnProperty(url)) {
       root.innerHTML = `

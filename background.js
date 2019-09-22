@@ -1,12 +1,12 @@
 chrome.runtime.onInstalled.addListener(() => {
-  chrome.storage.sync.set({ "scroll-mark": {} });
+  chrome.storage.local.set({ "scroll-mark": {} });
 });
 
 const updateIcon = () => {
   console.log("updated");
   chrome.tabs.query({ active: true, currentWindow: true }, tabs => {
     const url = tabs[0].url;
-    chrome.storage.sync.get("scroll-mark", data => {
+    chrome.storage.local.get("scroll-mark", data => {
       const scrollMarkData = data["scroll-mark"];
       if (!scrollMarkData.hasOwnProperty(url)) {
         setInactiveIcon();
@@ -20,7 +20,7 @@ const updateIcon = () => {
 chrome.tabs.onActivated.addListener(() => {
   chrome.tabs.query({ active: true, currentWindow: true }, tabs => {
     const url = tabs[0].url;
-    chrome.storage.sync.get("scroll-mark", data => {
+    chrome.storage.local.get("scroll-mark", data => {
       const scrollMarkData = data["scroll-mark"];
       if (!scrollMarkData.hasOwnProperty(url)) {
         setInactiveIcon();
@@ -35,7 +35,7 @@ chrome.tabs.onUpdated.addListener((tabId, updateObj) => {
   chrome.tabs.get(tabId, tab => {
     const url = tab.url;
     if (url) {
-      chrome.storage.sync.get("scroll-mark", data => {
+      chrome.storage.local.get("scroll-mark", data => {
         const scrollMarkData = data["scroll-mark"];
         if (!scrollMarkData.hasOwnProperty(url)) {
           setInactiveIcon();
