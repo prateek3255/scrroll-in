@@ -1,15 +1,49 @@
-chrome.tabs.onActivated.addListener(() => {
-  console.log("changed");
+chrome.runtime.onInstalled.addListener(() => {
+  chrome.storage.sync.set({ "scroll-mark": {} });
+});
+
+const updateIcon = () => {
+  console.log("updated");
   chrome.tabs.query({ active: true, currentWindow: true }, tabs => {
     const url = tabs[0].url;
-    chrome.storage.sync.get(url, data => {
-      console.log("here");
-      if (!data.hasOwnProperty(url)) {
+    chrome.storage.sync.get("scroll-mark", data => {
+      const scrollMarkData = data["scroll-mark"];
+      if (!scrollMarkData.hasOwnProperty(url)) {
         setInactiveIcon();
       } else {
         setActiveIcon();
       }
     });
+  });
+};
+
+chrome.tabs.onActivated.addListener(() => {
+  chrome.tabs.query({ active: true, currentWindow: true }, tabs => {
+    const url = tabs[0].url;
+    chrome.storage.sync.get("scroll-mark", data => {
+      const scrollMarkData = data["scroll-mark"];
+      if (!scrollMarkData.hasOwnProperty(url)) {
+        setInactiveIcon();
+      } else {
+        setActiveIcon();
+      }
+    });
+  });
+});
+
+chrome.tabs.onUpdated.addListener((tabId, updateObj) => {
+  chrome.tabs.get(tabId, tab => {
+    const url = tab.url;
+    if (url) {
+      chrome.storage.sync.get("scroll-mark", data => {
+        const scrollMarkData = data["scroll-mark"];
+        if (!scrollMarkData.hasOwnProperty(url)) {
+          setInactiveIcon();
+        } else {
+          setActiveIcon();
+        }
+      });
+    }
   });
 });
 

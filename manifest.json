@@ -3,6 +3,7 @@
     "version": "1.0",
     "description": "Never forget where you last left the page",
     "permissions": [
+        "tabs",
         "storage",
         "activeTab"
     ],

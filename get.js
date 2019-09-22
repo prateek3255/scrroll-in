@@ -1,6 +1,7 @@
 {
   const url = window.location.href;
-  chrome.storage.sync.get(url, data => {
-    window.scrollTo(0, data[url]);
+  chrome.storage.sync.get("scroll-mark", data => {
+    const scrollMarkData = data["scroll-mark"];
+    window.scrollTo({ left: 0, top: scrollMarkData[url], behavior: "smooth" });
   });
 }
