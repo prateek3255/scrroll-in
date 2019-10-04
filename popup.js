@@ -19,7 +19,7 @@ chrome.tabs.query({ active: true, currentWindow: true }, tabs => {
       `;
       let deleteScroll = document.getElementById("deleteScroll");
 
-      deleteScroll.onclick = function(element) {
+      deleteScroll.onclick = function (element) {
         chrome.tabs.executeScript(tabs[0].id, {
           file: "delete.js",
           allFrames: true
@@ -29,7 +29,7 @@ chrome.tabs.query({ active: true, currentWindow: true }, tabs => {
 
       let getScroll = document.getElementById("getScroll");
 
-      getScroll.onclick = function(element) {
+      getScroll.onclick = function (element) {
         chrome.tabs.executeScript(tabs[0].id, {
           file: "get.js",
           allFrames: true
@@ -41,7 +41,7 @@ chrome.tabs.query({ active: true, currentWindow: true }, tabs => {
     }
     let saveScroll = document.getElementById("saveScroll");
 
-    saveScroll.onclick = function(element) {
+    saveScroll.onclick = function (element) {
       chrome.tabs.executeScript(tabs[0].id, {
         file: "save.js",
         allFrames: true
