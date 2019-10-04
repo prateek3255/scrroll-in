@@ -1,20 +1,21 @@
 .container {
-    text-align: center;
+  text-align: center;
 }
 
 #saved-urls {
-    width: 650px;
-    display: flex;
-    flex-direction: column;
-    margin: 0 auto;
+  width: 650px;
+  display: flex;
+  flex-direction: column;
+  margin: 0 auto;
 }
 
 #saved-urls div {
-    padding: 10px;
-    margin: 0px;
-    text-align: left;
-    border: 1px solid #f0f0f0;
-    display: flex;
-    justify-content: space-between;
-    align-items: center;
+  padding: 10px;
+  margin: 0px;
+  margin-top: 10px;
+  text-align: left;
+  border: 1px solid #f0f0f0;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
 }
