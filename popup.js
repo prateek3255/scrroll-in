@@ -37,7 +37,7 @@ chrome.tabs.query({ active: true, currentWindow: true }, tabs => {
         window.close();
       };
     } else {
-      root.innerHTML = `<button style="width:100px; margin:15px" class="btn" id="saveScroll">Save</button>`;
+      root.innerHTML = `<button style="width:120px; margin:18px" class="btn" id="saveScroll">Save</button>`;
     }
     let saveScroll = document.getElementById("saveScroll");
 
