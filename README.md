@@ -46,3 +46,5 @@ All you need to know for contributing to this project is basic JavaScript, HTML,
 You can visit the issues page to find some relevant issues to contribute to or feel free to open a new issue for something that you think can be improved.
 
 Also, if you have any doubts regarding any of the concepts or how to get started, feel free to drop me a message on [twitter](https://twitter.com/psuranas) or the [Devfolio community telegram group](https://t.me/devfolio).
+
+Regards
