@@ -3,7 +3,6 @@
     var urls = "";
     chrome.storage.local.get('scroll-mark', function (result) {
         urls = result["scroll-mark"];
-        console.log(urls)
         for (var url in urls) {
             var div = document.createElement("div");
             div.innerHTML = "<a href=" + url + ">" + url + "</a>" + "<p>" + urls[url] + "</p>";
