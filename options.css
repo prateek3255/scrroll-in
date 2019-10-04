@@ -1,0 +1,25 @@
+body {
+    
+}
+
+.container {
+    text-align: center;
+    width: 100vw;
+}
+
+#saved-urls {
+    width: 50vw;
+    display: flex;
+    flex-direction: column;
+    margin: 0 auto;
+}
+
+#saved-urls div {
+    padding: 10px;
+    margin: 0px;
+    text-align: left;
+    border: 1px solid #f0f0f0;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+}
