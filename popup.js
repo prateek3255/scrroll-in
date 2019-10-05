@@ -5,7 +5,6 @@ chrome.tabs.query({ active: true, currentWindow: true }, tabs => {
   const url = tabs[0].url;
   chrome.storage.local.get("scroll-mark", data => {
     const scrollMarkData = data["scroll-mark"];
-    const scrollMarkOffset = scrollMarkData.offset;
     if (scrollMarkData && scrollMarkData.hasOwnProperty(url)) {
       root.innerHTML = `
       <div style="margin:15px;">
