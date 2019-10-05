@@ -1,14 +1,16 @@
 <!DOCTYPE html>
 <html>
-  <head>
-    <link href="popup.css" rel="stylesheet" />
-  </head>
-
-  <body>
-    <div id="root"></div>
-    <div style="float:right;margin-bottom:5px;">
-      <a target="_blank" href="options.html">Options</a>
-    </div>
-    <script src="popup.js"></script>
-  </body>
+    <head>
+        <link href="popup.css" rel="stylesheet" />
+        <link href="options.css" rel="stylesheet" />
+    </head>
+    <body>
+        <div id="root"></div>
+        <button class="btn opt" id="optbtn">Options</button>
+        <div class="hide" id="contain">
+            <div id="saved-urls"></div>
+        </div>
+        <script src="popup.js"></script>
+        <script src="options.js"></script>
+    </body>
 </html>

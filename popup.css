@@ -1,91 +1,100 @@
+* {
+    font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, Helvetica, Arial, sans-serif, "Apple Color Emoji", "Segoe UI Emoji", "Segoe UI Symbol";
+    transition: 0.3s ease-out;
+}
+body {
+    margin: 0;
+    width: 15rem
+}
+#root {
+    padding: 0 5px
+}
+a, button {
+    text-decoration: none
+}
+a, a:visited {
+    font-size: .8rem;
+    color: #006699
+}
 .btn {
-  position: relative;
-
-  display: block;
-  padding: 5px;
-  font-size: 15px;
-
-  overflow: hidden;
-
-  border-width: 0;
-  outline: none;
-  border-radius: 2px;
-  box-shadow: 0 1px 4px rgba(0, 0, 0, 0.6);
-
-  background-color: #2ecc71;
-  color: #ecf0f1;
-
-  transition: background-color 0.3s;
+    position: relative;
+    display: block;
+    padding: 0.5rem;
+    font-size: 1rem;
+    overflow: hidden;
+    outline: none;
+    border-radius: 2px;
+    border: 2px solid rgba(0,0,0,0.3);
+    background-color: #2ecc71;
+    color: #f1f1f1;
+    cursor: pointer;
+    letter-spacing: .6px;
+    width: 100%;
+    margin: 5px 0px
 }
 
-.btn:hover,
+.btn:hover {
+    filter: grayscale(20%);
+}
 .btn:focus {
-  background-color: #27ae60;
+    box-shadow: 0px 0px 0px 3px rgba(46, 204, 113, 0.4)
 }
 
 .btn > * {
-  position: relative;
+    position: relative;
 }
 
 .btn span {
-  display: block;
-  padding: 12px 24px;
+    display: block;
+    padding: 12px 24px;
 }
 
 .btn:before {
-  content: "";
-
-  position: absolute;
-  top: 50%;
-  left: 50%;
-
-  display: block;
-  width: 0;
-  padding-top: 0;
-
-  border-radius: 100%;
-
-  background-color: rgba(236, 240, 241, 0.3);
-
-  -webkit-transform: translate(-50%, -50%);
-  -moz-transform: translate(-50%, -50%);
-  -ms-transform: translate(-50%, -50%);
-  -o-transform: translate(-50%, -50%);
-  transform: translate(-50%, -50%);
+    content: "";
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    display: block;
+    width: 0;
+    padding-top: 0;
+    border-radius: 100%;
+    background-color: rgba(236, 240, 241, 0.5);
+    -webkit-transform: translate(-50%, -50%);
+    -moz-transform: translate(-50%, -50%);
+    -ms-transform: translate(-50%, -50%);
+    -o-transform: translate(-50%, -50%);
+    transform: translate(-50%, -50%);
 }
 
 .btn:active:before {
-  width: 120%;
-  padding-top: 120%;
-
-  transition: width 0.2s ease-out, padding-top 0.2s ease-out;
+    width: 120%;
+    padding-top: 120%;
+    transition: width 0.2s ease-out, padding-top 0.2s ease-out;
 }
 
 /* Styles, not important */
 *,
 *:before,
 *:after {
-  box-sizing: border-box;
+    box-sizing: border-box;
 }
 
 h2 {
-  font-weight: normal;
+    font-weight: normal;
 }
 
 .btn.orange {
-  background-color: #e67e22;
+    background-color: #e67e22;
 }
 
-.btn.orange:hover,
 .btn.orange:focus {
-  background-color: #d35400;
+    box-shadow: 0px 0px 0px 3px rgba(230, 126, 34, 0.6)
 }
 
 .btn.red {
-  background-color: #e74c3c;
+    background-color: #e74c3c;
 }
 
-.btn.red:hover,
 .btn.red:focus {
-  background-color: #c0392b;
+    box-shadow: 0px 0px 0px 3px rgba(231, 76, 60, 0.6)
 }

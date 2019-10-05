@@ -7,14 +7,9 @@ chrome.tabs.query({ active: true, currentWindow: true }, tabs => {
     const scrollMarkData = data["scroll-mark"];
     if (scrollMarkData && scrollMarkData.hasOwnProperty(url)) {
       root.innerHTML = `
-      <div style="margin:15px;">
-      <div style="margin-bottom:10px;display:flex;justify-content:center;width:100%;">
-      <button id="getScroll" style="width:100%;" class="btn">Fetch Scroll</button>
-      </div>
-      <div style="display:flex; width:200px;">
-      <button class="btn orange" style="width:100%;margin-right:10px" id="saveScroll">Update</button>
-      <button class="btn red" style="width:100%;" id="deleteScroll">Delete</button>
-      </div>
+      <button class="btn" id="getScroll">Fetch Scroll</button>
+      <button class="btn orange" id="saveScroll">Update</button>
+      <button class="btn red" id="deleteScroll">Delete</button>
       <div>
       `;
       let deleteScroll = document.getElementById("deleteScroll");
@@ -37,7 +32,7 @@ chrome.tabs.query({ active: true, currentWindow: true }, tabs => {
         window.close();
       };
     } else {
-      root.innerHTML = `<button style="width:100px; margin:15px" class="btn" id="saveScroll">Save</button>`;
+      root.innerHTML = `<button class="btn" id="saveScroll">Save</button>`;
     }
     let saveScroll = document.getElementById("saveScroll");
 
