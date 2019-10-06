@@ -3,13 +3,22 @@
 
 <head>
     <title>Scrroll In Options</title>
-    <link href="options.css" rel="stylesheet" />
+    
+    <link rel="stylesheet" href="https://bootswatch.com/4/flatly/bootstrap.min.css">
+    <link rel="stylesheet" href="https://bootswatch.com/4/flatly/bootstrap.css">
+    <link href="options.css" rel="stylesheet">
 </head>
 
 <body>
-    <div class="container">
-        <h1>All Saved Scrrolls</h1>
-        <div id="saved-urls"></div>
+    <nav class="navbar navbar-expand-lg navbar-light bg-primary" id="navibar">
+          <img src="./images/favicon-384x384.png" alt="icon">  <h1>All Saved Scrrolls</h1>
+      </nav>
+      <div class="container">
+        <div id="saved-urls">
+          <div><a href="http://www.google.com">www.google.com</a></div>
+            <div><a href="https://github.com/">https://github.com/</a></div>
+            <div><a href="https://www.hackerearth.com/challenges/">https://www.hackerearth.com/challenges/</a></div>
+        </div>
     </div>
     <script src="options.js"></script>
 </body>

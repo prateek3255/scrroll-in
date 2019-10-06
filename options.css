@@ -1,21 +1,56 @@
+body{
+  background-color: #086375;
+}
+h1{
+  margin-left: 35rem;
+}
 .container {
   text-align: center;
+
+ 
 }
 
 #saved-urls {
   width: 650px;
   display: flex;
   flex-direction: column;
-  margin: 0 auto;
+  margin-top: 6rem !important;
 }
 
 #saved-urls div {
   padding: 10px;
-  margin: 0px;
-  margin-top: 10px;
   text-align: left;
-  border: 1px solid #f0f0f0;
   display: flex;
   justify-content: space-between;
-  align-items: center;
+  align-items: left; 
+  margin-top: 1rem !important;
+  background-color: rgb(173, 27, 68);
+  padding-left: 4rem;
+  box-shadow: black 5px;
 }
+#saved-urls a{
+  color:azure;
+  font-size: 1.2rem;
+}
+img{
+    margin-left: 32%;
+    height: 3rem;
+    width: 3rem;
+    position: absolute;
+}
+#saved-urls div:hover{
+    box-shadow: 0 14px 28px rgba(0,0,0,0.25), 0 10px 10px rgba(0,0,0,0.22);
+}
+#saved-urls a:hover{
+  color: lightpink;
+}
+
+#navibar
+{
+color: azure;
+background-color: black;
+}
+
+
+
+
