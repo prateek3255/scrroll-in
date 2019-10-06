@@ -1,10 +1,10 @@
 {
   const list = document.getElementById("saved-urls");
-  var urls = "";
-  chrome.storage.local.get("scroll-mark", function(result) {
+  let urls = "";
+  chrome.storage.local.get("scroll-mark", (result) => {
     urls = result["scroll-mark"];
-    for (var url in urls) {
-      var div = document.createElement("div");
+    for (let url in urls) {
+      let div = document.createElement("div");
       div.innerHTML = "<a href=" + url + ">" + url + "</a>";
       list.appendChild(div);
     }
