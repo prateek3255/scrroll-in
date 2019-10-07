@@ -9,7 +9,7 @@
       let percentage = Math.round((urls[url].offset / urls[url].total) * 100);
       if (percentage)
         div.innerHTML =
-          "<a href=" + url + ">" + title + "</a> (" + percentage + "%)";
+          "<a href=" + url + ">" + title + "</a> " + percentage + "%";
       else div.innerHTML = "<a href=" + url + ">" + title + "</a>";
       list.appendChild(div);
     }
