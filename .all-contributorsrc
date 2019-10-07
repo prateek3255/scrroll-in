@@ -34,6 +34,15 @@
       "contributions": [
         "code"
       ]
+    },
+    {
+      "login": "adityaketkar",
+      "name": "Aditya Ketkar",
+      "avatar_url": "https://avatars0.githubusercontent.com/u/22611315?v=4",
+      "profile": "http://adityaketkar.me",
+      "contributions": [
+        "design"
+      ]
     }
   ],
   "contributorsPerLine": 7,
