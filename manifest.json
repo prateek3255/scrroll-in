@@ -1,6 +1,7 @@
 {
     "name": "Scrroll In",
-    "version": "1.0",
+    "short_name": "scrroll-in",
+    "version": "2.0",
     "description": "Never forget where you left a page",
     "permissions": [
         "tabs",
@@ -17,16 +18,18 @@
     "browser_action": {
         "default_popup": "popup.html",
         "default_icon": {
-            "16": "images/favicon-16x16.png",
-            "32": "images/favicon-32x32.png",
-            "96": "images/favicon-192x192.png",
-            "256": "images/favicon-384x384.png"
+            "16": "images/icon-16.png",
+            "32": "images/icon-32.png",
+            "48": "images/icon-48.png",
+            "128": "images/icon-128.png",
+            "256": "images/icon-256.png"
         },
         "icons": {
-            "16": "images/favicon-16x16.png",
-            "32": "images/favicon-32x32.png",
-            "48": "images/favicon-192x192.png",
-            "256": "images/favicon-384x384.png"
+            "16": "images/icon-16.png",
+            "32": "images/icon-32.png",
+            "48": "images/icon-48.png",
+            "128": "images/icon-128.png",
+            "256": "images/icon-256.png"
         }
     },
     "manifest_version": 2
