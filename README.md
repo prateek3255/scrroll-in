@@ -1,5 +1,5 @@
 # Scrroll In
-[![All Contributors](https://img.shields.io/badge/all_contributors-2-orange.svg?style=flat-square)](#contributors)
+[![All Contributors](https://img.shields.io/badge/all_contributors-5-orange.svg?style=flat-square)](#contributors)
 
 Never forget where you left a page.
 
@@ -35,8 +35,8 @@ The popup sheet is also handled by `popup.js` by dynamically changing the UI fol
 
 To run the extension locally follow these steps
 
-- Visit `chrome://extensions` and turn on devloper mode.
-- Click on load upacked and select the extension root folder.
+- Visit `chrome://extensions` and turn on developer mode.
+- Click on load unpacked and select the extension root folder.
 - Now you can go ahead and modify `popup.js` or `popup.html`, changes would directly be visible in the extension.
 - If you change something in `background.js` or `manifest.json` then you will need to reload the extension.
 
@@ -58,6 +58,9 @@ Thanks goes to these wonderful people ([emoji key](https://allcontributors.org/d
   <tr>
     <td align="center"><a href="http://prateeksurana.me"><img src="https://avatars3.githubusercontent.com/u/21277179?v=4" width="100px;" alt="Prateek Surana"/><br /><sub><b>Prateek Surana</b></sub></a><br /><a href="https://github.com/devfolioco/scrroll-in/commits?author=prateek3255" title="Code">💻</a> <a href="#design-prateek3255" title="Design">🎨</a> <a href="#content-prateek3255" title="Content">🖋</a> <a href="https://github.com/devfolioco/scrroll-in/commits?author=prateek3255" title="Documentation">📖</a></td>
     <td align="center"><a href="http://laylawrote.com"><img src="https://avatars3.githubusercontent.com/u/19983454?v=4" width="100px;" alt="Layla Hedges"/><br /><sub><b>Layla Hedges</b></sub></a><br /><a href="https://github.com/devfolioco/scrroll-in/commits?author=N7Layla" title="Code">💻</a></td>
+    <td align="center"><a href="https://github.com/shikharsaxena98"><img src="https://avatars1.githubusercontent.com/u/21315618?v=4" width="100px;" alt="shikharsaxena98"/><br /><sub><b>shikharsaxena98</b></sub></a><br /><a href="https://github.com/devfolioco/scrroll-in/commits?author=shikharsaxena98" title="Code">💻</a></td>
+    <td align="center"><a href="http://adityaketkar.me"><img src="https://avatars0.githubusercontent.com/u/22611315?v=4" width="100px;" alt="Aditya Ketkar"/><br /><sub><b>Aditya Ketkar</b></sub></a><br /><a href="#design-adityaketkar" title="Design">🎨</a></td>
+    <td align="center"><a href="https://github.com/DEBSUBHRO"><img src="https://avatars0.githubusercontent.com/u/42496309?v=4" width="100px;" alt="DEBSUBHRA ROY"/><br /><sub><b>DEBSUBHRA ROY</b></sub></a><br /><a href="#design-DEBSUBHRO" title="Design">🎨</a></td>
   </tr>
 </table>
 

@@ -58,10 +58,11 @@ chrome.runtime.onMessage.addListener((request, sender) => {
 const setActiveIcon = () => {
   chrome.browserAction.setIcon({
     path: {
-      "16": "images/favicon-16x16.png",
-      "32": "images/favicon-32x32.png",
-      "96": "images/favicon-192x192.png",
-      "256": "images/favicon-384x384.png"
+      "16": "images/icon-16.png",
+      "32": "images/icon-32.png",
+      "48": "images/icon-48.png",
+      "128": "images/icon-128.png",
+      "256": "images/icon-256.png"
     }
   });
 };
@@ -69,10 +70,11 @@ const setActiveIcon = () => {
 const setInactiveIcon = () => {
   chrome.browserAction.setIcon({
     path: {
-      "16": "images/favicon-inactive-16x16.png",
-      "32": "images/favicon-inactive-32x32.png",
-      "96": "images/favicon-inactive-192x192.png",
-      "256": "images/favicon-inactive-384x384.png"
+      "16": "images/icon-16-inactive.png",
+      "32": "images/icon-32-inactive.png",
+      "48": "images/icon-48-inactive.png",
+      "128": "images/icon-128-inactive.png",
+      "256": "images/icon-256-inactive.png"
     }
   });
 };
