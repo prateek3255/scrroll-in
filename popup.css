@@ -1,3 +1,50 @@
+*{
+  box-sizing: border-box;
+  margin: 0;
+  padding: 0;
+}
+
+body{
+  margin: 0;
+}
+
+#root{
+  padding: 10px;
+  position: relative;
+  width: 200px;
+}
+
+.options{
+  float:right;
+  margin-bottom:5px;
+}
+
+#getScrollCon{
+  margin-bottom:10px;
+  display:flex;
+  justify-content:center;
+  width:100%;
+}
+#getScroll{
+  width:90%;
+}
+#saveScroll{
+  width:100%;
+}
+
+
+
+#controlsCon{
+  display:flex;
+  justify-content: space-around; 
+  width:100%;
+}
+#saveScroll, #deleteScroll{
+  width: 40%;
+}
+
+
+
 .btn {
   position: relative;
 
