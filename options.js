@@ -1,19 +1,29 @@
 {
     const list = document.getElementById("saved-urls");
-    var urls = "";
-    var i = 0;
+    let urls = "";
+    let i = 0;
     chrome.storage.local.get("scroll-mark", function(result) {
         urls = result["scroll-mark"];
-        for (var url in urls) {
+        for (let url in urls) {
             i++;
-            var div = document.createElement("div");
-            div.innerHTML = "<a href=" + url + " target='_blank' class='links' title="+url+">" + i + ") " + url.substring(0,20) + "..." + "</a>";
+            let div = document.createElement("div");
+            div.innerHTML = "<a href=" + url + " class='links' title="+url+">" + i + ") " + url + "..." + "</a>";
             list.appendChild(div);
         }
     });
-    var optbtn = document.getElementById("optbtn");
-    var container = document.getElementById("contain");
-    optbtn.onclick = function() {
-        container.classList.toggle("hide");
+}
+// document scrolling behaviours
+{
+    window.onscroll = function() {
+        let heading = document.getElementById("heading");
+        if (document.body.scrollTop > 10 || document.documentElement.scrollTop > 10) {
+            heading.className = "scrolled";
+        } else {
+            heading.className = "";
+        }
     };
+    document.getElementById("pageup").onclick = function() {
+        window.scrollTo({top: 0, behavior: "smooth"});
+    };
+    
 }

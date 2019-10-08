@@ -98,3 +98,48 @@ h2 {
 .btn.red:focus {
     box-shadow: 0px 0px 0px 3px rgba(231, 76, 60, 0.6)
 }
+
+/* Recents */
+#contain {
+    overflow: auto;
+    width: 100%;
+    height: 200px;
+    transition: .5s ease-out;
+    -webkit-transition: .5s ease-out;
+    text-align: center
+}
+.hide {
+    height: 0 !important;
+    overflow: hidden
+}
+#saved-urls {
+  width: 100%;
+  display: flex;
+  flex-direction: column;
+  margin: 0 auto;
+    text-align: left
+}
+
+#saved-urls div a, #saved-urls + a {
+  padding: 10px;
+  margin-top: 10px;
+  border: 2px solid rgba(0, 102, 153, 0.6);
+  display: flow-root;
+}
+#saved-urls + a {
+    border: 0;
+}
+.opt {
+    text-align: center;
+    background-color: #666
+}
+.opt:hover {
+    background-color: #555
+}
+.opt:focus {
+    box-shadow: 0px 0px 0px 3px rgba(0,0,0,0.3)
+}
+.links:hover {
+    background-color: #006699;
+    color: #fff
+}

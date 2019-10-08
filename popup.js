@@ -7,7 +7,7 @@ chrome.tabs.query({ active: true, currentWindow: true }, tabs => {
     const scrollMarkData = data["scroll-mark"];
     if (scrollMarkData && scrollMarkData.hasOwnProperty(url)) {
       root.innerHTML = `
-      <button class="btn" id="getScroll">Fetch Scroll</button>
+      <button class="btn" id="getScroll">Go to</button>
       <button class="btn orange" id="saveScroll">Update</button>
       <button class="btn red" id="deleteScroll">Delete</button>
       <div>
@@ -45,3 +45,29 @@ chrome.tabs.query({ active: true, currentWindow: true }, tabs => {
     };
   });
 });
+
+// Recents
+
+{
+    const list = document.getElementById("saved-urls");
+    var urls = "";
+    var i = 0;
+    chrome.storage.local.get("scroll-mark", function(result) {
+        urls = result["scroll-mark"];
+        for (var url in urls) {
+            i++;
+            Object.assign([], urls).reverse();
+            var div = document.createElement("div");
+            div.innerHTML = "<a href=" + url + " target='_blank' class='links' title="+url+">" + i + ") " + url.substring(0,20) + "..." + "</a>";
+            list.appendChild(div);
+        }
+    });
+    
+    // Slider
+    
+    var optbtn = document.getElementById("optbtn");
+    var container = document.getElementById("contain");
+    optbtn.onclick = function() {
+        container.classList.toggle("hide");
+    };
+}

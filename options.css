@@ -1,26 +1,40 @@
-#contain {
-    overflow: auto;
-    width: 100%;
-    height: 200px;
-    transition: .5s ease-out;
-    -webkit-transition: .5s ease-out;
+* {
+    font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", 'Roboto', 'Helvetica', Arial, sans-serif, "Apple Color Emoji", "Segoe UI Emoji", "Segoe UI Symbol";
+    transition: 0.3s ease-out;
+    word-break: break-all
 }
-.hide {
-    height: 0 !important;
-    overflow: hidden
+h1, h2, h3, h4, h5, h6 {
+    font-family: '';
+    margin: 0
+}
+body {
+    margin: 0;
+    width: 100%;
+    height: auto;
+    overflow-x: hidden;
+}
+a, a:visited {
+    text-decoration: none;
+    color: #006699
+}
+.container {
+    height: auto;
+    position: relative
 }
 #saved-urls {
-  width: 100%;
-  display: flex;
-  flex-direction: column;
-  margin: 0 auto;
+    display: block;
+    margin: 0 auto;
+    position: relative;
+    padding: 1rem;
+    padding-top: 0
 }
 
 #saved-urls div a {
-  padding: 10px;
-  margin-top: 10px;
-  border: 2px solid rgba(0, 102, 153, 0.6);
-  display: flow-root;
+    padding: 10px;
+    margin-top: 10px;
+    border: 2px solid rgba(0, 102, 153, 0.6);
+    display: flex;
+    font-size: 0.85rem
 }
 .opt {
     text-align: center;
@@ -34,5 +48,36 @@
 }
 .links:hover {
     background-color: #006699;
+    color: #fff;
+    border-color: rgba(0,0,0,0.6) !important
+}
+#heading {
+    font-size: 2.4rem;
+    text-align: center;
+    width: 100%;
+    z-index: 10;
+    background-color: rgba(0,0,0,0.4);
+    position: fixed;
+    top: 0;
+    padding: 1rem 0;
     color: #fff
+}
+.banner {
+    height: 5rem;
+    width: 100%;
+    position: relative
+}
+.scrolled {
+    box-shadow: 0 1px 4px rgba(0, 0, 0, 0.6);
+    background-color: rgba(0,0,0,0.8) !important;
+}
+#pageup {
+    float: right;
+    margin-right: 1rem;
+    opacity: 0;
+    cursor: default
+}
+.scrolled #pageup {
+    opacity: 1;
+    cursor: pointer
 }
