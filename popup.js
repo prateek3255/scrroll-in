@@ -11,10 +11,11 @@ chrome.tabs.query({ active: true, currentWindow: true }, tabs => {
           <button id="getScroll" class="btn">Fetch Scroll</button>
         </div>
         <div id="controlsCon">
-          <button class="btn orange" id="saveScroll">Update</button>
+          <button class="btn orange" id="upScroll">Update</button>
           <button class="btn red" id="deleteScroll">Delete</button>
         </div>
       `;
+      root.style.width = "150px";
       let deleteScroll = document.getElementById("deleteScroll");
 
       deleteScroll.onclick = function(element) {
@@ -36,8 +37,9 @@ chrome.tabs.query({ active: true, currentWindow: true }, tabs => {
       };
     } else {
       root.innerHTML = `<div id="getScrollCon">
-                          <button class="btn" id="saveScroll">Save</button>
+                          <button class="btn" id="saveScroll">Save Scroll</button>
                         </div>`;
+      root.style.width = "100px";
     }
     let saveScroll = document.getElementById("saveScroll");
 

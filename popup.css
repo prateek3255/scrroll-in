@@ -2,6 +2,8 @@
   box-sizing: border-box;
   margin: 0;
   padding: 0;
+  transition: all 0.3s;
+  /* font-family: roboto; */
 }
 
 body{
@@ -9,24 +11,37 @@ body{
 }
 
 #root{
-  padding: 10px;
+  /* padding: 10px; */
   position: relative;
-  width: 200px;
 }
 
 .options{
   float:right;
-  margin-bottom:5px;
+  text-align: center;
+  padding: 3px;
+  width: 100%;
+  /* font-weight: 700; */
+  color: white;
+  transition: all 0.3s;
+  background: #27A7ED;
+  box-shadow: inset 0 2px 3px 2px #0003;
+}
+.options a{
+  /* text-decoration: none; */
+  color: white;
+}
+.options:hover{
+  background: #3F70FF;
 }
 
 #getScrollCon{
-  margin-bottom:10px;
+  /* margin-bottom:10px; */
   display:flex;
   justify-content:center;
   width:100%;
 }
 #getScroll{
-  width:90%;
+  width:100%;
 }
 #saveScroll{
   width:100%;
@@ -36,11 +51,11 @@ body{
 
 #controlsCon{
   display:flex;
-  justify-content: space-around; 
+  justify-content: center; 
   width:100%;
 }
-#saveScroll, #deleteScroll{
-  width: 40%;
+#upScroll, #deleteScroll{
+  width: 50%;
 }
 
 
@@ -51,12 +66,12 @@ body{
   display: block;
   padding: 5px;
   font-size: 15px;
-
+  font-weight: 700;
   overflow: hidden;
 
   border-width: 0;
   outline: none;
-  border-radius: 2px;
+  /* border-radius: 2px; */
   box-shadow: 0 1px 4px rgba(0, 0, 0, 0.6);
 
   background-color: #2ecc71;
