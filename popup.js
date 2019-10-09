@@ -49,9 +49,10 @@ chrome.tabs.query({ active: true, currentWindow: true }, tabs => {
 // Recents
 
 {
-    const list = document.getElementById("saved-urls");
+    let list = document.getElementById("saved-urls");
     var urls = "";
     let i = 0;
+    var sorted = new Array;
     console.log();
     chrome.storage.local.get("scroll-mark", function(result) {
         urls = result["scroll-mark"];
@@ -59,8 +60,12 @@ chrome.tabs.query({ active: true, currentWindow: true }, tabs => {
             i++;
             let title = urls[url].title || url;
             var div = document.createElement("div");
-            div.innerHTML = "<a href=" + url + " target='_blank' class='links' title="+url+">" + i + ") " + title.substring(0,20) + "..." + "</a>";
-            list.appendChild(div);
+            div.innerHTML = "<a href=" + url + " target='_blank' class='links' title="+url+">" + title.substring(0,20) + "..." + "</a>";
+            sorted.push(div);
+        }
+        sorted.reverse();
+        for (i=0;i<5;i++) {
+            list.appendChild(sorted[i]);
         }
     });
     
