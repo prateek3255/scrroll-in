@@ -21,6 +21,30 @@ So this extension lets you save the scroll position of the webpage, so you can c
 
 I know there are a few extensions that already serve this purpose, but most of them either didn't work correctly or lacked the features that I needed, so I ended up creating my own.
 
+## How to use?
+
+- Download the extension at the [Chrome Web Store](https://chrome.google.com/webstore/detail/scrroll-in/cjgjbjogfodppempgdlppgefojbcmjom?hl=en&gl=IN)
+- Go to a page where you want to save, scroll to a specific position
+- Hit the icon of Scrroll In to use it, then hit Save
+
+Your scroll position is saved for that page.
+
+While you are on that same page, you can:
+
+- Go back to the saved position
+- Or update the saved position
+- Or delete the saved position
+
+When you need to go back, hit the icon of Scrroll In, then hit Fetch Scroll.
+
+When you need to update, hit the icon of Scrroll In, then hit Update.
+
+When you need to update, hit the icon of Scrroll In, then hit Delete.
+
+You can also manage your saved positions, to do this, hit the icon of Scrroll In, then hit Options. You will see a list of links saved by Scrroll In.
+
+Check out our video to see more [how to use Scrroll In](https://www.youtube.com/watch?v=Pnc1EeF8y70).
+
 ## How it works?
 
 Under the hood, this extension uses the [chrome localStorage API](https://developer.mozilla.org/en/DOM/Storage#localStorage) to store the scroll positions for different webpages. I avoided using sync storage due to its storage limitations ([read more](https://developer.chrome.com/apps/storage)). This extension creates an object which stores the URL as keys and the scroll position as values.
