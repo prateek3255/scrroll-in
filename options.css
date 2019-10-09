@@ -79,10 +79,6 @@ h1 {
 	font-weight: bolder;
 }
 
-.img2 {
-	display: none;
-}
-
 .bookmark span {
 	background-color: #fff;
 	color: black;
@@ -116,12 +112,6 @@ h1 {
 	.header {
 		padding: 15px;
 		margin-bottom: 10px;
-	}
-	.img1 {
-		display: none;
-	}
-	.img2 {
-		display: block;
 	}
 	.bookmark span {
 		width: 30px;
