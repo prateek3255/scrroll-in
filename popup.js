@@ -51,14 +51,15 @@ chrome.tabs.query({ active: true, currentWindow: true }, tabs => {
 {
     const list = document.getElementById("saved-urls");
     var urls = "";
-    var i = 0;
+    let i = 0;
+    console.log();
     chrome.storage.local.get("scroll-mark", function(result) {
         urls = result["scroll-mark"];
         for (var url in urls) {
             i++;
-            Object.assign([], urls).reverse();
+            let title = urls[url].title || url;
             var div = document.createElement("div");
-            div.innerHTML = "<a href=" + url + " target='_blank' class='links' title="+url+">" + i + ") " + url.substring(0,20) + "..." + "</a>";
+            div.innerHTML = "<a href=" + url + " target='_blank' class='links' title="+url+">" + i + ") " + title.substring(0,20) + "..." + "</a>";
             list.appendChild(div);
         }
     });

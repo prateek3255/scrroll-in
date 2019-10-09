@@ -33,7 +33,7 @@ a, a:visited {
     padding: 10px;
     margin-top: 10px;
     border: 2px solid rgba(0, 102, 153, 0.6);
-    display: flex;
+    display: block;
     font-size: 0.85rem
 }
 .opt {
@@ -50,6 +50,12 @@ a, a:visited {
     background-color: #006699;
     color: #fff;
     border-color: rgba(0,0,0,0.6) !important
+}
+.links:hover #progress {
+    background-color: #006699
+}
+.links:hover #bar {
+    background-color: #fff
 }
 #heading {
     font-size: 2.4rem;
@@ -80,4 +86,16 @@ a, a:visited {
 .scrolled #pageup {
     opacity: 1;
     cursor: pointer
+}
+.percent {
+    float: right;
+}
+#progress {
+    width: 100%;
+    background-color: #ddd;
+}
+
+#bar {
+    height: 1px;
+    background-color: #006699;
 }
