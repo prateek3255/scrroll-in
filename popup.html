@@ -1,14 +1,23 @@
 <!DOCTYPE html>
 <html>
-  <head>
-    <link href="popup.css" rel="stylesheet" />
-  </head>
 
-  <body>
-    <div id="root"></div>
-    <div style="float:right;margin-bottom:5px;">
-      <a target="_blank" href="options.html">Options</a>
+<head>
+  <link href="popup.css" rel="stylesheet" />
+</head>
+
+<body>
+  <div class="controls">
+    <div id="activeContol"></div>
+    <div class="options">
+      <a target="_blank" href="options.html"><img src="./images/settings.svg" height="28" /></a>
     </div>
-    <script src="popup.js"></script>
-  </body>
+  </div>
+
+  <div class="main">
+    <p id="message"></p>
+    <div id="root"></div>
+  </div>
+  <script src="popup.js"></script>
+</body>
+
 </html>

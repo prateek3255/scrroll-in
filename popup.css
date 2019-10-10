@@ -1,18 +1,28 @@
+@font-face {
+  font-family: 'Roboto';
+  src: url('Roboto/Roboto-Bold.ttf') format('truetype');
+}
+
+body{
+  background: #242A36;
+  width: 340px;
+  padding: 1em ;
+}
+
+
 .btn {
-  position: relative;
-
-  display: block;
+  width: 100%!important;
   padding: 5px;
-  font-size: 15px;
-
+  height: 41px;
+  border-radius: 6px;
+  font-size: 20px;
   overflow: hidden;
-
+  font-family: 'Roboto', sans-serif;
   border-width: 0;
   outline: none;
-  border-radius: 2px;
+  margin-bottom: 0.4em;
   box-shadow: 0 1px 4px rgba(0, 0, 0, 0.6);
-
-  background-color: #2ecc71;
+  background-color: #2ECC71;
   color: #ecf0f1;
 
   transition: background-color 0.3s;
@@ -32,28 +42,6 @@
   padding: 12px 24px;
 }
 
-.btn:before {
-  content: "";
-
-  position: absolute;
-  top: 50%;
-  left: 50%;
-
-  display: block;
-  width: 0;
-  padding-top: 0;
-
-  border-radius: 100%;
-
-  background-color: rgba(236, 240, 241, 0.3);
-
-  -webkit-transform: translate(-50%, -50%);
-  -moz-transform: translate(-50%, -50%);
-  -ms-transform: translate(-50%, -50%);
-  -o-transform: translate(-50%, -50%);
-  transform: translate(-50%, -50%);
-}
-
 .btn:active:before {
   width: 120%;
   padding-top: 120%;
@@ -61,6 +49,40 @@
   transition: width 0.2s ease-out, padding-top 0.2s ease-out;
 }
 
+
+#message{
+  margin: 3.2em 0em 1em 0.5em;
+  font-family: 'Roboto', sans-serif;
+  font-style: normal;
+  font-weight: bold;
+  padding-left: 0.3em;
+  padding-right: 0.3em;
+  font-size: 16px;
+  line-height: 21px;
+  align-items: center;
+  color: white
+}
+
+.options{
+  float: right;
+  margin-right: 0.1em
+}
+
+#activeContol{
+  float: left
+}
+.main{
+  clear: both;
+}
+.content{
+  font-style: normal;
+  font-weight: bold;
+  font-size: 18px;
+  line-height: 21px;
+  display: flex;
+  align-items: center;
+  color: #FFFFFF;
+}
 /* Styles, not important */
 *,
 *:before,
