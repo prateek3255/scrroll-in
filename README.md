@@ -36,6 +36,8 @@ The popup sheet is also handled by `popup.js` by dynamically changing the UI fol
 To run the extension locally follow these steps
 
 - Visit `chrome://extensions` and turn on developer mode.
+see how in image..
+![look](https://i.ibb.co/YkNFtFr/Capture.png)
 - Click on load unpacked and select the extension root folder.
 - Now you can go ahead and modify `popup.js` or `popup.html`, changes would directly be visible in the extension.
 - If you change something in `background.js` or `manifest.json` then you will need to reload the extension.
