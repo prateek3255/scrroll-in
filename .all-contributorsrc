@@ -52,6 +52,15 @@
       "contributions": [
         "design"
       ]
+    },
+    {
+      "login": "aesher9o1",
+      "name": "Aashis kumar",
+      "avatar_url": "https://avatars2.githubusercontent.com/u/29084675?v=4",
+      "profile": "http://aashisresume.firebaseapp.com",
+      "contributions": [
+        "code"
+      ]
     }
   ],
   "contributorsPerLine": 7,
