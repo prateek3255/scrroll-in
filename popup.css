@@ -9,108 +9,15 @@ html {
 	box-sizing: border-box;
 }
 
-.btn {
-	position: relative;
-
-	display: block;
-	padding: 5px;
-	font-size: 15px;
-
-	overflow: hidden;
-
-	border-width: 0;
-	outline: none;
-	border-radius: 2px;
-	box-shadow: 0 1px 4px rgba(0, 0, 0, 0.6);
-
-	background-color: #2ecc71;
-	color: #ecf0f1;
-
-	transition: background-color 0.3s;
-}
-
-.btn:hover,
-.btn:focus {
-	background-color: #27ae60;
-}
-
-.btn > * {
-	position: relative;
-}
-
-.btn span {
-	display: block;
-	padding: 12px 24px;
-}
-
-.btn:before {
-	content: "";
-
-	position: absolute;
-	top: 50%;
-	left: 50%;
-
-	display: block;
-	width: 0;
-	padding-top: 0;
-
-	border-radius: 100%;
-
-	background-color: rgba(236, 240, 241, 0.3);
-
-	-webkit-transform: translate(-50%, -50%);
-	-moz-transform: translate(-50%, -50%);
-	-ms-transform: translate(-50%, -50%);
-	-o-transform: translate(-50%, -50%);
-	transform: translate(-50%, -50%);
-}
-
-.btn:active:before {
-	width: 120%;
-	padding-top: 120%;
-
-	transition: width 0.2s ease-out, padding-top 0.2s ease-out;
-}
-
-/* Styles, not important */
-*,
-*:before,
-*:after {
-	box-sizing: border-box;
-}
-
-h2 {
-	font-weight: normal;
-}
-
-.btn.orange {
-	background-color: #e67e22;
-}
-
-.btn.orange:hover,
-.btn.orange:focus {
-	background-color: #d35400;
-}
-
-.btn.red {
-	background-color: #e74c3c;
-}
-
-.btn.red:hover,
-.btn.red:focus {
-	background-color: #c0392b;
-}
-
 /* Theme changed */
 .popup {
 	width: 395px;
-	height: 224px;
 	background: #242a36;
 	display: flex;
 	flex-direction: column;
 	justify-content: space-between;
 	align-items: center;
-	padding-bottom: 20px;
+	padding-bottom: 16px;
 }
 .head {
 	width: 100%;
@@ -118,10 +25,8 @@ h2 {
 	justify-content: space-between;
 	align-items: center;
 }
-.active-img {
-	display: none;
-}
-.inactive-img {
+
+.image {
 	width: 69px;
 	height: 69px;
 }
@@ -137,9 +42,9 @@ h2 {
 }
 .btn-font:hover {
 	opacity: 0.9;
-	transform: translateY(2px);
+	transform: translateY(1px);
 }
-p {
+.p {
 	width: 340px;
 	height: 46px;
 	font-family: Roboto;
@@ -149,7 +54,7 @@ p {
 	line-height: 21px;
 	display: flex;
 	align-items: center;
-	margin-bottom: 16px;
+	margin-bottom: 20px;
 	color: #ffffff;
 }
 .green {
@@ -161,13 +66,14 @@ p {
 	font-size: 20px;
 	line-height: 28px;
 	color: #fff;
+	outline: none;
+	margin-bottom: 10px;
 }
 .buttons {
 	display: flex;
 	justify-content: space-around;
 	align-items: center;
 	width: 96%;
-	margin-top: 10px;
 }
 
 .btns {
@@ -183,9 +89,10 @@ p {
 	outline: none;
 	color: #fff;
 }
+.btns:hover {
+	opacity: 0.8;
+	transform: translateY(1px);
+}
 .red {
 	background: #e74c3c;
-}
-.pop-opt {
-	height: 278px;
 }
