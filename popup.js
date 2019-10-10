@@ -1,15 +1,16 @@
 const root = document.getElementById("root");
 root.innerHTML = "<div> Loading...</div>";
 
-
-
 chrome.tabs.query({ active: true, currentWindow: true }, tabs => {
   const url = tabs[0].url;
   chrome.storage.local.get("scroll-mark", data => {
     const scrollMarkData = data["scroll-mark"];
     if (scrollMarkData && scrollMarkData.hasOwnProperty(url)) {
-      document.getElementById('message').innerHTML = "Continue from where you last left or update/delete scrroll for this page."
-      document.getElementById('activeContol').innerHTML = `<img src="./images/icon-32.png" />`;
+      document.getElementById("message").innerHTML =
+        "Continue from where you last left or update/delete scrroll for this page.";
+      document.getElementById(
+        "activeContol"
+      ).innerHTML = `<img src="./images/icon-32.png" />`;
       root.innerHTML = `
       <div style="margin-top:25px">
       <div style="margin-bottom:10px;display:flex;justify-content:center;width:100%;">
@@ -23,7 +24,7 @@ chrome.tabs.query({ active: true, currentWindow: true }, tabs => {
       `;
       let deleteScroll = document.getElementById("deleteScroll");
 
-      deleteScroll.onclick = function (element) {
+      deleteScroll.onclick = function(element) {
         chrome.tabs.executeScript(tabs[0].id, {
           file: "delete.js",
           allFrames: true
@@ -33,7 +34,7 @@ chrome.tabs.query({ active: true, currentWindow: true }, tabs => {
 
       let getScroll = document.getElementById("getScroll");
 
-      getScroll.onclick = function (element) {
+      getScroll.onclick = function(element) {
         chrome.tabs.executeScript(tabs[0].id, {
           file: "get.js",
           allFrames: true
@@ -41,13 +42,16 @@ chrome.tabs.query({ active: true, currentWindow: true }, tabs => {
         window.close();
       };
     } else {
-      document.getElementById('message').innerHTML = "In a hurry! Save the scrroll and read this page at your own pace by clicking the button below"
-      document.getElementById('activeContol').innerHTML = `<img src="./images/icon-32-inactive.png" />`;
+      document.getElementById("message").innerHTML =
+        "In a hurry! Save the scrroll and read this page at your own pace by clicking the button below👇";
+      document.getElementById(
+        "activeContol"
+      ).innerHTML = `<img src="./images/icon-32-inactive.png" />`;
       root.innerHTML = ` <button style="width:100px; " class="btn" id="saveScroll">Save</button>`;
     }
     let saveScroll = document.getElementById("saveScroll");
 
-    saveScroll.onclick = function (element) {
+    saveScroll.onclick = function(element) {
       chrome.tabs.executeScript(tabs[0].id, {
         file: "save.js",
         allFrames: true
