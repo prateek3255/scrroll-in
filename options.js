@@ -5,7 +5,7 @@
 		urls = result["scroll-mark"];
 		for (var url in urls) {
 			let title = urls[url].title || url;
-			let icon = "/images/icon-16.png";
+			let icon = "/images/icon-32.png";
 			var div = document.createElement("div");
 			let percentage = Math.round((urls[url].offset / urls[url].total) * 100);
 			if (percentage)

@@ -8,13 +8,15 @@
 	/* text-align: center; */
 	height: 100vh;
 	width: 100vw;
+	background-color: #242a36;
 }
 .header {
-	padding: 30px;
+	padding: 50px;
 	display: flex;
 	justify-content: center;
 	align-items: center;
-	background-color: #ff6629;
+	background-color: #2ecc71;
+	margin-bottom: 50px;
 }
 #saved-urls {
 	width: 85vw;
@@ -29,9 +31,9 @@ a {
 	text-decoration: none;
 }
 p {
-	width: 80%;
+	width: 90%;
 	text-decoration: none;
-	margin-right: 5%;
+	margin-right: 4%;
 }
 
 .bookmark img {
@@ -42,19 +44,20 @@ p {
 }
 
 .bookmark {
-	padding: 10px;
+	padding: 30px;
 	margin: 0px;
 	margin-top: 10px;
 	/* border: 3px solid #ff6629; */
-	border-radius: 25px;
+	max-height: 80px;
+	border-radius: 40px;
 	cursor: pointer;
 	display: flex;
 	transition: all 0.3s ease;
 	justify-content: flex-start;
 	align-items: center;
-	background-color: #ff6629;
+	background-color: #e67e22;
 	text-decoration: none;
-	color: #fff;
+	color: #242a36;
 	font-weight: bolder;
 	/* min-width: 250px; */
 }
@@ -63,47 +66,55 @@ p {
 	overflow: hidden;
 	white-space: nowrap;
 	text-overflow: ellipsis;
-	font-family: cursive;
+	font-size: 20px;
 }
 
 .bookmark:hover {
-	color: #000;
+	color: #fff;
 }
 .bookmark:hover span {
 	background-color: #5fcc21;
+	color: #fff;
 }
 
 h1 {
 	color: #fff;
 	font-family: Arial, Helvetica, sans-serif;
 	font-weight: bolder;
+	font-size: 45px;
 }
 
 .bookmark span {
 	background-color: #fff;
 	color: black;
-	border-radius: 12px;
-	width: 50px;
-	height: 22px;
+	border-radius: 23px;
+	width: 80px;
+	height: 50px;
 	justify-self: end;
 	display: flex;
 	justify-content: center;
 	align-items: center;
+	font-size: 15px;
+	font-weight: bolder;
 }
 
-@media only screen and (max-width: 375px) {
+@media only screen and (max-width: 500px) {
 	#saved-urls a {
 		font-size: 8px;
 	}
 	h1 {
-		font-size: 15px;
+		font-size: 20px;
 	}
 
 	.bookmark {
 		margin-top: 0;
+		height: 40px;
+	}
+	.bookmark p {
+		font-size: 14px;
 	}
 	#saved-urls img {
-		width: 10px;
+		width: 15px;
 		margin: 0 6px;
 	}
 	#saved-urls div {
@@ -111,10 +122,12 @@ h1 {
 	}
 	.header {
 		padding: 15px;
-		margin-bottom: 10px;
+		margin-bottom: 25px;
 	}
 	.bookmark span {
-		width: 30px;
-		height: 15px;
+		width: 40px;
+		height: 25px;
+		margin: 0 6px;
+		font-size: 9px;
 	}
 }

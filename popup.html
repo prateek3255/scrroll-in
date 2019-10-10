@@ -1,14 +1,36 @@
 <!DOCTYPE html>
 <html>
-  <head>
-    <link href="popup.css" rel="stylesheet" />
-  </head>
+	<head>
+		<link href="popup.css" rel="stylesheet" />
+		<link
+			href="https://fonts.googleapis.com/css?family=Roboto:400,700&display=swap"
+			rel="stylesheet"
+		/>
+	</head>
 
-  <body>
-    <div id="root"></div>
-    <div style="float:right;margin-bottom:5px;">
-      <a target="_blank" href="options.html">Options</a>
-    </div>
-    <script src="popup.js"></script>
-  </body>
+	<body>
+		<div class="popup pop-opt">
+			<div class="head">
+				<img
+					class="inactive-img"
+					src="/images/icon-256-inactive.png"
+					alt="inactive logo"
+				/>
+				<img class="active-img" src="/images/icon-256.png" alt="active logo" />
+				<a target="_blank" href="options.html"
+					><img class="settings" src="/images/settings.svg" alt="settings icon"
+				/></a>
+			</div>
+			<p>
+				Continue from where you last left or update/delete scrroll for this
+				page.
+			</p>
+			<button class=" btn-font green">Fetch Scrroll</button>
+			<div class="buttons">
+				<button class="btns ">Update</button>
+				<button class="btns red">Delete</button>
+			</div>
+		</div>
+		<script src="popup.js"></script>
+	</body>
 </html>
