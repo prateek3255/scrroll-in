@@ -26,6 +26,7 @@ html {
 	align-items: center;
 }
 
+
 .image {
 	width: 69px;
 	height: 69px;
@@ -39,10 +40,6 @@ html {
 	font-family: Roboto;
 	font-style: normal;
 	font-weight: bold;
-}
-.btn-font:hover {
-	opacity: 0.9;
-	transform: translateY(1px);
 }
 .p {
 	width: 340px;
@@ -95,4 +92,7 @@ html {
 }
 .red {
 	background: #e74c3c;
+}
+.pop-opt{
+   color: #fff;
 }

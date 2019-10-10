@@ -1,10 +1,10 @@
-// const root = document.getElementById("root");
 const popup = document.querySelector(".pop-opt");
 const p = document.querySelector(".p");
 const green = document.querySelector(".green-btn");
 const buttons = document.querySelector(".buttons");
 const image = document.querySelector(".image");
-// popup.innerHTML = "<div> Loading...</div>";
+buttons.innerHTML = "<div> Loading...</div>"; 
+
 
 chrome.tabs.query({ active: true, currentWindow: true }, (tabs) => {
 	const url = tabs[0].url;
@@ -16,7 +16,7 @@ chrome.tabs.query({ active: true, currentWindow: true }, (tabs) => {
 			p.textContent = `Continue from where you last left or update/delete scrroll for this page.`;
 			green.innerHTML = `<button id="getScroll" class="btn-font green">Fetch Scrroll</button>`;
 			buttons.innerHTML = `<button class="btns" id="saveScroll">Update</button><button class="btns red" id="deleteScroll">Delete</button>`;
-
+      
 			let deleteScroll = document.getElementById("deleteScroll");
 
 			deleteScroll.onclick = function(element) {
@@ -28,7 +28,7 @@ chrome.tabs.query({ active: true, currentWindow: true }, (tabs) => {
 			};
 
 			let getScroll = document.getElementById("getScroll");
-
+      
 			getScroll.onclick = function(element) {
 				chrome.tabs.executeScript(tabs[0].id, {
 					file: "get.js",
@@ -38,7 +38,7 @@ chrome.tabs.query({ active: true, currentWindow: true }, (tabs) => {
 			};
 		} else {
 			popup.height = "224px";
-			p.textContent = `In a hurry! Save the scrroll and read this page at your own pace by clicking the button below 👇`;
+			p.textContent = `In a hurry! Save the scrroll and read this page at your own pace by clicking the button below`;
 			green.innerHTML = `<button id="saveScroll" class=" btn-font green">Save</button>`;
 		}
 		let saveScroll = document.getElementById("saveScroll");
