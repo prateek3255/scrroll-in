@@ -7,7 +7,7 @@ chrome.tabs.query({ active: true, currentWindow: true }, tabs => {
     const scrollMarkData = data["scroll-mark"];
     if (scrollMarkData && scrollMarkData.hasOwnProperty(url)) {
       document.getElementById("message").innerHTML =
-        "Continue from where you last left or update/delete scrroll for this page.";
+        "Continue from where you last left or update/delete scroll for this page.";
       document.getElementById(
         "activeContol"
       ).innerHTML = `<img src="./images/icon-32.png" />`;
