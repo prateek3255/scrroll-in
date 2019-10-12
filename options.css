@@ -1,23 +1,64 @@
-
-
+body {
+  background: #242a36;
+  color: #fff;
+}
 .container {
   text-align: center;
 }
-
+h1 {
+  font-size: 3rem;
+  text-shadow: -1px 2px 3px #0009;
+}
 #saved-urls {
-  width: 650px;
+  max-width: 1000px;
   display: flex;
-  flex-direction: column;
+  flex-direction: row;
+  flex-wrap: wrap;
   margin: 0 auto;
 }
 
-#saved-urls div {
+#saved-urls > div {
   padding: 10px;
-  margin: 0px;
+  max-width: 20rem;
+  margin: 1rem;
   margin-top: 10px;
   text-align: left;
-  border: 1px solid #f0f0f0;
+  border: 2px solid #ffffff;
   display: flex;
   justify-content: space-between;
   align-items: center;
+  border-radius: 5px;
+  background: #fff;
+  box-shadow: -1px 2px 5px 3px #00000096;
+}
+#saved-urls > div a {
+  max-width: 16rem;
+  color: #0640ac;
+  font-weight: bold;
+  text-decoration: none;
+}
+#saved-urls > div .perc {
+  margin: 0 0 0 2rem;
+  padding: 0.3rem;
+  border-radius: 50%;
+  display: flex;
+  position: relative;
+  justify-content: center;
+  align-items: center;
+  width: 1.5rem;
+  height: 1.5rem;
+  background: #2ecc71;
+  color: white;
+  font-weight: bold;
+  box-shadow: 0 1px 2px 2px rgba(0, 0, 0, 0.133);
+}
+
+#saved-urls > div .perc::after {
+  content: "%";
+  color: rgb(0, 85, 14);
+  text-shadow: 0 0 2px #0002;
+  font-size: 0.7rem;
+  position: absolute;
+  bottom: 0;
+  right: -0.1rem;
 }
