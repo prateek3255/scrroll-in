@@ -71,6 +71,15 @@
         "code",
         "design"
       ]
+    },
+    {
+      "login": "itaditya",
+      "name": "Aditya Agarwal",
+      "avatar_url": "https://avatars1.githubusercontent.com/u/15871340?v=4",
+      "profile": "http://adi.surge.sh",
+      "contributions": [
+        "code"
+      ]
     }
   ],
   "contributorsPerLine": 7,
