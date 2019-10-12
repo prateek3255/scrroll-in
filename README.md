@@ -1,5 +1,5 @@
 # Scrroll In
-[![All Contributors](https://img.shields.io/badge/all_contributors-7-orange.svg?style=flat-square)](#contributors)
+[![All Contributors](https://img.shields.io/badge/all_contributors-8-orange.svg?style=flat-square)](#contributors)
 
 Never forget where you left a page.
 
@@ -63,6 +63,9 @@ Thanks goes to these wonderful people ([emoji key](https://allcontributors.org/d
     <td align="center"><a href="https://github.com/DEBSUBHRO"><img src="https://avatars0.githubusercontent.com/u/42496309?v=4" width="100px;" alt="DEBSUBHRA ROY"/><br /><sub><b>DEBSUBHRA ROY</b></sub></a><br /><a href="#design-DEBSUBHRO" title="Design">🎨</a></td>
     <td align="center"><a href="http://aashisresume.firebaseapp.com"><img src="https://avatars2.githubusercontent.com/u/29084675?v=4" width="100px;" alt="Aashis kumar"/><br /><sub><b>Aashis kumar</b></sub></a><br /><a href="https://github.com/devfolioco/scrroll-in/commits?author=aesher9o1" title="Code">💻</a></td>
     <td align="center"><a href="https://github.com/RohitKaushal7"><img src="https://avatars2.githubusercontent.com/u/43717403?v=4" width="100px;" alt="Rohit Kaushal"/><br /><sub><b>Rohit Kaushal</b></sub></a><br /><a href="https://github.com/devfolioco/scrroll-in/commits?author=RohitKaushal7" title="Code">💻</a> <a href="#design-RohitKaushal7" title="Design">🎨</a></td>
+  </tr>
+  <tr>
+    <td align="center"><a href="http://adi.surge.sh"><img src="https://avatars1.githubusercontent.com/u/15871340?v=4" width="100px;" alt="Aditya Agarwal"/><br /><sub><b>Aditya Agarwal</b></sub></a><br /><a href="https://github.com/devfolioco/scrroll-in/commits?author=itaditya" title="Code">💻</a></td>
   </tr>
 </table>
 
