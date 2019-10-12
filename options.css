@@ -10,10 +10,9 @@ h1 {
   text-shadow: -1px 2px 3px #0009;
 }
 #saved-urls {
-  max-width: 1000px;
-  display: flex;
-  flex-direction: row;
-  flex-wrap: wrap;
+  max-width: 1200px;
+  display: grid;
+  grid-template-columns: 1fr 1fr 1fr;
   margin: 0 auto;
 }
 
@@ -30,7 +29,16 @@ h1 {
   border-radius: 5px;
   background: #fff;
   box-shadow: -1px 2px 5px 3px #00000096;
+  cursor: pointer;
 }
+
+#saved-urls > div:hover {
+  transition: transform 400ms ease-out;
+  box-shadow: 0 1px 3px 0 rgba(0, 0, 0, 0.04), 0 10px 25px 0 rgba(0, 0, 0, 0.2);
+  transform: translateY(-0.25em);
+  border-radius: 5px;
+}
+
 #saved-urls > div a {
   max-width: 16rem;
   color: #0640ac;
