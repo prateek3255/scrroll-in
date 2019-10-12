@@ -1,6 +1,5 @@
-<<<<<<< HEAD
 * {
-    font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, Helvetica, Arial, sans-serif, "Apple Color Emoji", "Segoe UI Emoji", "Segoe UI Symbol";
+    font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", 'Roboto', Helvetica, Arial, sans-serif, "Apple Color Emoji", "Segoe UI Emoji", "Segoe UI Symbol";
     transition: 0.3s ease-out;
 }
 body {
@@ -15,7 +14,7 @@ a, button {
 }
 a, a:visited {
     font-size: .8rem;
-    color: #006699
+    color: #8bbdd6
 }
 .btn {
     position: relative;
@@ -31,11 +30,7 @@ a, a:visited {
     cursor: pointer;
     letter-spacing: .6px;
     width: 100%;
-    margin: 5px 0px
-=======
-@font-face {
-  font-family: "Roboto";
-  src: url("Roboto/Roboto-Bold.ttf") format("truetype");
+    margin: 5px 0px;
 }
 
 body {
@@ -49,23 +44,20 @@ body {
   padding: 5px;
   height: 41px;
   border-radius: 6px;
-  font-size: 20px;
+  font-size: 1.1rem;
   overflow: hidden;
-  font-family: "Roboto", sans-serif;
   border-width: 0;
   outline: none;
   margin-bottom: 0.4em;
-  box-shadow: 0 1px 4px rgba(0, 0, 0, 0.6);
   background-color: #2ecc71;
   color: #ecf0f1;
   cursor: pointer;
-
-  transition: background-color 0.3s;
->>>>>>> devfolioco/master
+  transition: 0.3s ease-out;
+    filter: brightness(0.9)
 }
 
 .btn:hover {
-    filter: grayscale(20%);
+    filter: grayscale(30%);
 }
 .btn:focus {
     box-shadow: 0px 0px 0px 3px rgba(46, 204, 113, 0.4)
@@ -79,8 +71,6 @@ body {
     display: block;
     padding: 12px 24px;
 }
-
-<<<<<<< HEAD
 .btn:before {
     content: "";
     position: absolute;
@@ -97,9 +87,6 @@ body {
     -o-transform: translate(-50%, -50%);
     transform: translate(-50%, -50%);
 }
-
-=======
->>>>>>> devfolioco/master
 .btn:active:before {
     width: 120%;
     padding-top: 120%;
@@ -107,16 +94,14 @@ body {
 }
 
 #message {
-  margin: 3.2em 0em 1em 0.5em;
-  font-family: "Roboto", sans-serif;
+    margin: auto;
   font-style: normal;
   font-weight: bold;
-  padding-left: 0.3em;
-  padding-right: 0.3em;
-  font-size: 16px;
-  line-height: 21px;
+    padding: 1rem;
+  font-size: 1.2rem;
   align-items: center;
-  color: white;
+  color: rgba(255,255,255,0.7);
+    font-family: 'Quicksand'
 }
 
 .options {
@@ -138,6 +123,14 @@ body {
   display: flex;
   align-items: center;
   color: #ffffff;
+}
+.options img {
+    width: 1.6rem;
+    height: auto;
+    filter: brightness(0.7)
+}
+.options img:hover {
+    filter: brightness(1)
 }
 /* Styles, not important */
 *,
@@ -190,7 +183,7 @@ h2 {
 #saved-urls div a, #saved-urls + a {
   padding: 10px;
   margin-top: 10px;
-  border: 2px solid rgba(0, 102, 153, 0.6);
+  border: 2px solid rgba(255, 255, 255, 0.1);
   display: flow-root;
 }
 #saved-urls + a {
@@ -204,9 +197,10 @@ h2 {
     background-color: #555
 }
 .opt:focus {
-    box-shadow: 0px 0px 0px 3px rgba(0,0,0,0.3)
+    box-shadow: 0px 0px 0px 3px rgba(255,255,255,0.2)
 }
 .links:hover {
-    background-color: #006699;
-    color: #fff
+    background-color: rgba(255,255,255,0.7);
+    border-color: rgba(0,0,0,0.5) !important;
+    color: #006699 !important
 }

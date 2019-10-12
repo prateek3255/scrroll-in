@@ -1,11 +1,22 @@
 <!DOCTYPE html>
 <html>
-<<<<<<< HEAD
     <head>
+        <meta charset="UTF-8" />
         <link href="popup.css" rel="stylesheet" />
+        <link href="https://fonts.googleapis.com/css?family=Quicksand" rel="stylesheet">
     </head>
     <body>
-        <div id="root"></div>
+        <div class="controls">
+            <div id="activeContol"></div>
+            <div class="options">
+                <a target="_blank" href="options.html"><img src="./images/settings.svg" /></a>
+            </div>
+        </div>
+
+        <div class="main">
+            <p id="message"></p>
+            <div id="root"></div>
+        </div>
         <button class="btn opt" id="optbtn">Recent Scrrolls</button>
         <div class="hide" id="contain">
             <div id="saved-urls"></div>
@@ -13,27 +24,4 @@
         </div>
         <script src="popup.js"></script>
     </body>
-=======
-  <head>
-    <meta charset="UTF-8" />
-    <link href="popup.css" rel="stylesheet" />
-  </head>
-
-  <body>
-    <div class="controls">
-      <div id="activeContol"></div>
-      <div class="options">
-        <a target="_blank" href="options.html"
-          ><img src="./images/settings.svg" height="28"
-        /></a>
-      </div>
-    </div>
-
-    <div class="main">
-      <p id="message"></p>
-      <div id="root"></div>
-    </div>
-    <script src="popup.js"></script>
-  </body>
->>>>>>> devfolioco/master
 </html>
