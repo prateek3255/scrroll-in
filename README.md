@@ -1,5 +1,5 @@
 # Scrroll In
-[![All Contributors](https://img.shields.io/badge/all_contributors-8-orange.svg?style=flat-square)](#contributors)
+[![All Contributors](https://img.shields.io/badge/all_contributors-9-orange.svg?style=flat-square)](#contributors)
 
 Never forget where you left a page.
 
@@ -66,6 +66,7 @@ Thanks goes to these wonderful people ([emoji key](https://allcontributors.org/d
   </tr>
   <tr>
     <td align="center"><a href="http://adi.surge.sh"><img src="https://avatars1.githubusercontent.com/u/15871340?v=4" width="100px;" alt="Aditya Agarwal"/><br /><sub><b>Aditya Agarwal</b></sub></a><br /><a href="https://github.com/devfolioco/scrroll-in/commits?author=itaditya" title="Code">💻</a></td>
+    <td align="center"><a href="https://github.com/MitchMo"><img src="https://avatars2.githubusercontent.com/u/11459569?v=4" width="100px;" alt="Mitch Moore"/><br /><sub><b>Mitch Moore</b></sub></a><br /><a href="https://github.com/devfolioco/scrroll-in/commits?author=MitchMo" title="Code">💻</a></td>
   </tr>
 </table>
 
