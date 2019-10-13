@@ -1,3 +1,7 @@
+function getUrlWithoutHash(url) {
+  return url.split("?")[0];
+}
+
 chrome.runtime.onInstalled.addListener(() => {
   chrome.storage.local.set({ "scroll-mark": {} });
 });
@@ -5,7 +9,8 @@ chrome.runtime.onInstalled.addListener(() => {
 const updateIcon = () => {
   console.log("updated");
   chrome.tabs.query({ active: true, currentWindow: true }, tabs => {
-    const url = tabs[0].url;
+    const url = getUrlWithoutHash(tabs[0].url);
+
     chrome.storage.local.get("scroll-mark", data => {
       const scrollMarkData = data["scroll-mark"];
       if (!scrollMarkData.hasOwnProperty(url)) {
@@ -19,7 +24,8 @@ const updateIcon = () => {
 
 chrome.tabs.onActivated.addListener(() => {
   chrome.tabs.query({ active: true, currentWindow: true }, tabs => {
-    const url = tabs[0].url;
+    const url = getUrlWithoutHash(tabs[0].url);
+
     chrome.storage.local.get("scroll-mark", data => {
       const scrollMarkData = data["scroll-mark"];
       if (!scrollMarkData.hasOwnProperty(url)) {
@@ -33,7 +39,8 @@ chrome.tabs.onActivated.addListener(() => {
 
 chrome.tabs.onUpdated.addListener((tabId, updateObj) => {
   chrome.tabs.get(tabId, tab => {
-    const url = tab.url;
+    const url = getUrlWithoutHash(tab.url);
+
     if (url) {
       chrome.storage.local.get("scroll-mark", data => {
         const scrollMarkData = data["scroll-mark"];

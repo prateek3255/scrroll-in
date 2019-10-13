@@ -1,8 +1,12 @@
 {
   const list = document.getElementById("saved-urls");
   var urls = "";
+<<<<<<< HEAD
   let i = 0;
   chrome.storage.local.get("scroll-mark", function(result) {
+=======
+  chrome.storage.local.get("scroll-mark", function (result) {
+>>>>>>> devfolioco/master
     urls = result["scroll-mark"];
     for (var url in urls) {
         i++
@@ -11,8 +15,12 @@
       let percentage = Math.round((urls[url].offset / urls[url].total) * 100);
       if (percentage)
         div.innerHTML =
+<<<<<<< HEAD
           "<a href=" + url + " class='links' title="+url+">"+ i + ") " + title + 
             "<span class='percent'><div id='progress'><div id='bar' style='width: "+percentage+"%'></div></div>" + percentage + "%" +"</span></a> ";
+=======
+          "<a href=" + url + ">" + title + "</a> " + "<div class='perc'>" + percentage + "</div>";
+>>>>>>> devfolioco/master
       else div.innerHTML = "<a href=" + url + ">" + title + "</a>";
       list.appendChild(div);
     }

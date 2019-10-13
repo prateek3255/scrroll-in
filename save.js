@@ -1,9 +1,11 @@
 {
-  const url = window.location.href;
+  const fullUrl = window.location.href;
+  const url = fullUrl.split("?")[0];
+
   chrome.storage.local.get("scroll-mark", data => {
     const scrollMarkData = data["scroll-mark"];
     const offset = window.pageYOffset;
-    const total = document.body.clientHeight;
+    const total = document.body.scrollHeight;
     const title = document.title;
     console.log(document.title);
     const newData = scrollMarkData
