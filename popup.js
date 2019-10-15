@@ -2,7 +2,10 @@ const root = document.getElementById("root");
 root.innerHTML = "<div> Loading...</div>";
 
 chrome.tabs.query({ active: true, currentWindow: true }, tabs => {
-  const url = tabs[0].url;
+  const fullUrl = tabs[0].url;
+
+  const url = fullUrl.split("?")[0];
+
   chrome.storage.local.get("scroll-mark", data => {
     const scrollMarkData = data["scroll-mark"];
     if (scrollMarkData && scrollMarkData.hasOwnProperty(url)) {
