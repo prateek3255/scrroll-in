@@ -3,16 +3,14 @@ const getUrlWithoutHash = (url) => {
 }
 
 const iconSet = (url) => {
-  chrome.storage.local.get("scroll-mark")
-    .then(data => {
-      const scrollMarkData = data["scroll-mark"];
-      if (!scrollMarkData.hasOwnProperty(url)) {
-        setInactiveIcon();
-      } else {
-        setActiveIcon();
-      }
-    })
-    .catch(err => console.log(err));
+  chrome.storage.local.get("scroll-mark", data => {
+    const scrollMarkData = data["scroll-mark"];
+    if (!scrollMarkData.hasOwnProperty(url)) {
+      setInactiveIcon();
+    } else {
+      setActiveIcon();
+    }
+  })
 }
 
 chrome.runtime.onInstalled.addListener(() => {
@@ -21,35 +19,29 @@ chrome.runtime.onInstalled.addListener(() => {
 
 const updateIcon = () => {
   console.log("updated");
-  chrome.tabs.query({ active: true, currentWindow: true })
-    .then(tabs => {
-      const url = getUrlWithoutHash(tabs[0].url);
+  chrome.tabs.query({ active: true, currentWindow: true }, tabs => {
+    const url = getUrlWithoutHash(tabs[0].url);
 
-      iconSet(url);
-    })
-    .catch(err => console.log(err));
+    iconSet(url);
+  })
 };
 
 chrome.tabs.onActivated.addListener(() => {
-  chrome.tabs.query({ active: true, currentWindow: true })
-    .then(tabs => {
-      const url = getUrlWithoutHash(tabs[0].url);
+  chrome.tabs.query({ active: true, currentWindow: true }, tabs => {
+    const url = getUrlWithoutHash(tabs[0].url);
 
-      iconSet(url);
-    })
-    .catch(err => console.log(err));
+    iconSet(url);
+  })
 });
 
 chrome.tabs.onUpdated.addListener((tabId, updateObj) => {
-  chrome.tabs.get(tabId)
-    .then(tab => {
-      const url = getUrlWithoutHash(tab.url);
+  chrome.tabs.get(tabId, tab => {
+    const url = getUrlWithoutHash(tab.url);
 
-      if (url) {
-        iconSet(url);
-      }
-    })
-    .catch(err => console.log(err));
+    if (url) {
+      iconSet(url);
+    }
+  })
 });
 
 chrome.runtime.onMessage.addListener((request, sender) => {
