@@ -1,13 +1,42 @@
+* {
+  box-sizing: border-box;
+  margin: 0;
+  padding: 0;
+}
+
 body {
-  background: #242a36;
+  background: linear-gradient(hsl(271, 77%, 15%), #27012b);
+  background-size: cover;
+  min-height: 100vh;
   color: #fff;
 }
+
+::-webkit-scrollbar {
+  width: 0.3rem;
+}
+
+::-webkit-scrollbar-thumb {
+  background: #faf8f888;
+}
+
+::-webkit-scrollbar-track {
+  background: #2229;
+}
+
 .container {
   text-align: center;
 }
+.header {
+  background: ;
+  height: 8rem;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  color: #9c27b0;
+}
 h1 {
-  font-size: 3rem;
-  text-shadow: -1px 2px 3px #0009;
+  font-size: 4rem;
+  text-shadow: -5px 5px 5px #000000c9;
 }
 #saved-urls {
   max-width: 1200px;
@@ -17,7 +46,7 @@ h1 {
 }
 
 #saved-urls > div {
-  padding: 10px;
+  padding: 15px;
   max-width: 20rem;
   margin: 1rem;
   margin-top: 10px;
@@ -26,22 +55,26 @@ h1 {
   display: flex;
   justify-content: space-between;
   align-items: center;
-  border-radius: 5px;
+  border-radius: 15px 30px 15px 30px;
   background: #fff;
-  box-shadow: -1px 2px 5px 3px #00000096;
+  background: linear-gradient(to right, #fff, #fff, #ffeb3b);
+  background-size: 150%;
+  box-shadow: -1px 2px 5px 3px #00000055;
   cursor: pointer;
+  transition: all 250ms ease-out;
+  position: relative;
 }
 
 #saved-urls > div:hover {
-  transition: transform 400ms ease-out;
   box-shadow: 0 1px 3px 0 rgba(0, 0, 0, 0.04), 0 10px 25px 0 rgba(0, 0, 0, 0.2);
-  transform: translateY(-0.25em);
-  border-radius: 5px;
+  /* transform: translateY(-0.15em) scale(1.02); */
+  border-radius: 15px;
+  background-position: 100%;
 }
 
 #saved-urls > div a {
   max-width: 16rem;
-  color: #0640ac;
+  color: #9e0bad;
   font-weight: bold;
   text-decoration: none;
 }
@@ -53,8 +86,8 @@ h1 {
   position: relative;
   justify-content: center;
   align-items: center;
-  width: 1.5rem;
-  height: 1.5rem;
+  width: 2.5rem;
+  height: 2.2rem;
   background: #2ecc71;
   color: white;
   font-weight: bold;
@@ -67,6 +100,20 @@ h1 {
   text-shadow: 0 0 2px #0002;
   font-size: 0.7rem;
   position: absolute;
-  bottom: 0;
-  right: -0.1rem;
+  bottom: 0.1rem;
+  right: -0rem;
+}
+
+#saved-urls > div::before {
+  content: attr(data-date);
+  color: rgb(0, 0, 0);
+  /* text-shadow: 0 0 2px #0002; */
+  background: #cddc39;
+  font-size: 0.6rem;
+  padding: 0.2rem 0.7rem;
+  border-radius: 5px;
+  position: absolute;
+  top: -6px;
+  left: -0.3rem;
+  box-shadow: 0 1px 3px 1px #ffffff9e;
 }
