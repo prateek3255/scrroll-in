@@ -1,7 +1,7 @@
 {
     "name": "Scrroll In",
     "short_name": "scrroll-in",
-    "version": "2.0",
+    "version": "2.3",
     "description": "Never forget where you left a page",
     "permissions": [
         "tabs",
@@ -23,14 +23,14 @@
             "48": "images/icon-48.png",
             "128": "images/icon-128.png",
             "256": "images/icon-256.png"
-        },
-        "icons": {
-            "16": "images/icon-16.png",
-            "32": "images/icon-32.png",
-            "48": "images/icon-48.png",
-            "128": "images/icon-128.png",
-            "256": "images/icon-256.png"
         }
+    },
+    "icons": {
+        "16": "images/icon-16.png",
+        "32": "images/icon-32.png",
+        "48": "images/icon-48.png",
+        "128": "images/icon-128.png",
+        "256": "images/icon-256.png"
     },
     "manifest_version": 2
 }
