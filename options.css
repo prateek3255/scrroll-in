@@ -1,3 +1,8 @@
+@font-face {
+  font-family: "Roboto";
+  src: url("Roboto/Roboto-Bold.ttf") format("truetype");
+}
+
 body {
   background: #242a36;
   color: #fff;
@@ -9,6 +14,73 @@ h1 {
   font-size: 3rem;
   text-shadow: -1px 2px 3px #0009;
 }
+
+.btn {
+  width: 100% !important;
+  padding: 5px;
+  height: 41px;
+  border-radius: 6px;
+  font-size: 20px;
+  overflow: hidden;
+  font-family: "Roboto", sans-serif;
+  border-width: 0;
+  outline: none;
+  margin-bottom: 0.4em;
+  box-shadow: 0 1px 4px rgba(0, 0, 0, 0.6);
+  background-color: #2ecc71;
+  color: #ecf0f1;
+  cursor: pointer;
+
+  transition: background-color 0.3s;
+}
+
+.btn:hover,
+.btn:focus {
+  background-color: #27ae60;
+}
+
+.btn > * {
+  position: relative;
+}
+
+.btn span {
+  display: block;
+  padding: 12px 24px;
+}
+
+.btn:active:before {
+  width: 120%;
+  padding-top: 120%;
+
+  transition: width 0.2s ease-out, padding-top 0.2s ease-out;
+}
+
+
+.btn.orange {
+  background-color: #e67e22;
+}
+
+.btn.orange:hover,
+.btn.orange:focus {
+  background-color: #d35400;
+}
+
+.btn.red {
+  background-color: #e74c3c;
+}
+
+.btn.red:hover,
+.btn.red:focus {
+  background-color: #c0392b;
+}
+
+
+#mybutton {
+  position: fixed;
+  bottom: 0px;
+  width: 99%;
+}
+
 #saved-urls {
   max-width: 1200px;
   display: grid;
