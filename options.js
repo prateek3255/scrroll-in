@@ -11,6 +11,9 @@
     }
     else {
 
+      let heading = document.getElementById("saved-scroll-heading");
+      heading.innerHTML = "<h1 id='saved-scroll-heading'>All Saved Scrrolls</h1>";
+
       var btn = document.createElement("div");
       btn.innerHTML = `
       <div id="mybutton">
