@@ -12,7 +12,7 @@
     else {
 
       let heading = document.getElementById("saved-scroll-heading");
-      heading.innerHTML = "<h1 id='saved-scroll-heading'>All Saved Scrrolls</h1>";
+      heading.innerHTML = "<h1 id='saved-scroll-heading'>All Saved Scrolls</h1>";
 
       var btn = document.createElement("div");
       btn.innerHTML = `
