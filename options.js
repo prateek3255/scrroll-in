@@ -26,23 +26,44 @@
         let title = urls[url].title || url;
         let url_id = url;
         var div = document.createElement("div");
+        div.setAttribute('class', 'Scroll');
         let percentage = Math.round((urls[url].offset / urls[url].total) * 100);
 
         let delete_html = `
-        <div style="margin-left:25px">
-        <div style="display:flex; width:285 px; margin-top:5px">
-        <button class="btn red ScrollElement" style="width:100%;" id="${url_id}">Delete</button>
+        <div class="dropdown" id="${url_id}_|_">
+          <div id="${url_id}_|" class="dropdown-content">
+                <button class="ScrollElement" id="${url_id}">Delete</button>
+          </div>
         </div>
-        <div>
-        `
+        `;
 
         if (percentage)
           div.innerHTML =
             "<a href=" + url + ">" + title + "</a> " + "<div class='perc'>" + percentage + "</div>" + delete_html;
-        else div.innerHTML = "<a href=" + url + ">" + title + "</a>" + delete_html;
+        else div.innerHTML = "<a href=" + url + ">" + title + "</a> " + "<div class='perc'>" + 0 + "</div>" + delete_html;
 
         list.appendChild(div);
       }
+    }
+
+    // function to open dropdown menu
+    let showDropdown = function (e) {
+      let drop_id = this.id.substring(0, this.id.length - 1);
+      document.getElementById(drop_id).classList.toggle("show_dropdown");
+    }
+
+    // function to close dropdown menu
+    let closeDropdown = function () {
+      let drop_id = this.id.substring(0, this.id.length - 1);
+      document.getElementById(drop_id).classList.toggle("show_dropdown");
+    }
+
+    // all dropdown menus
+    let dotElements = document.getElementsByClassName("dropdown");
+
+    for (let i = 0; i < dotElements.length; i++) {
+      dotElements[i].addEventListener('mouseover', showDropdown, false);
+      dotElements[i].addEventListener("mouseout", closeDropdown);
     }
 
     let scrollElements = document.getElementsByClassName("ScrollElement");
