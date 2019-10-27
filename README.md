@@ -15,7 +15,7 @@ Never forget where you left a page.
 
 ## Motivation
 
-You must have been in a situation wherein you are reading a long article, but you don't have enough time to finish it, so you close the tab, and the next time you open the article again, you have no idea where you left it.
+You must have been in a situation wherein you are reading a long article, but you don't have enough time to finish it, so you close the window/tab, and the next time you open the article again, you have no idea where you left it.
 
 So this extension lets you save the scroll position of the webpage, so you can continue from exactly where you left.
 
@@ -25,7 +25,13 @@ I know there are a few extensions that already serve this purpose, but most of t
 
 Under the hood, this extension uses the [chrome localStorage API](https://developer.mozilla.org/en/DOM/Storage#localStorage) to store the scroll positions for different webpages. I avoided using sync storage due to its storage limitations ([read more](https://developer.chrome.com/apps/storage)). This extension creates an object which stores the URL as keys and the scroll position as values.
 
-The functions for adding or updating, reading and deleting are in the files `save.js`, `get.js` and `delete.js` respectively, which are executed as content scripts from `popup.js` whenever the respective button is clicked.
+`save.js` handles function for adding/updating the file
+
+`get.js` handles function for reading the file
+
+`delete.js` handles function for deleting the file
+
+`popup.js` handles the execution the conent scripts when the respective buttons are clicked.
 
 The `background.js` handles switching icon color whenever a tab is changed, or the URL is updated.
 
