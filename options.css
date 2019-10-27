@@ -144,9 +144,8 @@ h1 {
 
 .dropdown::after {
   content: '\2807';
-  color: #ecf0f1;
+  color: #242a36;
   font-size: 20px;
-  
 }
 
 .Scroll {
@@ -154,8 +153,8 @@ h1 {
 }
 .Scroll .dropdown {
     position: absolute;
-    top: 2px;
-    right: -20px;
+    top: 1px;
+    right: -5px;
     z-index: 100;
 }
 
