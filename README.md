@@ -15,11 +15,11 @@ Never forget where you left a page.
 
 ## Motivation
 
-You must have been in a situation where you are reading a long article, but you don't have enough time to finish it, so you close the tab, and the next time you open the article again, you have no idea where you left it.
+You must have been in a situation wherein you are reading a long article, but you don't have enough time to finish it, so you close the tab, and the next time you open the article again, you have no idea where you left it.
 
 So this extension lets you save the scroll position of the webpage, so you can continue from exactly where you left.
 
-I know there are a few extensions that already serve to this purpose, but most of them didn't work correctly or lacked the features that I need, so I ended up creating my own.
+I know there are a few extensions that already serve this purpose, but most of them either didn't work correctly or lacked the features that I needed, so I ended up creating my own.
 
 ## How it works?
 
@@ -44,7 +44,7 @@ To run the extension locally follow these steps:
 
 All you need to know for contributing to this project is basic JavaScript, HTML, and CSS.
 
-You can visit the issues page to find some relevant issues to fix to or feel free to open a new issue for something that you think can be improved.
+You can visit the issues page to find some relevant issues to contribute to or feel free to open a new issue for something that you think can be improved.
 
 Also, if you have any doubts regarding any of the concepts or how to get started, feel free to drop me a message on [Twitter](https://twitter.com/psuranas) or the [Devfolio community Telegram group](https://t.me/devfolio).
 
@@ -72,4 +72,4 @@ Thanks goes to these wonderful people ([emoji key](https://allcontributors.org/d
 
 <!-- ALL-CONTRIBUTORS-LIST:END -->
 
-This project follows the [all-contributors](https://github.com/all-contributors/all-contributors) specification. Contributions of any kind welcome!
+This project follows the [all-contributors](https://github.com/all-contributors/all-contributors) specification. Contributions of any kind are welcome!
