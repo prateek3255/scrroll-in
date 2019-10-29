@@ -6,7 +6,7 @@
     for (var url in urls) {
       let title = urls[url].title || url;
       var div = document.createElement("div");
-      div.setAttribute("data-date", urls[url].sdate ? urls[url].sdate : "Date-Here"); // add date here when the url was saved.
+      div.setAttribute("data-date", urls[url].date ? urls[url].date.slice(0, 15) : "Date-Here"); // add date here when the url was saved.
       let percentage = Math.round((urls[url].offset / urls[url].total) * 100);
       if (percentage)
         div.innerHTML =

@@ -5,7 +5,8 @@
 }
 
 body {
-  background: linear-gradient(hsl(271, 77%, 15%), #27012b);
+  /* background: linear-gradient(hsl(271, 77%, 15%), #27012b); */
+  background: #242a36;
   background-size: cover;
   min-height: 100vh;
   color: #fff;
@@ -27,16 +28,15 @@ body {
   text-align: center;
 }
 .header {
-  background: ;
   height: 8rem;
   display: flex;
   justify-content: center;
   align-items: center;
-  color: #9c27b0;
+  color: #ffffff;
 }
 h1 {
   font-size: 4rem;
-  text-shadow: -5px 5px 5px #000000c9;
+  /* text-shadow: -5px 5px 5px #000000c9; */
 }
 #saved-urls {
   max-width: 1200px;
@@ -51,13 +51,13 @@ h1 {
   margin: 1rem;
   margin-top: 10px;
   text-align: left;
-  border: 2px solid #ffffff;
+  border: 1px solid #ffffff;
   display: flex;
   justify-content: space-between;
   align-items: center;
   border-radius: 15px 30px 15px 30px;
   background: #fff;
-  background: linear-gradient(to right, #fff, #fff, #ffeb3b);
+  background: linear-gradient(to right, #fff, #fff, #fdff74);
   background-size: 150%;
   box-shadow: -1px 2px 5px 3px #00000055;
   cursor: pointer;
@@ -108,12 +108,16 @@ h1 {
   content: attr(data-date);
   color: rgb(0, 0, 0);
   /* text-shadow: 0 0 2px #0002; */
-  background: #cddc39;
+  background: #cacaca;
+  transition: all 0.3s;
   font-size: 0.6rem;
   padding: 0.2rem 0.7rem;
   border-radius: 5px;
   position: absolute;
   top: -6px;
   left: -0.3rem;
-  box-shadow: 0 1px 3px 1px #ffffff9e;
+  /* box-shadow: 0 1px 3px 1px #ffffff9e; */
+}
+#saved-urls > div:hover::before {
+  background: #f8fc02;
 }
