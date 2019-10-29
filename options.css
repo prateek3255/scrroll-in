@@ -9,6 +9,7 @@ body {
 }
 .container {
   text-align: center;
+  height: 90vh;
 }
 h1 {
   font-size: 3rem;
@@ -55,7 +56,6 @@ h1 {
   transition: width 0.2s ease-out, padding-top 0.2s ease-out;
 }
 
-
 .btn.orange {
   background-color: #e67e22;
 }
@@ -74,8 +74,7 @@ h1 {
   background-color: #c0392b;
 }
 
-
-#mybutton {
+#delete-button {
   position: fixed;
   bottom: 0px;
   width: 99%;
@@ -89,7 +88,7 @@ h1 {
 }
 
 #saved-urls > div {
-  padding: 10px;
+  padding: 10px 20px 10px 10px;
   max-width: 20rem;
   margin: 1rem;
   margin-top: 10px;
@@ -106,7 +105,9 @@ h1 {
 }
 
 #saved-urls > div:hover {
+  transition: transform 400ms ease-out;
   box-shadow: 0 1px 3px 0 rgba(0, 0, 0, 0.04), 0 10px 25px 0 rgba(0, 0, 0, 0.2);
+  transform: translateY(-0.25em);
   border-radius: 5px;
 }
 
@@ -143,19 +144,19 @@ h1 {
 }
 
 .dropdown::after {
-  content: '\2807';
+  content: "\2807";
   color: #242a36;
   font-size: 20px;
 }
 
 .Scroll {
-    position: relative;
+  position: relative;
 }
 .Scroll .dropdown {
-    position: absolute;
-    top: 1px;
-    right: -5px;
-    z-index: 100;
+  position: absolute;
+  top: 1px;
+  right: -2px;
+  z-index: 100;
 }
 
 .dropdown-content {
@@ -163,7 +164,7 @@ h1 {
   position: absolute;
   background-color: #e74c3c;
   min-width: 80px;
-  box-shadow: 0px 8px 16px 0px rgba(0,0,0,0.2);
+  box-shadow: 0px 8px 16px 0px rgba(0, 0, 0, 0.2);
   z-index: 1;
   border-radius: 5px;
 }
@@ -189,6 +190,7 @@ h1 {
   color: #ecf0f1;
   background-color: #c0392b;
   border-radius: 5px;
+  cursor: pointer;
 }
 
 .dropdown-content.show_dropdown {
@@ -196,7 +198,7 @@ h1 {
   z-index: 10;
   transform: scale(1);
   opacity: 1;
-  animation: anim .3s ease-in-out;
+  animation: anim 0.3s ease-in-out;
 }
 
 @keyframes anim {

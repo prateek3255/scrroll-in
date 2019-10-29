@@ -1,35 +1,37 @@
 {
   const list = document.getElementById("saved-urls");
 
-  chrome.storage.local.get("scroll-mark", function (result) {
-    let urls = result["scroll-mark"];
+  chrome.storage.local.get("scroll-mark", function(result) {
+    const urls = result["scroll-mark"];
 
     // if no saved scrolls are available
     if (Object.entries(urls).length === 0 && urls.constructor === Object) {
-      let heading = document.getElementById("saved-scroll-heading");
-      heading.innerHTML = "<h1 id='saved-scroll-heading'>Empty!!!</h1>";
-    }
-    else {
+      const heading = document.getElementById("saved-scroll-heading");
+      heading.innerHTML =
+        "<h1 id='saved-scroll-heading'>Save some scrrolls first!</h1>";
+    } else {
+      const heading = document.getElementById("saved-scroll-heading");
+      heading.innerHTML =
+        "<h1 id='saved-scroll-heading'>All Saved Scrolls</h1>";
 
-      let heading = document.getElementById("saved-scroll-heading");
-      heading.innerHTML = "<h1 id='saved-scroll-heading'>All Saved Scrolls</h1>";
-
-      var btn = document.createElement("div");
+      const btn = document.createElement("div");
       btn.innerHTML = `
-      <div id="mybutton">
+      <div id="delete-button">
         <button class="btn red" style="width:100%;" id="delete-all">Delete All</button>
       </div>
       `;
       document.body.appendChild(btn);
 
       for (var url in urls) {
-        let title = urls[url].title || url;
-        let url_id = url;
-        var div = document.createElement("div");
-        div.setAttribute('class', 'Scroll');
-        let percentage = Math.round((urls[url].offset / urls[url].total) * 100);
+        const title = urls[url].title || url;
+        const url_id = url;
+        const div = document.createElement("div");
+        div.setAttribute("class", "Scroll");
+        const percentage = Math.round(
+          (urls[url].offset / urls[url].total) * 100
+        );
 
-        let delete_html = `
+        const delete_html = `
         <div class="dropdown" id="${url_id}_|_">
           <div id="${url_id}_|" class="dropdown-content">
                 <button class="ScrollElement" id="${url_id}">Delete</button>
@@ -39,39 +41,64 @@
 
         if (percentage)
           div.innerHTML =
-            "<a href=" + url + ">" + title + "</a> " + "<div class='perc'>" + percentage + "</div>" + delete_html;
-        else div.innerHTML = "<a href=" + url + ">" + title + "</a> " + "<div class='perc'>" + 0 + "</div>" + delete_html;
+            "<a href=" +
+            url +
+            ">" +
+            title +
+            "</a> " +
+            "<div class='perc'>" +
+            percentage +
+            "</div>" +
+            delete_html;
+        else
+          div.innerHTML =
+            "<a href=" +
+            url +
+            ">" +
+            title +
+            "</a> " +
+            "<div class='perc'>" +
+            0 +
+            "</div>" +
+            delete_html;
 
         list.appendChild(div);
       }
     }
 
     // function to open dropdown menu
-    let showDropdown = function (e) {
-      let drop_id = this.id.substring(0, this.id.length - 1);
+    const showDropdown = function(e) {
+      const drop_id = this.id.substring(0, this.id.length - 1);
+      console.log(this.id);
       document.getElementById(drop_id).classList.toggle("show_dropdown");
-    }
+    };
 
     // function to close dropdown menu
-    let closeDropdown = function () {
-      let drop_id = this.id.substring(0, this.id.length - 1);
-      document.getElementById(drop_id).classList.toggle("show_dropdown");
-    }
+    const closeDropdown = function(e) {
+      const dropdowns = document.getElementsByClassName("dropdown-content");
+      if (e.target.className !== "dropdown") {
+        for (let i = 0; i < dropdowns.length; i++) {
+          dropdowns[i].classList.remove("show_dropdown");
+        }
+      }
+    };
 
     // all dropdown menus
-    let dotElements = document.getElementsByClassName("dropdown");
+    const dotElements = document.getElementsByClassName("dropdown");
 
     for (let i = 0; i < dotElements.length; i++) {
-      dotElements[i].addEventListener('mouseover', showDropdown, false);
-      dotElements[i].addEventListener("mouseout", closeDropdown);
+      dotElements[i].addEventListener("click", showDropdown, false);
     }
 
-    let scrollElements = document.getElementsByClassName("ScrollElement");
-    let deleteAllBtn = document.getElementById("delete-all");
+    const containers = document.getElementsByClassName("container");
+    containers[0].addEventListener("click", closeDropdown);
+
+    const scrollElements = document.getElementsByClassName("ScrollElement");
+    const deleteAllBtn = document.getElementById("delete-all");
 
     // TODO: use the delete.js script instead
     // but that would require some modifications to the original delete functionality
-    let deleteScrollElement = function (element) {
+    const deleteScrollElement = function(element) {
       if (confirm("Are you sure you want to remove this saved scroll?")) {
         const { [this.id]: _, ...restData } = urls;
         chrome.storage.local.set({ "scroll-mark": restData }, () => {
@@ -81,19 +108,17 @@
       }
     };
 
-    let deleteAllScrollElement = function (element) {
+    const deleteAllScrollElement = function(element) {
       if (confirm("Are you sure you want to remove all saved scrolls?")) {
-        chrome.storage.local.set({ "scroll-mark": {} }, (data) => {
-        });
+        chrome.storage.local.set({ "scroll-mark": {} }, data => {});
         window.location.reload();
       }
     };
 
     for (let i = 0; i < scrollElements.length; i++) {
-      scrollElements[i].addEventListener('click', deleteScrollElement, false);
+      scrollElements[i].addEventListener("click", deleteScrollElement, false);
     }
 
-    deleteAllBtn.addEventListener('click', deleteAllScrollElement, false);
-
+    deleteAllBtn.addEventListener("click", deleteAllScrollElement, false);
   });
 }
