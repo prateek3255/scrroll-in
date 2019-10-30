@@ -115,6 +115,7 @@ h1 {
   height: 110px;
   padding: 25px 0px;
   text-align: center;
+  text-shadow: 1px 1px 3px #555;
   border-radius: 50%;
   transform: translate(0, 70px);
   margin: 10px auto;
@@ -173,8 +174,10 @@ h1 {
   position: relative;
   justify-content: center;
   align-items: center;
-  width: 2.5rem;
-  height: 2.2rem;
+  max-width: 2.5rem;
+  max-height: 2.2rem;
+  min-width: 2.5rem;
+  min-height: 2.5rem; /* to maintain circle in the flex box */
   background: #2ecc71;
   color: white;
   font-weight: bold;
