@@ -1,8 +1,8 @@
 {
     "name": "Scrroll In",
     "short_name": "scrroll-in",
-    "version": "2.3",
-    "description": "Never forget where you left a page",
+    "version": "2.4",
+    "description": "An extension to save scroll position of a webpage",
     "permissions": [
         "tabs",
         "storage",

@@ -1,5 +1,5 @@
 # Scrroll In
-[![All Contributors](https://img.shields.io/badge/all_contributors-9-orange.svg?style=flat-square)](#contributors)
+[![All Contributors](https://img.shields.io/badge/all_contributors-10-orange.svg?style=flat-square)](#contributors)
 
 Never forget where you left a page.
 
@@ -27,17 +27,17 @@ Under the hood, this extension uses the [chrome localStorage API](https://develo
 
 The functions for adding or updating, reading and deleting are in the files `save.js`, `get.js` and `delete.js` respectively, which are executed as content scripts from `popup.js` whenever the respective button is clicked.
 
-The `background.js` handles switching icon color part whenever a tab is changed, or the URL is updated.
+The `background.js` handles switching icon color whenever a tab is changed, or the URL is updated.
 
 The popup sheet is also handled by `popup.js` by dynamically changing the UI following the availability of the URL in the localStorage object.
 
 ## Development
 
-To run the extension locally follow these steps
+To run the extension locally follow these steps:
 
 - Visit `chrome://extensions` and turn on developer mode.
-- Click on load unpacked and select the extension root folder.
-- Now you can go ahead and modify `popup.js` or `popup.html`, changes would directly be visible in the extension.
+- Click on `Load unpacked` at the top left and select the extension root folder.
+- Now you can go ahead and modify `popup.js` or `popup.html`. Changes would directly be visible in the extension.
 - If you change something in `background.js` or `manifest.json` then you will need to reload the extension.
 
 ## Contributing
@@ -46,7 +46,7 @@ All you need to know for contributing to this project is basic JavaScript, HTML,
 
 You can visit the issues page to find some relevant issues to contribute to or feel free to open a new issue for something that you think can be improved.
 
-Also, if you have any doubts regarding any of the concepts or how to get started, feel free to drop me a message on [twitter](https://twitter.com/psuranas) or the [Devfolio community telegram group](https://t.me/devfolio).
+Also, if you have any doubts regarding any of the concepts or how to get started, feel free to drop me a message on [Twitter](https://twitter.com/psuranas) or the [Devfolio community Telegram group](https://t.me/devfolio).
 
 ## Contributors ✨
 
@@ -67,9 +67,10 @@ Thanks goes to these wonderful people ([emoji key](https://allcontributors.org/d
   <tr>
     <td align="center"><a href="http://adi.surge.sh"><img src="https://avatars1.githubusercontent.com/u/15871340?v=4" width="100px;" alt="Aditya Agarwal"/><br /><sub><b>Aditya Agarwal</b></sub></a><br /><a href="https://github.com/devfolioco/scrroll-in/commits?author=itaditya" title="Code">💻</a></td>
     <td align="center"><a href="https://github.com/MitchMo"><img src="https://avatars2.githubusercontent.com/u/11459569?v=4" width="100px;" alt="Mitch Moore"/><br /><sub><b>Mitch Moore</b></sub></a><br /><a href="https://github.com/devfolioco/scrroll-in/commits?author=MitchMo" title="Code">💻</a></td>
+    <td align="center"><a href="https://github.com/underscoreanuj"><img src="https://avatars1.githubusercontent.com/u/30765911?v=4" width="100px;" alt="Anuj Singh"/><br /><sub><b>Anuj Singh</b></sub></a><br /><a href="https://github.com/devfolioco/scrroll-in/commits?author=underscoreanuj" title="Code">💻</a></td>
   </tr>
 </table>
 
 <!-- ALL-CONTRIBUTORS-LIST:END -->
 
-This project follows the [all-contributors](https://github.com/all-contributors/all-contributors) specification. Contributions of any kind welcome!
+This project follows the [all-contributors](https://github.com/all-contributors/all-contributors) specification. Contributions of any kind are welcome!
