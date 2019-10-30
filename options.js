@@ -5,12 +5,11 @@
     const urls = result["scroll-mark"];
 
     // if no saved scrolls are available
+    const heading = document.getElementById("saved-scroll-heading");
     if (Object.entries(urls).length === 0 && urls.constructor === Object) {
-      const heading = document.getElementById("saved-scroll-heading");
       heading.innerHTML =
-        "<h1 id='saved-scroll-heading'>Save some scrrolls first!</h1>";
+        "<h1 id='saved-scroll-heading'>You don't have any saved scrrolls yet!</h1>";
     } else {
-      const heading = document.getElementById("saved-scroll-heading");
       heading.innerHTML =
         "<h1 id='saved-scroll-heading'>All Saved Scrolls</h1>";
 
