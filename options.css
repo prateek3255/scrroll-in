@@ -1,23 +1,52 @@
+* {
+  box-sizing: border-box;
+  margin: 0;
+  padding: 0;
+}
+
 @font-face {
   font-family: "Roboto";
   src: url("Roboto/Roboto-Bold.ttf") format("truetype");
 }
 
 body {
+  /* background: linear-gradient(hsl(271, 77%, 15%), #27012b); */
   background: #242a36;
+  background-size: cover;
+  min-height: 100vh;
   color: #fff;
 }
+
+::-webkit-scrollbar {
+  width: 0.3rem;
+}
+
+::-webkit-scrollbar-thumb {
+  background: #faf8f888;
+}
+
+::-webkit-scrollbar-track {
+  background: #2229;
+}
+
 .container {
   text-align: center;
   height: 90vh;
 }
+.side {
+  height: 8rem;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  color: #ffffff;
+}
 h1 {
-  font-size: 3rem;
-  text-shadow: -1px 2px 3px #0009;
+  font-size: 4rem;
+  /* text-shadow: -5px 5px 5px #000000c9; */
 }
 
 .btn {
-  width: 100% !important;
+  width: 100%;
   padding: 5px;
   height: 41px;
   border-radius: 6px;
@@ -77,7 +106,24 @@ h1 {
 #delete-button {
   position: fixed;
   bottom: 0px;
-  width: 99%;
+  width: 100%;
+}
+
+#delete-all {
+  display: block;
+  width: 110px;
+  height: 110px;
+  padding: 25px 0px;
+  text-align: center;
+  text-shadow: 1px 1px 3px #555;
+  border-radius: 50%;
+  transform: translate(0, 70px);
+  margin: 10px auto;
+  transition: all 0.3s;
+}
+
+#delete-all:hover {
+  transform: translate(0, 60px);
 }
 
 #saved-urls {
@@ -88,32 +134,35 @@ h1 {
 }
 
 #saved-urls > div {
-  padding: 10px 20px 10px 10px;
+  padding: 15px 20px 15px 15px;
   max-width: 20rem;
   margin: 1rem;
   margin-top: 10px;
   text-align: left;
-  border: 2px solid #ffffff;
+  border: 1px solid #ffffff;
   display: flex;
   justify-content: space-between;
   align-items: center;
-  border-radius: 5px;
+  border-radius: 0px 5px 15px 15px;
   background: #fff;
-  box-shadow: -1px 2px 5px 3px #00000096;
+  background: linear-gradient(to right, #fff, #fff, #fdff74);
+  background-size: 150%;
+  box-shadow: -1px 2px 5px 3px #00000055;
   cursor: pointer;
-  transition: transform 400ms ease-out;
+  transition: all 250ms ease-out;
+  position: relative;
 }
 
 #saved-urls > div:hover {
-  transition: transform 400ms ease-out;
   box-shadow: 0 1px 3px 0 rgba(0, 0, 0, 0.04), 0 10px 25px 0 rgba(0, 0, 0, 0.2);
-  transform: translateY(-0.25em);
+  /* transform: translateY(-0.15em) scale(1.02); */
   border-radius: 5px;
+  background-position: 100%;
 }
 
 #saved-urls > div a {
   max-width: 16rem;
-  color: #0640ac;
+  color: #9e0bad;
   font-weight: bold;
   text-decoration: none;
 }
@@ -125,8 +174,10 @@ h1 {
   position: relative;
   justify-content: center;
   align-items: center;
-  width: 1.5rem;
-  height: 1.5rem;
+  max-width: 2.5rem;
+  max-height: 2.2rem;
+  min-width: 2.5rem;
+  min-height: 2.5rem; /* to maintain circle in the flex box */
   background: #2ecc71;
   color: white;
   font-weight: bold;
@@ -139,8 +190,26 @@ h1 {
   text-shadow: 0 0 2px #0002;
   font-size: 0.7rem;
   position: absolute;
-  bottom: 0;
-  right: -0.1rem;
+  bottom: 0.1rem;
+  right: -0rem;
+}
+
+#saved-urls > div::before {
+  content: attr(data-date);
+  color: rgb(0, 0, 0);
+  /* text-shadow: 0 0 2px #0002; */
+  background: #cacaca;
+  transition: all 0.3s;
+  font-size: 0.6rem;
+  padding: 0.2rem 0.7rem;
+  border-radius: 5px;
+  position: absolute;
+  top: -6px;
+  left: -0.3rem;
+  /* box-shadow: 0 1px 3px 1px #ffffff9e; */
+}
+#saved-urls > div:hover::before {
+  background: #f8fc02;
 }
 
 .dropdown::after {
@@ -174,14 +243,13 @@ h1 {
   height: 100%;
   padding: 5px;
   border-radius: 5px;
-  font-size: 20px;
+  font-size: 15px;
   font-family: "Roboto", sans-serif;
   border-width: 0;
   align-content: initial;
   box-shadow: 0 1px 4px rgba(0, 0, 0, 0.6);
   background-color: #e74c3c;
   color: #ecf0f1;
-
   transition: background-color 0.5s;
 }
 
