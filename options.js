@@ -26,7 +26,10 @@
         const url_id = url;
         const div = document.createElement("div");
         div.setAttribute("class", "Scroll");
-        div.setAttribute("data-date", urls[url].date ? urls[url].date.slice(0, 15) : "Date-Here");
+        div.setAttribute(
+          "data-date",
+          urls[url].date ? urls[url].date.slice(0, 15) : "Date-Here"
+        );
         const percentage = Math.round(
           (urls[url].offset / urls[url].total) * 100
         );
@@ -69,7 +72,6 @@
     // function to open dropdown menu
     const showDropdown = function (e) {
       const drop_id = this.id.substring(0, this.id.length - 1);
-      console.log(this.id);
       document.getElementById(drop_id).classList.toggle("show_dropdown");
     };
 

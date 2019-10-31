@@ -7,7 +7,6 @@ chrome.runtime.onInstalled.addListener(() => {
 });
 
 const updateIcon = () => {
-  console.log("updated");
   chrome.tabs.query({ active: true, currentWindow: true }, tabs => {
     const url = getUrlWithoutHash(tabs[0].url);
 
