@@ -1,7 +1,7 @@
 {
   const list = document.getElementById("saved-urls");
 
-  chrome.storage.local.get("scroll-mark", function (result) {
+  chrome.storage.local.get("scroll-mark", function(result) {
     const urls = result["scroll-mark"];
 
     // if no saved scrolls are available
@@ -26,7 +26,10 @@
         const url_id = url;
         const div = document.createElement("div");
         div.setAttribute("class", "Scroll");
-        div.setAttribute("data-date", urls[url].date ? urls[url].date.slice(0, 15) : "Date-Here");
+        div.setAttribute(
+          "data-date",
+          urls[url].date ? urls[url].date.slice(0, 15) : "Date-Here"
+        );
         const percentage = Math.round(
           (urls[url].offset / urls[url].total) * 100
         );
@@ -67,14 +70,13 @@
     }
 
     // function to open dropdown menu
-    const showDropdown = function (e) {
+    const showDropdown = function(e) {
       const drop_id = this.id.substring(0, this.id.length - 1);
-      console.log(this.id);
       document.getElementById(drop_id).classList.toggle("show_dropdown");
     };
 
     // function to close dropdown menu
-    const closeDropdown = function (e) {
+    const closeDropdown = function(e) {
       const dropdowns = document.getElementsByClassName("dropdown-content");
       if (e.target.className !== "dropdown") {
         for (let i = 0; i < dropdowns.length; i++) {
@@ -98,7 +100,7 @@
 
     // TODO: use the delete.js script instead
     // but that would require some modifications to the original delete functionality
-    const deleteScrollElement = function (element) {
+    const deleteScrollElement = function(element) {
       if (confirm("Are you sure you want to remove this saved scroll?")) {
         const { [this.id]: _, ...restData } = urls;
         chrome.storage.local.set({ "scroll-mark": restData }, () => {
@@ -108,9 +110,9 @@
       }
     };
 
-    const deleteAllScrollElement = function (element) {
+    const deleteAllScrollElement = function(element) {
       if (confirm("Are you sure you want to remove all saved scrolls?")) {
-        chrome.storage.local.set({ "scroll-mark": {} }, data => { });
+        chrome.storage.local.set({ "scroll-mark": {} }, data => {});
         window.location.reload();
       }
     };
