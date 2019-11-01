@@ -14,6 +14,5 @@
     chrome.storage.local.set({ "scroll-mark": newData }, () => {
       chrome.runtime.sendMessage("setActive");
     });
-    console.log({ url, offset, total, title, date })
   });
 }
