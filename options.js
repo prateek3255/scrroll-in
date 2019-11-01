@@ -102,20 +102,42 @@
     // TODO: use the delete.js script instead
     // but that would require some modifications to the original delete functionality
     const deleteScrollElement = function (element) {
-      if (confirm("Are you sure you want to remove this saved scroll?")) {
-        const { [this.id]: _, ...restData } = urls;
-        chrome.storage.local.set({ "scroll-mark": restData }, () => {
-          chrome.runtime.sendMessage("setInactive");
-        });
-        window.location.reload();
-      }
+      Swal.fire({
+        title: 'Are you sure?',
+        text: "Delete this Scrroll from your collection.",
+        type: 'warning',
+        showCancelButton: true,
+        confirmButtonColor: '#3085d6',
+        cancelButtonColor: '#d33',
+        confirmButtonText: 'Yes, delete it!'
+      }).then((result) => {
+        if (result.value) {
+          const { [this.id]: _, ...restData } = urls;
+          chrome.storage.local.set({ "scroll-mark": restData }, () => {
+            chrome.runtime.sendMessage("setInactive");
+          });
+          window.location.reload();
+        }
+      })
+
     };
 
     const deleteAllScrollElement = function (element) {
-      if (confirm("Are you sure you want to remove all saved scrolls?")) {
-        chrome.storage.local.set({ "scroll-mark": {} }, data => { });
-        window.location.reload();
-      }
+
+      Swal.fire({
+        title: 'Clear All?',
+        text: "You won't be able to revert this!",
+        type: 'warning',
+        showCancelButton: true,
+        confirmButtonColor: '#3085d6',
+        cancelButtonColor: '#d33',
+        confirmButtonText: 'Yes, delete it!'
+      }).then((result) => {
+        if (result.value) {
+          chrome.storage.local.set({ "scroll-mark": {} }, data => { });
+          window.location.reload();
+        }
+      })
     };
 
     for (let i = 0; i < scrollElements.length; i++) {
