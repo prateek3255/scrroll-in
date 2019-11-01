@@ -10,7 +10,7 @@
 }
 
 body {
-  background: #242a36;
+  background: url("./images/bg.png");
   min-height: 100vh;
   color: #fff;
 }
