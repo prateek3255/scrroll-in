@@ -9,6 +9,7 @@
     if (Object.entries(urls).length === 0 && urls.constructor === Object) {
       heading.innerHTML =
         "<h1 id='saved-scroll-heading'>You don't have any saved scrrolls yet!</h1>";
+      heading.parentElement.style.height = "100vh";
     } else {
       heading.innerHTML =
         "<h1 id='saved-scroll-heading'>All Saved Scrolls</h1>";
@@ -16,7 +17,7 @@
       const btn = document.createElement("div");
       btn.innerHTML = `
       <div id="delete-button">
-        <div class="btn red" id="delete-all">Delete All</div>
+        <div class="btn red" id="delete-all"> <img src='./images/bin.png'> </div>
       </div>
       `;
       document.body.appendChild(btn);

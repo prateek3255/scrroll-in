@@ -10,9 +10,7 @@
 }
 
 body {
-  /* background: linear-gradient(hsl(271, 77%, 15%), #27012b); */
   background: #242a36;
-  background-size: cover;
   min-height: 100vh;
   color: #fff;
 }
@@ -41,7 +39,8 @@ body {
   color: #ffffff;
 }
 h1 {
-  font-size: 4rem;
+  font-size: 2.5rem;
+  cursor: default;
   /* text-shadow: -5px 5px 5px #000000c9; */
 }
 
@@ -105,25 +104,63 @@ h1 {
 
 #delete-button {
   position: fixed;
-  bottom: 0px;
-  width: 100%;
+  display: inline-flex;
+  justify-content: center;
+  align-items: center;
+  bottom: 1rem;
+  right: 2rem;
+  transform: scale(0.98);
+  transition: all 0.3s;
+}
+#delete-button:hover {
+  transform: scale(1);
 }
 
 #delete-all {
-  display: block;
-  width: 110px;
-  height: 110px;
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  width: 70px;
+  height: 70px;
   padding: 25px 0px;
   text-align: center;
   text-shadow: 1px 1px 3px #555;
+  border: 2px solid #fffa;
   border-radius: 50%;
-  transform: translate(0, 70px);
+  /* transform: translate(0, 70px); */
   margin: 10px auto;
   transition: all 0.3s;
+  box-shadow: 0 0 5px 3px #0003;
+  z-index: 3;
+}
+#delete-all:hover {
+  border: 2px solid transparent;
 }
 
-#delete-all:hover {
-  transform: translate(0, 60px);
+#delete-all img {
+  width: 50px;
+  filter: invert(100%);
+}
+
+#delete-button::before {
+  content: "Clear All";
+  display: inline-flex;
+  justify-content: center;
+  align-items: center;
+  font-size: 1rem;
+  padding: 5px 20px 5px 10px;
+  border-radius: 20px 0 0 20px;
+  background: #da4332;
+  position: relative;
+  right: -50px;
+  transition: all 0.2s;
+  overflow: hidden;
+  opacity: 0;
+}
+
+#delete-button:hover::before {
+  right: -10px;
+  opacity: 1;
 }
 
 #saved-urls {
