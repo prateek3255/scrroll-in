@@ -3,7 +3,7 @@
 
   chrome.storage.local.get("scroll-mark", function (result) {
     const urls = result["scroll-mark"];
-
+    let delay = 0.3;
     // if no saved scrolls are available
     const heading = document.getElementById("saved-scroll-heading");
     if (Object.entries(urls).length === 0 && urls.constructor === Object) {
@@ -17,7 +17,7 @@
       const btn = document.createElement("div");
       btn.innerHTML = `
       <div id="delete-button">
-        <div class="btn red" id="delete-all"> <img src='./images/bin.png'> </div>
+        <div class="btn del" id="delete-all"> <img src='./images/bin.png'> </div>
       </div>
       `;
       document.body.appendChild(btn);
@@ -65,7 +65,7 @@
             0 +
             "</div>" +
             delete_html;
-
+        div.style.animationDelay = (delay += 0.1) + 's';
         list.appendChild(div);
       }
     }
@@ -116,7 +116,9 @@
           chrome.storage.local.set({ "scroll-mark": restData }, () => {
             chrome.runtime.sendMessage("setInactive");
           });
-          window.location.reload();
+          let x = document.querySelector(`a[href = "${this.id}"]`);
+          x.parentElement.parentElement.removeChild(x.parentElement);
+          // window.location.reload();
         }
       })
 
