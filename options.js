@@ -1,14 +1,15 @@
 {
   const list = document.getElementById("saved-urls");
 
-  chrome.storage.local.get("scroll-mark", function(result) {
+  chrome.storage.local.get("scroll-mark", function (result) {
     const urls = result["scroll-mark"];
-
+    let delay = 0.3;
     // if no saved scrolls are available
     const heading = document.getElementById("saved-scroll-heading");
     if (Object.entries(urls).length === 0 && urls.constructor === Object) {
       heading.innerHTML =
         "<h1 id='saved-scroll-heading'>You don't have any saved scrrolls yet!</h1>";
+      heading.parentElement.style.height = "100vh";
     } else {
       heading.innerHTML =
         "<h1 id='saved-scroll-heading'>All Saved Scrolls</h1>";
@@ -16,7 +17,7 @@
       const btn = document.createElement("div");
       btn.innerHTML = `
       <div id="delete-button">
-        <div class="btn red" id="delete-all">Delete All</div>
+        <div class="btn del" id="delete-all"> <img src='./images/bin.png'> </div>
       </div>
       `;
       document.body.appendChild(btn);
@@ -64,19 +65,19 @@
             0 +
             "</div>" +
             delete_html;
-
+        div.style.animationDelay = (delay += 0.1) + 's';
         list.appendChild(div);
       }
     }
 
     // function to open dropdown menu
-    const showDropdown = function(e) {
+    const showDropdown = function (e) {
       const drop_id = this.id.substring(0, this.id.length - 1);
       document.getElementById(drop_id).classList.toggle("show_dropdown");
     };
 
     // function to close dropdown menu
-    const closeDropdown = function(e) {
+    const closeDropdown = function (e) {
       const dropdowns = document.getElementsByClassName("dropdown-content");
       if (e.target.className !== "dropdown") {
         for (let i = 0; i < dropdowns.length; i++) {
@@ -100,21 +101,45 @@
 
     // TODO: use the delete.js script instead
     // but that would require some modifications to the original delete functionality
-    const deleteScrollElement = function(element) {
-      if (confirm("Are you sure you want to remove this saved scroll?")) {
-        const { [this.id]: _, ...restData } = urls;
-        chrome.storage.local.set({ "scroll-mark": restData }, () => {
-          chrome.runtime.sendMessage("setInactive");
-        });
-        window.location.reload();
-      }
+    const deleteScrollElement = function (element) {
+      Swal.fire({
+        title: 'Are you sure?',
+        text: "Delete this Scrroll from your collection.",
+        type: 'warning',
+        showCancelButton: true,
+        confirmButtonColor: '#3085d6',
+        cancelButtonColor: '#d33',
+        confirmButtonText: 'Yes, delete it!'
+      }).then((result) => {
+        if (result.value) {
+          const { [this.id]: _, ...restData } = urls;
+          chrome.storage.local.set({ "scroll-mark": restData }, () => {
+            chrome.runtime.sendMessage("setInactive");
+          });
+          let x = document.querySelector(`a[href = "${this.id}"]`);
+          x.parentElement.parentElement.removeChild(x.parentElement);
+          // window.location.reload();
+        }
+      })
+
     };
 
-    const deleteAllScrollElement = function(element) {
-      if (confirm("Are you sure you want to remove all saved scrolls?")) {
-        chrome.storage.local.set({ "scroll-mark": {} }, data => {});
-        window.location.reload();
-      }
+    const deleteAllScrollElement = function (element) {
+
+      Swal.fire({
+        title: 'Clear All?',
+        text: "You won't be able to revert this!",
+        type: 'warning',
+        showCancelButton: true,
+        confirmButtonColor: '#3085d6',
+        cancelButtonColor: '#d33',
+        confirmButtonText: 'Delete All'
+      }).then((result) => {
+        if (result.value) {
+          chrome.storage.local.set({ "scroll-mark": {} }, data => { });
+          window.location.reload();
+        }
+      })
     };
 
     for (let i = 0; i < scrollElements.length; i++) {

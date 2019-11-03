@@ -10,9 +10,8 @@
 }
 
 body {
-  /* background: linear-gradient(hsl(271, 77%, 15%), #27012b); */
+  background: url("./images/bg.jpg");
   background: #242a36;
-  background-size: cover;
   min-height: 100vh;
   color: #fff;
 }
@@ -32,6 +31,7 @@ body {
 .container {
   text-align: center;
   height: 90vh;
+  perspective: 20cm;
 }
 .side {
   height: 8rem;
@@ -41,7 +41,8 @@ body {
   color: #ffffff;
 }
 h1 {
-  font-size: 4rem;
+  font-size: 2.5rem;
+  cursor: default;
   /* text-shadow: -5px 5px 5px #000000c9; */
 }
 
@@ -94,40 +95,95 @@ h1 {
   background-color: #d35400;
 }
 
-.btn.red {
-  background-color: #e74c3c;
+.btn.del {
+  background-color: #fff;
 }
-
-.btn.red:hover,
-.btn.red:focus {
-  background-color: #c0392b;
+.btn.del:hover,
+.btn.del:focus {
+  background-color: #fff;
 }
 
 #delete-button {
   position: fixed;
-  bottom: 0px;
-  width: 100%;
+  display: inline-flex;
+  justify-content: center;
+  align-items: center;
+  bottom: 1rem;
+  /* width: 100%; */
+  /* right: 2rem; */
+  right: 50%;
+  transform: translate(50%, 0) scale(0.98);
+  transition: all 0.3s;
+  filter: grayscale(20%);
+}
+#delete-button:hover {
+  transform: scale(1) translate(50%, 0);
+  filter: grayscale(0);
 }
 
 #delete-all {
-  display: block;
-  width: 110px;
-  height: 110px;
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  width: 65px;
+  height: 65px;
   padding: 25px 0px;
   text-align: center;
   text-shadow: 1px 1px 3px #555;
-  border-radius: 50%;
-  transform: translate(0, 70px);
+  border: 2px solid #ffffff99;
+  border-radius: 65px;
+  /* transform: translate(0, 70px); */
   margin: 10px auto;
   transition: all 0.3s;
+  box-shadow: 0 0 5px 3px #0005;
+  z-index: 4;
+}
+#delete-all:hover {
+  border: 2px solid transparent;
+  transform: scale(0.9);
 }
 
-#delete-all:hover {
-  transform: translate(0, 60px);
+#delete-all img {
+  width: 45px;
+  /* filter: invert(100%); */
+}
+
+#delete-button::before,
+#delete-button::after {
+  content: "Clear ";
+  display: inline-flex;
+  justify-content: center;
+  align-items: center;
+  font-size: 1rem;
+  padding: 5px 15px 5px 10px;
+  border-radius: 20px 0px 0px 20px;
+  background: #da4332;
+  position: relative;
+  right: -50px;
+  transition: all 0.2s;
+  overflow: hidden;
+  opacity: 0;
+  z-index: 3;
+}
+#delete-button::after {
+  content: " All";
+  right: 0;
+  left: -50px;
+  padding: 5px 20px 5px 25px;
+  border-radius: 0px 20px 20px 0px;
+}
+
+#delete-button:hover::before {
+  right: -15px;
+  opacity: 1;
+}
+#delete-button:hover::after {
+  left: -15px;
+  opacity: 1;
 }
 
 #saved-urls {
-  max-width: 1200px;
+  max-width: 1024px;
   display: grid;
   grid-template-columns: 1fr 1fr 1fr;
   margin: 0 auto;
@@ -143,7 +199,7 @@ h1 {
   display: flex;
   justify-content: space-between;
   align-items: center;
-  border-radius: 0px 5px 15px 15px;
+  border-radius: 0px 5px 10px 10px;
   background: #fff;
   background: linear-gradient(to right, #fff, #fff, #fdff74);
   background-size: 150%;
@@ -151,13 +207,34 @@ h1 {
   cursor: pointer;
   transition: all 250ms ease-out;
   position: relative;
+  transform-origin: top;
+  animation: flip-in 0.3s forwards;
+  opacity: 0;
+  transform: rotateX(-15deg);
+  z-index: 2;
 }
 
 #saved-urls > div:hover {
   box-shadow: 0 1px 3px 0 rgba(0, 0, 0, 0.04), 0 10px 25px 0 rgba(0, 0, 0, 0.2);
-  /* transform: translateY(-0.15em) scale(1.02); */
+  transform: rotateX(-15deg);
   border-radius: 5px;
   background-position: 100%;
+}
+
+@keyframes flip-in {
+  0% {
+    transform: rotateX(-15deg);
+  }
+  50% {
+    transform: rotateX(10deg);
+  }
+  70% {
+    transform: rotateX(-5deg);
+  }
+  100% {
+    transform: rotateX(0deg);
+    opacity: 1;
+  }
 }
 
 #saved-urls > div a {
@@ -225,14 +302,16 @@ h1 {
   position: absolute;
   top: 1px;
   right: -2px;
-  z-index: 100;
+  z-index: 2;
 }
 
 .dropdown-content {
   display: none;
   position: absolute;
+  right: 0.9rem;
+  top: -1.1rem;
   background-color: #e74c3c;
-  min-width: 80px;
+  min-width: 50px;
   box-shadow: 0px 8px 16px 0px rgba(0, 0, 0, 0.2);
   z-index: 1;
   border-radius: 5px;
@@ -243,7 +322,7 @@ h1 {
   height: 100%;
   padding: 5px;
   border-radius: 5px;
-  font-size: 15px;
+  font-size: 12px;
   font-family: "Roboto", sans-serif;
   border-width: 0;
   align-content: initial;
@@ -263,7 +342,7 @@ h1 {
 
 .dropdown-content.show_dropdown {
   display: block;
-  z-index: 10;
+  position: absolute;
   transform: scale(1);
   opacity: 1;
   animation: anim 0.3s ease-in-out;
