@@ -11,7 +11,7 @@
 
 body {
   background: url("./images/bg.jpg");
-  background: #242a36;
+  /* background: #242a36; */
   min-height: 100vh;
   color: #fff;
 }
