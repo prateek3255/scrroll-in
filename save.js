@@ -7,11 +7,10 @@
     const offset = window.pageYOffset;
     const total = document.body.scrollHeight;
     const title = document.title;
-    console.log(document.title);
+    let date = String(new Date());
     const newData = scrollMarkData
-      ? { ...scrollMarkData, [url]: { offset, total, title } }
-      : { [url]: { offset, total, title } };
-    console.log(offset, scrollMarkData[url], newData[url]);
+      ? { ...scrollMarkData, [url]: { offset, total, title, date } }
+      : { [url]: { offset, total, title, date } };
     chrome.storage.local.set({ "scroll-mark": newData }, () => {
       chrome.runtime.sendMessage("setActive");
     });

@@ -1,52 +1,252 @@
 * {
+<<<<<<< HEAD
     font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", 'Roboto', 'Helvetica', Arial, sans-serif, "Apple Color Emoji", "Segoe UI Emoji", "Segoe UI Symbol";
     transition: 0.3s ease-out;
     word-break: break-all
 }
+=======
+  box-sizing: border-box;
+  margin: 0;
+  padding: 0;
+}
+
+@font-face {
+  font-family: "Roboto";
+  src: url("Roboto/Roboto-Bold.ttf") format("truetype");
+}
+
+>>>>>>> devfolioco/master
 body {
-  background: #242a36;
+  background: url("./images/bg.jpg");
+  /* background: #242a36; */
+  min-height: 100vh;
   color: #fff;
 }
+
+::-webkit-scrollbar {
+  width: 0.3rem;
+}
+
+::-webkit-scrollbar-thumb {
+  background: #faf8f888;
+}
+
+::-webkit-scrollbar-track {
+  background: #2229;
+}
+
 .container {
   text-align: center;
+  height: 90vh;
+  perspective: 20cm;
+}
+.side {
+  height: 8rem;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  color: #ffffff;
 }
 h1 {
-  font-size: 3rem;
-  text-shadow: -1px 2px 3px #0009;
+  font-size: 2.5rem;
+  cursor: default;
+  /* text-shadow: -5px 5px 5px #000000c9; */
 }
+
+.btn {
+  width: 100%;
+  padding: 5px;
+  height: 41px;
+  border-radius: 6px;
+  font-size: 20px;
+  overflow: hidden;
+  font-family: "Roboto", sans-serif;
+  border-width: 0;
+  outline: none;
+  margin-bottom: 0.4em;
+  box-shadow: 0 1px 4px rgba(0, 0, 0, 0.6);
+  background-color: #2ecc71;
+  color: #ecf0f1;
+  cursor: pointer;
+
+  transition: background-color 0.3s;
+}
+
+.btn:hover,
+.btn:focus {
+  background-color: #27ae60;
+}
+
+.btn > * {
+  position: relative;
+}
+
+.btn span {
+  display: block;
+  padding: 12px 24px;
+}
+
+.btn:active:before {
+  width: 120%;
+  padding-top: 120%;
+
+  transition: width 0.2s ease-out, padding-top 0.2s ease-out;
+}
+
+.btn.orange {
+  background-color: #e67e22;
+}
+
+.btn.orange:hover,
+.btn.orange:focus {
+  background-color: #d35400;
+}
+
+.btn.del {
+  background-color: #fff;
+}
+.btn.del:hover,
+.btn.del:focus {
+  background-color: #fff;
+}
+
+#delete-button {
+  position: fixed;
+  display: inline-flex;
+  justify-content: center;
+  align-items: center;
+  bottom: 1rem;
+  /* width: 100%; */
+  /* right: 2rem; */
+  right: 50%;
+  transform: translate(50%, 0) scale(0.98);
+  transition: all 0.3s;
+  filter: grayscale(20%);
+}
+#delete-button:hover {
+  transform: scale(1) translate(50%, 0);
+  filter: grayscale(0);
+}
+
+#delete-all {
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  width: 65px;
+  height: 65px;
+  padding: 25px 0px;
+  text-align: center;
+  text-shadow: 1px 1px 3px #555;
+  border: 2px solid #ffffff99;
+  border-radius: 65px;
+  /* transform: translate(0, 70px); */
+  margin: 10px auto;
+  transition: all 0.3s;
+  box-shadow: 0 0 5px 3px #0005;
+  z-index: 4;
+}
+#delete-all:hover {
+  border: 2px solid transparent;
+  transform: scale(0.9);
+}
+
+#delete-all img {
+  width: 45px;
+  /* filter: invert(100%); */
+}
+
+#delete-button::before,
+#delete-button::after {
+  content: "Clear ";
+  display: inline-flex;
+  justify-content: center;
+  align-items: center;
+  font-size: 1rem;
+  padding: 5px 15px 5px 10px;
+  border-radius: 20px 0px 0px 20px;
+  background: #da4332;
+  position: relative;
+  right: -50px;
+  transition: all 0.2s;
+  overflow: hidden;
+  opacity: 0;
+  z-index: 3;
+}
+#delete-button::after {
+  content: " All";
+  right: 0;
+  left: -50px;
+  padding: 5px 20px 5px 25px;
+  border-radius: 0px 20px 20px 0px;
+}
+
+#delete-button:hover::before {
+  right: -15px;
+  opacity: 1;
+}
+#delete-button:hover::after {
+  left: -15px;
+  opacity: 1;
+}
+
 #saved-urls {
-  max-width: 1200px;
+  max-width: 1024px;
   display: grid;
   grid-template-columns: 1fr 1fr 1fr;
   margin: 0 auto;
 }
 
 #saved-urls > div {
-  padding: 10px;
+  padding: 15px 20px 15px 15px;
   max-width: 20rem;
   margin: 1rem;
   margin-top: 10px;
   text-align: left;
-  border: 2px solid #ffffff;
+  border: 1px solid #ffffff;
   display: flex;
   justify-content: space-between;
   align-items: center;
-  border-radius: 5px;
+  border-radius: 0px 5px 10px 10px;
   background: #fff;
-  box-shadow: -1px 2px 5px 3px #00000096;
+  background: linear-gradient(to right, #fff, #fff, #fdff74);
+  background-size: 150%;
+  box-shadow: -1px 2px 5px 3px #00000055;
   cursor: pointer;
+  transition: all 250ms ease-out;
+  position: relative;
+  transform-origin: top;
+  animation: flip-in 0.3s forwards;
+  opacity: 0;
+  transform: rotateX(-15deg);
+  z-index: 2;
 }
 
 #saved-urls > div:hover {
-  transition: transform 400ms ease-out;
   box-shadow: 0 1px 3px 0 rgba(0, 0, 0, 0.04), 0 10px 25px 0 rgba(0, 0, 0, 0.2);
-  transform: translateY(-0.25em);
+  transform: rotateX(-15deg);
   border-radius: 5px;
+  background-position: 100%;
+}
+
+@keyframes flip-in {
+  0% {
+    transform: rotateX(-15deg);
+  }
+  50% {
+    transform: rotateX(10deg);
+  }
+  70% {
+    transform: rotateX(-5deg);
+  }
+  100% {
+    transform: rotateX(0deg);
+    opacity: 1;
+  }
 }
 
 #saved-urls > div a {
   max-width: 16rem;
-  color: #0640ac;
+  color: #9e0bad;
   font-weight: bold;
   text-decoration: none;
 }
@@ -58,8 +258,10 @@ h1 {
   position: relative;
   justify-content: center;
   align-items: center;
-  width: 1.5rem;
-  height: 1.5rem;
+  max-width: 2.5rem;
+  max-height: 2.2rem;
+  min-width: 2.5rem;
+  min-height: 2.5rem; /* to maintain circle in the flex box */
   background: #2ecc71;
   color: white;
   font-weight: bold;
@@ -72,6 +274,106 @@ h1 {
   text-shadow: 0 0 2px #0002;
   font-size: 0.7rem;
   position: absolute;
+<<<<<<< HEAD
   bottom: 0;
   right: -0.1rem;
 }
+=======
+  bottom: 0.1rem;
+  right: -0rem;
+}
+
+#saved-urls > div::before {
+  content: attr(data-date);
+  color: rgb(0, 0, 0);
+  /* text-shadow: 0 0 2px #0002; */
+  background: #cacaca;
+  transition: all 0.3s;
+  font-size: 0.6rem;
+  padding: 0.2rem 0.7rem;
+  border-radius: 5px;
+  position: absolute;
+  top: -6px;
+  left: -0.3rem;
+  /* box-shadow: 0 1px 3px 1px #ffffff9e; */
+}
+#saved-urls > div:hover::before {
+  background: #f8fc02;
+}
+
+.dropdown::after {
+  content: "\2807";
+  color: #242a36;
+  font-size: 20px;
+}
+
+.Scroll {
+  position: relative;
+}
+.Scroll .dropdown {
+  position: absolute;
+  top: 1px;
+  right: -2px;
+  z-index: 2;
+}
+
+.dropdown-content {
+  display: none;
+  position: absolute;
+  right: 0.9rem;
+  top: -1.1rem;
+  background-color: #e74c3c;
+  min-width: 50px;
+  box-shadow: 0px 8px 16px 0px rgba(0, 0, 0, 0.2);
+  z-index: 1;
+  border-radius: 5px;
+}
+
+.dropdown-content button {
+  width: 100% !important;
+  height: 100%;
+  padding: 5px;
+  border-radius: 5px;
+  font-size: 12px;
+  font-family: "Roboto", sans-serif;
+  border-width: 0;
+  align-content: initial;
+  box-shadow: 0 1px 4px rgba(0, 0, 0, 0.6);
+  background-color: #e74c3c;
+  color: #ecf0f1;
+  transition: background-color 0.5s;
+}
+
+.dropdown-content button:hover {
+  font-family: "Roboto", sans-serif;
+  color: #ecf0f1;
+  background-color: #c0392b;
+  border-radius: 5px;
+  cursor: pointer;
+}
+
+.dropdown-content.show_dropdown {
+  display: block;
+  position: absolute;
+  transform: scale(1);
+  opacity: 1;
+  animation: anim 0.3s ease-in-out;
+}
+
+@keyframes anim {
+  0% {
+    display: none;
+    opacity: 0;
+  }
+  1% {
+    display: block;
+    opacity: 0;
+    transform: translateY(-5px);
+    transform: translateX(-2px);
+  }
+  100% {
+    opacity: 1;
+    transform: scale(1);
+  }
+}
+>>>>>>> devfolioco/master
