@@ -1,0 +1,23 @@
+{
+    "name": "scrroll-in",
+    "version": "1.0.0",
+    "scripts": {
+        "build": "gulp"
+    },
+    "main": "index.js",
+    "repository": "https://github.com/devfolioco/scrroll-in.git",
+    "license": "MIT",
+    "dependencies": {
+        "@babel/core": "7.7.4",
+        "@babel/preset-env": "7.7.4",
+        "del": "5.1.0",
+        "gulp": "4.0.2",
+        "gulp-babel": "8.0.0",
+        "gulp-clean-css": "4.2.0",
+        "gulp-cli": "2.2.0",
+        "gulp-copy": "4.0.1",
+        "gulp-htmlmin": "5.0.1",
+        "gulp-sourcemaps": "2.6.5",
+        "gulp-uglify": "3.0.2"
+    }
+}
