@@ -53,7 +53,8 @@ Also, if you have any doubts regarding any of the concepts or how to get started
 Thanks goes to these wonderful people ([emoji key](https://allcontributors.org/docs/en/emoji-key)):
 
 <!-- ALL-CONTRIBUTORS-LIST:START - Do not remove or modify this section -->
-<!-- prettier-ignore -->
+<!-- prettier-ignore-start -->
+<!-- markdownlint-disable -->
 <table>
   <tr>
     <td align="center"><a href="http://prateeksurana.me"><img src="https://avatars3.githubusercontent.com/u/21277179?v=4" width="100px;" alt="Prateek Surana"/><br /><sub><b>Prateek Surana</b></sub></a><br /><a href="https://github.com/devfolioco/scrroll-in/commits?author=prateek3255" title="Code">💻</a> <a href="#design-prateek3255" title="Design">🎨</a> <a href="#content-prateek3255" title="Content">🖋</a> <a href="https://github.com/devfolioco/scrroll-in/commits?author=prateek3255" title="Documentation">📖</a></td>
@@ -69,9 +70,12 @@ Thanks goes to these wonderful people ([emoji key](https://allcontributors.org/d
     <td align="center"><a href="https://github.com/MitchMo"><img src="https://avatars2.githubusercontent.com/u/11459569?v=4" width="100px;" alt="Mitch Moore"/><br /><sub><b>Mitch Moore</b></sub></a><br /><a href="https://github.com/devfolioco/scrroll-in/commits?author=MitchMo" title="Code">💻</a></td>
     <td align="center"><a href="https://github.com/underscoreanuj"><img src="https://avatars1.githubusercontent.com/u/30765911?v=4" width="100px;" alt="Anuj Singh"/><br /><sub><b>Anuj Singh</b></sub></a><br /><a href="https://github.com/devfolioco/scrroll-in/commits?author=underscoreanuj" title="Code">💻</a></td>
     <td align="center"><a href="http://www.gaberosedesign.com"><img src="https://avatars3.githubusercontent.com/u/7225212?v=4" width="100px;" alt="Gabe"/><br /><sub><b>Gabe</b></sub></a><br /><a href="https://github.com/devfolioco/scrroll-in/commits?author=roseg43" title="Code">💻</a></td>
+    <td align="center"><a href="https://github.com/Alucard17"><img src="https://avatars1.githubusercontent.com/u/26205172?v=4" width="100px;" alt="alucard17"/><br /><sub><b>alucard17</b></sub></a><br /><a href="https://github.com/devfolioco/scrroll-in/commits?author=alucard17" title="Code">💻</a></td>
   </tr>
 </table>
 
+<!-- markdownlint-enable -->
+<!-- prettier-ignore-end -->
 <!-- ALL-CONTRIBUTORS-LIST:END -->
 
 This project follows the [all-contributors](https://github.com/all-contributors/all-contributors) specification. Contributions of any kind are welcome!
