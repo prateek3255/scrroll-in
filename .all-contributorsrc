@@ -107,11 +107,21 @@
       "contributions": [
         "code"
       ]
+    },
+    {
+      "login": "karan",
+      "name": "Karan Goel",
+      "avatar_url": "https://avatars1.githubusercontent.com/u/3261985?v=4",
+      "profile": "https://twitter.com/karangoel",
+      "contributions": [
+        "code"
+      ]
     }
   ],
   "contributorsPerLine": 7,
   "projectName": "scrroll-in",
   "projectOwner": "devfolioco",
   "repoType": "github",
-  "repoHost": "https://github.com"
+  "repoHost": "https://github.com",
+  "skipCi": true
 }
