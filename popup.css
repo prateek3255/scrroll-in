@@ -110,3 +110,15 @@ h2 {
 .btn.red:focus {
   background-color: #c0392b;
 }
+
+#tip {
+  text-align: center;
+  color: white;
+  font-size: 12px;
+  font-family: "Roboto", sans-serif;
+  font-size: 12px;
+}
+
+a {
+  color: white;
+}
