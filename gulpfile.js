@@ -1,6 +1,5 @@
 const gulp = require("gulp");
-const uglify = require("gulp-uglify");
-const babel = require("gulp-babel");
+const uglify = require("gulp-uglify-es").default;
 let cleanCSS = require("gulp-clean-css");
 const htmlmin = require("gulp-htmlmin");
 const del = require("del");
@@ -13,11 +12,6 @@ gulp.task("clean", done => {
 gulp.task("minify-scripts", done => {
   gulp
     .src(["*.js", "!gulpfile.js"])
-    .pipe(
-      babel({
-        presets: ["@babel/preset-env"]
-      })
-    )
     .pipe(uglify())
     .pipe(gulp.dest("build"));
   done();
