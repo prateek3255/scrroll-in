@@ -1,3 +1,9 @@
+import {
+  executeSaveScroll,
+  executeGetScroll,
+  executeDeleteScroll
+} from "./helpers.js";
+
 const root = document.getElementById("root");
 root.innerHTML = "<div> Loading...</div>";
 
@@ -28,18 +34,14 @@ chrome.tabs.query({ active: true, currentWindow: true }, tabs => {
       let deleteScroll = document.getElementById("deleteScroll");
 
       deleteScroll.onclick = function(element) {
-        chrome.tabs.executeScript(tabs[0].id, {
-          file: "delete.js",
-        });
+        executeDeleteScroll(tabs[0].id);
         window.close();
       };
 
       let getScroll = document.getElementById("getScroll");
 
       getScroll.onclick = function(element) {
-        chrome.tabs.executeScript(tabs[0].id, {
-          file: "get.js",
-        });
+        executeGetScroll(tabs[0].id);
         window.close();
       };
     } else {
@@ -53,9 +55,7 @@ chrome.tabs.query({ active: true, currentWindow: true }, tabs => {
     let saveScroll = document.getElementById("saveScroll");
 
     saveScroll.onclick = function(element) {
-      chrome.tabs.executeScript(tabs[0].id, {
-        file: "save.js",
-      });
+      executeSaveScroll(tabs[0].id);
       window.close();
     };
   });

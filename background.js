@@ -1,3 +1,9 @@
+import {
+  executeSaveScroll,
+  executeGetScroll,
+  executeDeleteScroll
+} from "./helpers.js";
+
 function getUrlWithoutHash(url) {
   return url.split("?")[0];
 }
@@ -59,6 +65,19 @@ chrome.runtime.onMessage.addListener((request, sender) => {
   } else {
     setInactiveIcon();
   }
+});
+
+chrome.commands.onCommand.addListener(function(command) {
+  chrome.tabs.query({ active: true, currentWindow: true }, tabs => {
+    const currentTabId = tabs[0].id;
+    if (command === "save-or-update-scroll") {
+      executeSaveScroll(currentTabId);
+    } else if (command === "delete-scroll") {
+      executeDeleteScroll(currentTabId);
+    } else if (command === "fetch-scroll") {
+      executeGetScroll(currentTabId);
+    }
+  });
 });
 
 const setActiveIcon = () => {

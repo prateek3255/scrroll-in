@@ -10,9 +10,7 @@
     ],
     "options_page": "options.html",
     "background": {
-        "scripts": [
-            "background.js"
-        ],
+        "page": "background.html",
         "persistent": false
     },
     "browser_action": {
@@ -31,6 +29,29 @@
         "48": "images/icon-48.png",
         "128": "images/icon-128.png",
         "256": "images/icon-256.png"
+    },
+    "commands": {
+        "save-or-update-scroll": {
+            "suggested_key": {
+                "default": "Shift+Ctrl+S",
+                "mac": "Shift+Command+S"
+            },
+            "description": "Save or update scroll"
+        },
+        "delete-scroll": {
+            "suggested_key": {
+                "default": "Shift+Ctrl+D",
+                "mac": "Shift+Command+D"
+            },
+            "description": "Delete scroll"
+        },
+        "fetch-scroll": {
+            "suggested_key": {
+                "default": "Shift+Ctrl+G",
+                "mac": "Shift+Command+G"
+            },
+            "description": "Fetch scroll"
+        }
     },
     "manifest_version": 2
 }
