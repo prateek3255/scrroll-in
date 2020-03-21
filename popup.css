@@ -204,3 +204,15 @@ h2 {
     border-color: rgba(0,0,0,0.5) !important;
     color: #006699 !important
 }
+
+#tip {
+  text-align: center;
+  color: white;
+  font-size: 12px;
+  font-family: "Roboto", sans-serif;
+  font-size: 12px;
+}
+
+a {
+  color: white;
+}

@@ -143,7 +143,8 @@
     for (let i = 0; i < scrollElements.length; i++) {
       scrollElements[i].addEventListener("click", deleteScrollElement, false);
     }
-
-    deleteAllBtn.addEventListener("click", deleteAllScrollElement, false);
+    if (deleteAllBtn) {
+      deleteAllBtn.addEventListener("click", deleteAllScrollElement, false);
+    }
   });
 }
