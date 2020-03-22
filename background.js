@@ -8,8 +8,10 @@ function getUrlWithoutHash(url) {
   return url.split("?")[0];
 }
 
-chrome.runtime.onInstalled.addListener(() => {
-  chrome.storage.local.set({ "scroll-mark": {} });
+chrome.runtime.onInstalled.addListener(details => {
+  if (details.reason === "install") {
+    chrome.storage.local.set({ "scroll-mark": {} });
+  }
 });
 
 const updateIcon = () => {
