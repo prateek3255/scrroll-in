@@ -54,6 +54,7 @@ chrome.tabs.onUpdated.addListener((tabId, updateObj) => {
         if (!scrollMarkData.hasOwnProperty(url)) {
           setInactiveIcon();
         } else {
+          executeGetScroll(tabId);
           setActiveIcon();
         }
       });

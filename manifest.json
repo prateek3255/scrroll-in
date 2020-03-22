@@ -6,7 +6,9 @@
     "permissions": [
         "tabs",
         "storage",
-        "activeTab"
+        "activeTab",
+        "http://*/",
+        "https://*/"
     ],
     "options_page": "options.html",
     "background": {
