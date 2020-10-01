@@ -1,5 +1,13 @@
 # Scrroll In
+
 [![All Contributors](https://img.shields.io/badge/all_contributors-11-orange.svg?style=flat-square)](#contributors)
+![GitHub package.json version](https://img.shields.io/github/package-json/v/devfolioco/scrroll-in)
+[![GitHub issues](https://img.shields.io/github/issues-raw/devfolioco/scrroll-in?logo=github)](https://github.com/devfolioco/scrroll-in/issues) 
+[![GitHub pull requests](https://img.shields.io/github/issues-pr/devfolioco/scrroll-in?logo=git)](https://github.com/devfolioco/scrroll-in/pulls)
+[![License](https://img.shields.io/badge/license-MIT-yellowgreen)](https://github.com/devfolioco/scrroll-in/blob/master/LICENSE)
+[![Twitter__follow](https://img.shields.io/twitter/follow/devfolioco?style=social)](https://twitter.com/Devfolioco)
+[![PR_accepted](https://img.shields.io/badge/PRs-welcome-brightgreen.svg)]()
+![GitHub top language](https://img.shields.io/github/languages/top/devfolioco/scrroll-in)
 
 Never forget where you left a page.
 
@@ -71,7 +79,10 @@ Thanks goes to these wonderful people ([emoji key](https://allcontributors.org/d
     <td align="center"><a href="https://github.com/underscoreanuj"><img src="https://avatars1.githubusercontent.com/u/30765911?v=4" width="100px;" alt="Anuj Singh"/><br /><sub><b>Anuj Singh</b></sub></a><br /><a href="https://github.com/devfolioco/scrroll-in/commits?author=underscoreanuj" title="Code">💻</a></td>
     <td align="center"><a href="http://www.gaberosedesign.com"><img src="https://avatars3.githubusercontent.com/u/7225212?v=4" width="100px;" alt="Gabe"/><br /><sub><b>Gabe</b></sub></a><br /><a href="https://github.com/devfolioco/scrroll-in/commits?author=roseg43" title="Code">💻</a></td>
     <td align="center"><a href="https://github.com/Alucard17"><img src="https://avatars1.githubusercontent.com/u/26205172?v=4" width="100px;" alt="alucard17"/><br /><sub><b>alucard17</b></sub></a><br /><a href="https://github.com/devfolioco/scrroll-in/commits?author=alucard17" title="Code">💻</a></td>
+    <td align="center"><a href="https://github.com/3scava1i3r"><img src="https://avatars2.githubusercontent.com/u/52003051?s=96&v=4" width="100px;" alt="3scava1i3r"/><br /><sub><b>3scava1i3r</b></sub></a><br /><a href="https://github.com/devfolioco/scrroll-in/commits?author=3scava1i3r" title="Code">💻</a></td>
   </tr>
+  
+ 
 </table>
 
 <!-- markdownlint-enable -->
