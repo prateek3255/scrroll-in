@@ -1,4 +1,4 @@
-# Scrroll In
+# Scrroll In - Chrome Extension
 [![All Contributors](https://img.shields.io/badge/all_contributors-11-orange.svg?style=flat-square)](#contributors)
 
 Never forget where you left a page.
@@ -19,13 +19,13 @@ You must have been in a situation wherein you are reading a long article, but yo
 
 So this extension lets you save the scroll position of the webpage, so you can continue from exactly where you left.
 
-I know there are a few extensions that already serve this purpose, but most of them either didn't work correctly or lacked the features that I needed, so I ended up creating my own.
+I know there are a few extensions that already serve this purpose, but most of them either didn't work effectively or lacked the features that I needed, so I ended up creating my own.
 
 ## How it works?
 
 Under the hood, this extension uses the [chrome localStorage API](https://developer.mozilla.org/en/DOM/Storage#localStorage) to store the scroll positions for different webpages. I avoided using sync storage due to its storage limitations ([read more](https://developer.chrome.com/apps/storage)). This extension creates an object which stores the URL as keys and the scroll position as values.
 
-The functions for adding or updating, reading and deleting are in the files `save.js`, `get.js` and `delete.js` respectively, which are executed as content scripts from `popup.js` whenever the respective button is clicked.
+The functions for adding or updating, reading, and deleting are in the files `save.js`, `get.js`, and `delete.js` respectively, which are executed as content scripts from `popup.js` whenever the respective button is clicked.
 
 The `background.js` handles switching icon color whenever a tab is changed, or the URL is updated.
 
@@ -35,9 +35,9 @@ The popup sheet is also handled by `popup.js` by dynamically changing the UI fol
 
 To run the extension locally follow these steps:
 
-- Visit `chrome://extensions` and turn on developer mode.
-- Click on `Load unpacked` at the top left and select the extension root folder.
-- Now you can go ahead and modify `popup.js` or `popup.html`. Changes would directly be visible in the extension.
+- Visit the `chrome://extensions` page and turn on developer mode.
+- Click on `Load unpacked` at the top left corner and select the extension root folder.
+- Now you can go ahead and modify `popup.js` or `popup.html`. Changes would be directly visible in the extension.
 - If you change something in `background.js` or `manifest.json` then you will need to reload the extension.
 
 ## Contributing
@@ -50,7 +50,7 @@ Also, if you have any doubts regarding any of the concepts or how to get started
 
 ## Contributors ✨
 
-Thanks goes to these wonderful people ([emoji key](https://allcontributors.org/docs/en/emoji-key)):
+Thanks goes to these wonderful people! ([emoji key](https://allcontributors.org/docs/en/emoji-key)):
 
 <!-- ALL-CONTRIBUTORS-LIST:START - Do not remove or modify this section -->
 <!-- prettier-ignore-start -->
