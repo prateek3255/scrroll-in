@@ -1,4 +1,4 @@
-# Scrroll In
+# Scroll In
 [![All Contributors](https://img.shields.io/badge/all_contributors-11-orange.svg?style=flat-square)](#contributors)
 
 Never forget where you left a page.
@@ -19,7 +19,7 @@ You must have been in a situation wherein you are reading a long article, but yo
 
 So this extension lets you save the scroll position of the webpage, so you can continue from exactly where you left.
 
-I know there are a few extensions that already serve this purpose, but most of them either didn't work correctly or lacked the features that I needed, so I ended up creating my own.
+I know there are a few extensions that already serve this purpose, but most of them either didn't work correctly or lacked the features that I needed, so I ended up creating my own. It can save your time.
 
 ## How it works?
 
