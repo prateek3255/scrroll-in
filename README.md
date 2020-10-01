@@ -11,7 +11,7 @@ Never forget where you left a page.
 
 </p>
 
-> Contribute to this project during hacktoberfest and get exclusive limited edition Devfolio schwag if your pull requests gets merged. [Read more](https://devfolio.co/blog/hacktoberfest-2019-devfolio/)
+> Contribute to this project during hacktoberfest and get exclusive limited edition Devfolio schwag if your pull requests get merged. [Read more](https://devfolio.co/blog/hacktoberfest-2019-devfolio/)
 
 ## Motivation
 
@@ -21,11 +21,11 @@ So this extension lets you save the scroll position of the webpage, so you can c
 
 I know there are a few extensions that already serve this purpose, but most of them either didn't work correctly or lacked the features that I needed, so I ended up creating my own.
 
-## How it works?
+## How does it works?
 
 Under the hood, this extension uses the [chrome localStorage API](https://developer.mozilla.org/en/DOM/Storage#localStorage) to store the scroll positions for different webpages. I avoided using sync storage due to its storage limitations ([read more](https://developer.chrome.com/apps/storage)). This extension creates an object which stores the URL as keys and the scroll position as values.
 
-The functions for adding or updating, reading and deleting are in the files `save.js`, `get.js` and `delete.js` respectively, which are executed as content scripts from `popup.js` whenever the respective button is clicked.
+The functions for adding or updating, reading, and deleting are in the files `save.js`, `get.js`, and `delete.js` respectively, which are executed as content scripts from `popup.js` whenever the respective button is clicked.
 
 The `background.js` handles switching icon color whenever a tab is changed, or the URL is updated.
 
@@ -50,7 +50,8 @@ Also, if you have any doubts regarding any of the concepts or how to get started
 
 ## Contributors ✨
 
-Thanks goes to these wonderful people ([emoji key](https://allcontributors.org/docs/en/emoji-key)):
+Thanks go to these wonderful people ([emoji key](https://allcontributors.org/docs/en/emoji-key)):
+
 
 <!-- ALL-CONTRIBUTORS-LIST:START - Do not remove or modify this section -->
 <!-- prettier-ignore-start -->
