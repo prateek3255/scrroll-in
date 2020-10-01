@@ -4,7 +4,7 @@
   chrome.storage.local.get("scroll-mark", function(result) {
     const urls = result["scroll-mark"];
     let delay = 0.3;
-    // if no saved scrolls are available
+    // if no saved scrrolls are available
     const heading = document.getElementById("saved-scroll-heading");
     if (Object.entries(urls).length === 0 && urls.constructor === Object) {
       heading.innerHTML =
@@ -22,17 +22,24 @@
       `;
       document.body.appendChild(btn);
 
-      for (var url in urls) {
-        const title = urls[url].title || url;
+      // to sort scrrolls chronologically
+      chrono_urls = [];
+      for (url in urls) {
+        chrono_urls.push({ ...urls[url], url: url })
+      }
+      chrono_urls.sort((a, b) => new Date(b.date) - new Date(a.date));
+
+      for (var url in chrono_urls) {
+        const title = chrono_urls[url].title || url;
         const url_id = url;
         const div = document.createElement("div");
         div.setAttribute("class", "Scroll");
         div.setAttribute(
           "data-date",
-          urls[url].date ? urls[url].date.slice(0, 15) : "Date-Here"
+          chrono_urls[url].date ? chrono_urls[url].date.slice(0, 15) : "Date-Here"
         );
         const percentage = Math.round(
-          (urls[url].offset / urls[url].total) * 100
+          (chrono_urls[url].offset / chrono_urls[url].total) * 100
         );
 
         const delete_html = `
@@ -112,7 +119,7 @@
         confirmButtonText: "Yes, delete it!"
       }).then(result => {
         if (result.value) {
-          const { [this.id]: _, ...restData } = urls;
+          const { [this.id]: _, ...restData } = chrono_urls;
           chrome.storage.local.set({ "scroll-mark": restData }, () => {
             chrome.runtime.sendMessage("setInactive");
           });
