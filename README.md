@@ -23,17 +23,17 @@ I know there are a few extensions that already serve this purpose, but most of t
 
 ## How it works?
 
-Under the hood, this extension uses the [chrome localStorage API](https://developer.mozilla.org/en/DOM/Storage#localStorage) to store the scroll positions for different webpages. I avoided using sync storage due to its storage limitations ([read more](https://developer.chrome.com/apps/storage)). This extension creates an object which stores the URL as keys and the scroll position as values.
+This extension uses the [chrome localStorage API](https://developer.mozilla.org/en/DOM/Storage#localStorage) to store the scroll positions for different webpages. I avoided using sync storage due to its storage limitations ([read more](https://developer.chrome.com/apps/storage)). This extension creates an object which stores the URL as keys and the scroll position as values.
 
-The functions for adding or updating, reading and deleting are in the files `save.js`, `get.js` and `delete.js` respectively, which are executed as content scripts from `popup.js` whenever the respective button is clicked.
+The functions for adding/updating, reading and deleting are in the files `save.js`, `get.js` and `delete.js` respectively, which are executed as content scripts from `popup.js` whenever the respective button is clicked.
 
-The `background.js` handles switching icon color whenever a tab is changed, or the URL is updated.
+The `background.js` handles switching icon colour whenever a tab is changed, or the URL is updated.
 
-The popup sheet is also handled by `popup.js` by dynamically changing the UI following the availability of the URL in the localStorage object.
+The popup sheet is also handled by `popup.js` by dynamically changing the UI following the availability of the URL in the local Storage object.
 
 ## Development
 
-To run the extension locally follow these steps:
+To run the extension locally, follow these steps:
 
 - Visit `chrome://extensions` and turn on developer mode.
 - Click on `Load unpacked` at the top left and select the extension root folder.
@@ -44,7 +44,7 @@ To run the extension locally follow these steps:
 
 All you need to know for contributing to this project is basic JavaScript, HTML, and CSS.
 
-You can visit the issues page to find some relevant issues to contribute to or feel free to open a new issue for something that you think can be improved.
+You can visit the issues page to find some relevant issues to contribute to or feel free to open a new issue for something that you think that can be improved.
 
 Also, if you have any doubts regarding any of the concepts or how to get started, feel free to drop me a message on [Twitter](https://twitter.com/psuranas) or the [Devfolio community Telegram group](https://t.me/devfolio).
 
