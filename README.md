@@ -1,4 +1,4 @@
-# Scrroll In
+# Scrroll in
 [![All Contributors](https://img.shields.io/badge/all_contributors-11-orange.svg?style=flat-square)](#contributors)
 
 Never forget where you left a page.
@@ -11,7 +11,7 @@ Never forget where you left a page.
 
 </p>
 
-> Contribute to this project during hacktoberfest and get exclusive limited edition Devfolio schwag if your pull requests gets merged. [Read more](https://devfolio.co/blog/hacktoberfest-2019-devfolio/)
+-> Contribute to this project during hacktoberfest and get exclusive limited edition Devfolio schwag if your pull requests gets merged. [Read more](https://devfolio.co/blog/hacktoberfest-2019-devfolio/)
 
 ## Motivation
 
