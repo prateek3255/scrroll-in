@@ -263,10 +263,9 @@ h1 {
 
 #saved-urls > div .perc::after {
   content: "%";
-  color: rgb(0, 85, 14);
+  color: rgb(0, 0, 0);
   text-shadow: 0 0 2px #0002;
   font-size: 0.7rem;
-  position: absolute;
   bottom: 0.1rem;
   right: -0rem;
 }
@@ -299,7 +298,6 @@ h1 {
   position: relative;
 }
 .Scroll .dropdown {
-  position: absolute;
   top: 1px;
   right: -2px;
   z-index: 2;
@@ -307,7 +305,6 @@ h1 {
 
 .dropdown-content {
   display: none;
-  position: absolute;
   right: 0.9rem;
   top: -1.1rem;
   background-color: #e74c3c;
