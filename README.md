@@ -11,7 +11,7 @@ Never forget where you left a page.
 
 </p>
 
--> Contribute to this project during hacktoberfest and get exclusive limited edition Devfolio schwag if your pull requests gets merged. [Read more](https://devfolio.co/blog/hacktoberfest-2019-devfolio/)
+--> Contribute to this project during hacktoberfest and get exclusive limited edition Devfolio schwag if your pull requests gets merged. [Read more](https://devfolio.co/blog/hacktoberfest-2019-devfolio/)
 
 ## Motivation
 
@@ -31,7 +31,7 @@ The `background.js` handles switching icon color whenever a tab is changed, or t
 
 The popup sheet is also handled by `popup.js` by dynamically changing the UI following the availability of the URL in the localStorage object.
 
-## Development
+## Development:
 
 To run the extension locally follow these steps:
 
@@ -40,7 +40,7 @@ To run the extension locally follow these steps:
 - Now you can go ahead and modify `popup.js` or `popup.html`. Changes would directly be visible in the extension.
 - If you change something in `background.js` or `manifest.json` then you will need to reload the extension.
 
-## Contributing
+## Contributing:
 
 All you need to know for contributing to this project is basic JavaScript, HTML, and CSS.
 
