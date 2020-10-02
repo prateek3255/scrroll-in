@@ -242,7 +242,12 @@ h1 {
   color: #9e0bad;
   font-weight: bold;
   text-decoration: none;
+  transition: transform .2s;
 }
+#saved-urls > div a:hover {
+  transform: scale(1.05);
+}
+
 #saved-urls > div .perc {
   margin: 0 0 0 2rem;
   padding: 0.3rem;
