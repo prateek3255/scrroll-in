@@ -38,7 +38,7 @@
         const delete_html = `
         <div class="dropdown" id="${url_id}_|_">
           <div id="${url_id}_|" class="dropdown-content">
-                <button class="ScrollElement" id="${url_id}">Delete</button>
+                <button class="ScrollElement" id="${url_id}">Delet</button>
           </div>
         </div>
         `;
@@ -86,10 +86,21 @@
       }
     };
 
+    //function so that only one dropdown menu is open at a time.
+    const closeDropdownOnButtonClick = function(e) {
+      const dropdowns = document.getElementsByClassName("dropdown-content");
+      // if (e.target.className !== "dropdown") {
+        for (let i = 0; i < dropdowns.length; i++) {
+          dropdowns[i].classList.remove("show_dropdown");
+        }
+      // 
+    };
+
     // all dropdown menus
     const dotElements = document.getElementsByClassName("dropdown");
 
     for (let i = 0; i < dotElements.length; i++) {
+      dotElements[i].addEventListener("click", closeDropdownOnButtonClick, false);
       dotElements[i].addEventListener("click", showDropdown, false);
     }
 
