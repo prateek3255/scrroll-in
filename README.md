@@ -48,6 +48,10 @@ You can visit the issues page to find some relevant issues to contribute to or f
 
 Also, if you have any doubts regarding any of the concepts or how to get started, feel free to drop me a message on [Twitter](https://twitter.com/psuranas) or the [Devfolio community Telegram group](https://t.me/devfolio).
 
+## License
+
+[![NPM](https://img.shields.io/github/license/devfolioco/scrroll-in)](https://github.com/devfolioco/scrroll-in/blob/master/LICENSE)
+
 ## Contributors ✨
 
 Thanks goes to these wonderful people ([emoji key](https://allcontributors.org/docs/en/emoji-key)):
