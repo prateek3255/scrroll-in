@@ -48,6 +48,10 @@ You can visit the issues page to find some relevant issues to contribute to or f
 
 Also, if you have any doubts regarding any of the concepts or how to get started, feel free to drop me a message on [Twitter](https://twitter.com/psuranas) or the [Devfolio community Telegram group](https://t.me/devfolio).
 
+## License
+
+[![NPM](https://img.shields.io/npm/l/react-otp-input)](https://github.com/devfolioco/react-otp-input/blob/master/LICENSE)[MIT](http://www.opensource.org/licenses/mit-license.php)
+
 ## Contributors ✨
 
 Thanks goes to these wonderful people ([emoji key](https://allcontributors.org/docs/en/emoji-key)):
