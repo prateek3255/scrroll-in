@@ -1,3 +1,4 @@
+
 export const executeScript = (tabId, fileName) => {
   chrome.tabs.executeScript(tabId, {
     file: fileName
@@ -15,3 +16,10 @@ export const executeDeleteScroll = tabId => {
 export const executeGetScroll = tabId => {
   executeScript(tabId, "get.js");
 };
+export const executeAddScroll = tabId => {
+  executeScript(tabId, "add.js")
+}
+
+export const fullName = () => {
+  return 'adcsdc';
+}

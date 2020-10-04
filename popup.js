@@ -1,13 +1,15 @@
 import {
   executeSaveScroll,
   executeGetScroll,
-  executeDeleteScroll
+  executeDeleteScroll,
+  executeAddScroll,
+  fullName
 } from "./helpers.js";
-
+//import { fullName } from './add.js';
 const root = document.getElementById("root");
 root.innerHTML = "<div> Loading...</div>";
 
-window.addEventListener("click", function(e) {
+window.addEventListener("click", function (e) {
   if (e.target.href !== undefined) {
     chrome.tabs.create({ url: e.target.href });
     chrome.storage.local.set({ "scroll-mark-shortcut-tip": true });
@@ -45,18 +47,50 @@ chrome.tabs.query({ active: true, currentWindow: true }, tabs => {
       <button class="btn orange" style="width:100%;margin-right:10px" id="saveScroll">Update</button>
       <button class="btn red" style="width:100%;" id="deleteScroll">Delete</button>
       </div>
-      <div>
-      `;
+      <div id="addScroll"><p style="font-size:16px; cursor:pointer; color:white">Add More scrolls</p></div>
+      <div id="getId">
+          ${Object.keys(scrollMarkData[url]).map((v, i) => {
+          return `<p id="${i}" style="font-size: 12px;color:white;cursor:pointer">${v}</p>`
+        }).join('')}
+      </div>
+      <div>`
+
+
+
+      let addScroll = document.getElementById("addScroll");
+      addScroll.onclick = function (element) {
+        const full = fullName();
+
+        executeAddScroll(tabs[0].id)
+
+      }
+
+      var df = document.getElementById("getId")
+      df.addEventListener('click', function (e) {
+        e.target.style.color = 'blue';
+        //alert(e.target.innerHTML)
+
+        //.addEventListener('click', function (e) {
+        //alert(e.target.innerHTML)
+
+
+        chrome.storage.local.set({
+          "get-multiple-scroll": e.target.innerHTML
+        })
+      });
+
+
+
       let deleteScroll = document.getElementById("deleteScroll");
 
-      deleteScroll.onclick = function(element) {
+      deleteScroll.onclick = function (element) {
         executeDeleteScroll(tabs[0].id);
         window.close();
       };
 
       let getScroll = document.getElementById("getScroll");
 
-      getScroll.onclick = function(element) {
+      getScroll.onclick = function (element) {
         executeGetScroll(tabs[0].id);
         window.close();
       };
@@ -70,7 +104,7 @@ chrome.tabs.query({ active: true, currentWindow: true }, tabs => {
     }
     let saveScroll = document.getElementById("saveScroll");
 
-    saveScroll.onclick = function(element) {
+    saveScroll.onclick = function (element) {
       executeSaveScroll(tabs[0].id);
       window.close();
     };

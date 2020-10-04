@@ -2,6 +2,7 @@ import {
   executeSaveScroll,
   executeGetScroll,
   executeDeleteScroll,
+  executeAddScroll
 } from "./helpers.js";
 
 function getUrlWithoutHash(url) {
@@ -83,6 +84,9 @@ chrome.commands.onCommand.addListener(function (command) {
       executeDeleteScroll(currentTabId);
     } else if (command === "fetch-scroll") {
       executeGetScroll(currentTabId);
+    }
+    else if (command === "add-scroll") {
+      executeAddScroll(currentTabId, scrollId);
     }
   });
 });

@@ -53,6 +53,13 @@
                 "mac": "Shift+Command+G"
             },
             "description": "Fetch scroll"
+        },
+        "add-scroll": {
+            "suggested_key": {
+                "default": "Shift+Ctrl+A",
+                "mac": "Shift+Command+A"
+            },
+            "description": "Add scroll"
         }
     },
     "manifest_version": 2
