@@ -1,4 +1,8 @@
-# Scrroll In
+# Scrroll In <img src = "https://github.com/devfolioco/scrroll-in/blob/master/images/icon-32.png?raw=true">
+<p align = "center">
+<img src = "https://forthebadge.com/images/badges/uses-html.svg"> <img src = "https://forthebadge.com/images/badges/uses-css.svg"> <img src = "https://forthebadge.com/images/badges/made-with-javascript.svg"> <br> <img src = "https://forthebadge.com/images/badges/built-with-love.svg">
+
+
 [![All Contributors](https://img.shields.io/badge/all_contributors-11-orange.svg?style=flat-square)](#contributors)
 
 Never forget where you left a page.
@@ -13,7 +17,7 @@ Never forget where you left a page.
 
 > Contribute to this project during hacktoberfest and get exclusive limited edition Devfolio schwag if your pull requests gets merged. [Read more](https://devfolio.co/blog/hacktoberfest-2019-devfolio/)
 
-## Motivation
+## Motivation 💡
 
 You must have been in a situation wherein you are reading a long article, but you don't have enough time to finish it, so you close the tab, and the next time you open the article again, you have no idea where you left it.
 
@@ -21,7 +25,7 @@ So this extension lets you save the scroll position of the webpage, so you can c
 
 I know there are a few extensions that already serve this purpose, but most of them either didn't work correctly or lacked the features that I needed, so I ended up creating my own.
 
-## How it works?
+## How it works? 🤔
 
 Under the hood, this extension uses the [chrome localStorage API](https://developer.mozilla.org/en/DOM/Storage#localStorage) to store the scroll positions for different webpages. I avoided using sync storage due to its storage limitations ([read more](https://developer.chrome.com/apps/storage)). This extension creates an object which stores the URL as keys and the scroll position as values.
 
@@ -31,7 +35,18 @@ The `background.js` handles switching icon color whenever a tab is changed, or t
 
 The popup sheet is also handled by `popup.js` by dynamically changing the UI following the availability of the URL in the localStorage object.
 
-## Development
+## Features 🚀
+
+- You can **save** the scroll position of the page and then revisit the page at any time to continue where you left. 
+- Also, extension allows you to save **multiple scrolls** from the page. 
+- You can **fetch** the last saved scroll.
+- If you dont want a scroll you can **delete** it.
+- Extension allows you to see all the saved scrolls arranged in the newly first order where you can **delete** any specific scroll or **clear all** the scrolls at once.
+- You can use **update** the scroll which will update the last saved scroll with the current one.
+- You can add customizable keyboard shortcuts to **save**, **fetch** or **delete** scrolls without having to open the extension popup.
+- The extension **auto fetches** the last saved scroll position on page load, if page has any saved scroll.
+
+## Development 💻
 
 To run the extension locally follow these steps:
 
@@ -40,9 +55,9 @@ To run the extension locally follow these steps:
 - Now you can go ahead and modify `popup.js` or `popup.html`. Changes would directly be visible in the extension.
 - If you change something in `background.js` or `manifest.json` then you will need to reload the extension.
 
-## Contributing
+## Contributing 🌏
 
-All you need to know for contributing to this project is basic JavaScript, HTML, and CSS.
+All you need to know for contributing to this project is basic **JavaScript**, **HTML**, and **CSS**.
 
 You can visit the issues page to find some relevant issues to contribute to or feel free to open a new issue for something that you think can be improved.
 
