@@ -47,7 +47,7 @@
           div.innerHTML =
             "<a href=" +
             url +
-            ">" +
+            " target='_blank'>" +
             title +
             "</a> " +
             "<div class='perc'>" +
@@ -58,7 +58,7 @@
           div.innerHTML =
             "<a href=" +
             url +
-            ">" +
+            " target='_blank'>" +
             title +
             "</a> " +
             "<div class='perc'>" +
