@@ -87,6 +87,7 @@ Thanks goes to these wonderful people ([emoji key](https://allcontributors.org/d
     <td align="center"><a href="http://www.gaberosedesign.com"><img src="https://avatars3.githubusercontent.com/u/7225212?v=4" width="100px;" alt=""/><br /><sub><b>Gabe</b></sub></a><br /><a href="https://github.com/devfolioco/scrroll-in/commits?author=roseg43" title="Code">💻</a></td>
     <td align="center"><a href="https://github.com/Alucard17"><img src="https://avatars1.githubusercontent.com/u/26205172?v=4" width="100px;" alt=""/><br /><sub><b>alucard17</b></sub></a><br /><a href="https://github.com/devfolioco/scrroll-in/commits?author=alucard17" title="Code">💻</a></td>
     <td align="center"><a href="https://www.linkedin.com/in/sharvari-raut-a62a99171"><img src="https://avatars1.githubusercontent.com/u/57194200?v=4" width="100px;" alt=""/><br /><sub><b>Sharvari Raut</b></sub></a><br /><a href="https://github.com/devfolioco/scrroll-in/commits?author=sharur7" title="Documentation">📖</a></td>
+    <td align="center"><a href="https://github.com/abstrekt"><img src="https://avatars0.githubusercontent.com/u/42478217?v=4" width="100px;" alt=""/><br /><sub><b>Samiran Konwar</b></sub></a><br /><a href="https://github.com/devfolioco/scrroll-in/commits?author=abstrekt" title="Code">💻</a></td>
   </tr>
 </table>
 
