@@ -19,7 +19,3 @@ export const executeGetScroll = tabId => {
 export const executeAddScroll = tabId => {
   executeScript(tabId, "add.js")
 }
-
-export const fullName = () => {
-  return 'adcsdc';
-}
