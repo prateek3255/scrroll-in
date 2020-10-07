@@ -2,10 +2,8 @@ import {
   executeSaveScroll,
   executeGetScroll,
   executeDeleteScroll,
-  executeAddScroll,
-  fullName
+  executeAddScroll
 } from "./helpers.js";
-//import { fullName } from './add.js';
 const root = document.getElementById("root");
 root.innerHTML = "<div> Loading...</div>";
 
@@ -59,7 +57,7 @@ chrome.tabs.query({ active: true, currentWindow: true }, tabs => {
 
       let addScroll = document.getElementById("addScroll");
       addScroll.onclick = function (element) {
-        const full = fullName();
+    
 
         executeAddScroll(tabs[0].id)
 
