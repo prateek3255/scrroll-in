@@ -8,11 +8,11 @@
     const heading = document.getElementById("saved-scroll-heading");
     if (Object.entries(urls).length === 0 && urls.constructor === Object) {
       heading.innerHTML =
-        "<h1 id='saved-scroll-heading'>You don't have any saved scrrolls yet!</h1>";
+        "<h1 id='saved-scroll-heading'>You don't have any saved scrolls yet!</h1>";
       heading.parentElement.style.height = "100vh";
     } else {
       heading.innerHTML =
-        "<h1 id='saved-scroll-heading'>All Saved Scrrolls</h1>";
+        "<h1 id='saved-scroll-heading'>All Saved Scrolls</h1>";
 
       const btn = document.createElement("div");
       btn.innerHTML = `
@@ -104,7 +104,7 @@
     const deleteScrollElement = function(element) {
       Swal.fire({
         title: "Are you sure?",
-        text: "This scrroll would be removed from your collection.",
+        text: "This scroll would be removed from your collection.",
         type: "warning",
         showCancelButton: true,
         confirmButtonColor: "#3085d6",
@@ -125,7 +125,7 @@
 
     const deleteAllScrollElement = function(element) {
       Swal.fire({
-        title: "Remove all Scrrolls?",
+        title: "Remove all Scrolls?",
         text: "This action is not reversible!",
         type: "warning",
         showCancelButton: true,
