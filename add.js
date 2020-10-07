@@ -21,6 +21,3 @@
 
 
 }
-////export const fullName = () => {
- //   return 'adcsdc';
-//}
