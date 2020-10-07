@@ -86,7 +86,7 @@ chrome.commands.onCommand.addListener(function (command) {
       executeGetScroll(currentTabId);
     }
     else if (command === "add-scroll") {
-      executeAddScroll(currentTabId, scrollId);
+      executeAddScroll(currentTabId);
     }
   });
 });
