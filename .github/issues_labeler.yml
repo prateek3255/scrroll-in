@@ -1,11 +1,5 @@
-APIs:
-  - "(api|APIs|apis|API|APIS)"
-BASH:
-  - "(Bash|bash|BASH)"
 javascript:
   - "(JavaScript|JAVASCRIPT|Javascript|javascript|JS|js|Js)"
-python:
-  - "(Python|PYTHON|python)"
 enhancement:
   - "(enhancement|Enhancement|enhance)"
 difficulty-easy:
