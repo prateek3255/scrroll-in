@@ -1,7 +1,7 @@
 {
   const list = document.getElementById("saved-urls");
 
-  chrome.storage.local.get("scroll-mark", function(result) {
+  chrome.storage.local.get("scroll-mark", function (result) {
     const urls = result["scroll-mark"];
     let delay = 0.3;
     // if no saved scrolls are available
@@ -71,13 +71,17 @@
     }
 
     // function to open dropdown menu
-    const showDropdown = function(e) {
+    const showDropdown = function (e) {
+      const dropdowns = document.getElementsByClassName("dropdown-content");
+      for (let i = 0; i < dropdowns.length; i++) {
+        dropdowns[i].classList.remove("show_dropdown");
+      }
       const drop_id = this.id.substring(0, this.id.length - 1);
       document.getElementById(drop_id).classList.toggle("show_dropdown");
     };
 
     // function to close dropdown menu
-    const closeDropdown = function(e) {
+    const closeDropdown = function (e) {
       const dropdowns = document.getElementsByClassName("dropdown-content");
       if (e.target.className !== "dropdown") {
         for (let i = 0; i < dropdowns.length; i++) {
@@ -101,7 +105,7 @@
 
     // TODO: use the delete.js script instead
     // but that would require some modifications to the original delete functionality
-    const deleteScrollElement = function(element) {
+    const deleteScrollElement = function (element) {
       Swal.fire({
         title: "Are you sure?",
         text: "This scrroll would be removed from your collection.",
@@ -123,7 +127,7 @@
       });
     };
 
-    const deleteAllScrollElement = function(element) {
+    const deleteAllScrollElement = function (element) {
       Swal.fire({
         title: "Remove all Scrrolls?",
         text: "This action is not reversible!",
@@ -134,7 +138,7 @@
         confirmButtonText: "Delete All"
       }).then(result => {
         if (result.value) {
-          chrome.storage.local.set({ "scroll-mark": {} }, data => {});
+          chrome.storage.local.set({ "scroll-mark": {} }, data => { });
           window.location.reload();
         }
       });
