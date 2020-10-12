@@ -91,6 +91,7 @@ Thanks goes to these wonderful people ([emoji key](https://allcontributors.org/d
   </tr>
   <tr>
     <td align="center"><a href="https://github.com/Parshwa52"><img src="https://avatars2.githubusercontent.com/u/48866201?v=4" width="100px;" alt=""/><br /><sub><b>Parshwa52</b></sub></a><br /><a href="https://github.com/devfolioco/scrroll-in/commits?author=Parshwa52" title="Code">💻</a></td>
+    <td align="center"><a href="https://github.com/bislara"><img src="https://avatars1.githubusercontent.com/u/35392585?v=4" width="100px;" alt=""/><br /><sub><b>Biswajeet Sahoo</b></sub></a><br /><a href="#tool-bislara" title="Tools">🔧</a></td>
   </tr>
 </table>
 
