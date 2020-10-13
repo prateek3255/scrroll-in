@@ -116,6 +116,42 @@
       "contributions": [
         "code"
       ]
+    },
+    {
+      "login": "sharur7",
+      "name": "Sharvari Raut",
+      "avatar_url": "https://avatars1.githubusercontent.com/u/57194200?v=4",
+      "profile": "https://www.linkedin.com/in/sharvari-raut-a62a99171",
+      "contributions": [
+        "doc"
+      ]
+    },
+    {
+      "login": "abstrekt",
+      "name": "Samiran Konwar",
+      "avatar_url": "https://avatars0.githubusercontent.com/u/42478217?v=4",
+      "profile": "https://github.com/abstrekt",
+      "contributions": [
+        "code"
+      ]
+    },
+    {
+      "login": "Parshwa52",
+      "name": "Parshwa52",
+      "avatar_url": "https://avatars2.githubusercontent.com/u/48866201?v=4",
+      "profile": "https://github.com/Parshwa52",
+      "contributions": [
+        "code"
+      ]
+    },
+    {
+      "login": "bislara",
+      "name": "Biswajeet Sahoo",
+      "avatar_url": "https://avatars1.githubusercontent.com/u/35392585?v=4",
+      "profile": "https://github.com/bislara",
+      "contributions": [
+        "tool"
+      ]
     }
   ],
   "contributorsPerLine": 7,
