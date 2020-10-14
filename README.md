@@ -45,7 +45,7 @@ The popup sheet is also handled by `popup.js` by dynamically changing the UI fol
 - You can use **update** the scroll which will update the last saved scroll with the current one.
 - You can add customizable keyboard shortcuts to **save**, **fetch** or **delete** scrolls without having to open the extension popup.
 - The extension **auto fetches** the last saved scroll position on page load, if page has any saved scroll.
-isn't it sounds great😍
+isn't it sounds great?😍
 
 ## Development 💻
 
@@ -100,4 +100,4 @@ Thanks goes to these wonderful people ([emoji key](https://allcontributors.org/d
 <!-- prettier-ignore-end -->
 <!-- ALL-CONTRIBUTORS-LIST:END -->
 
-This project follows the [all-contributors](https://github.com/all-contributors/all-contributors) specification. Contributions of any kind are welcome! Let's grow together!
+This project follows the [all-contributors](https://github.com/all-contributors/all-contributors) specification. Contributions of any kind are welcome. Let's grow together!
