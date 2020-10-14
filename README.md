@@ -25,7 +25,7 @@ So this extension lets you save the scroll position of the webpage, so you can c
 
 I know there are a few extensions that already serve this purpose, but most of them either didn't work correctly or lacked the features that I needed, so I ended up creating my own.
 
-## How it works? 🤔
+## How it works? ⏯️
 
 Under the hood, this extension uses the [chrome localStorage API](https://developer.mozilla.org/en/DOM/Storage#localStorage) to store the scroll positions for different webpages. I avoided using sync storage due to its storage limitations ([read more](https://developer.chrome.com/apps/storage)). This extension creates an object which stores the URL as keys and the scroll position as values.
 
@@ -100,3 +100,5 @@ Thanks goes to these wonderful people ([emoji key](https://allcontributors.org/d
 <!-- ALL-CONTRIBUTORS-LIST:END -->
 
 This project follows the [all-contributors](https://github.com/all-contributors/all-contributors) specification. Contributions of any kind are welcome!
+
+THANK YOU!
