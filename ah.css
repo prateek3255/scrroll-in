@@ -1,0 +1,28 @@
+p{
+	display: block;
+	font-family: "Helventica New";
+	font-weight: bold;
+	color: white;
+	font-size: 27px;
+	font-style: 15px;
+	font-weight: 500;
+	padding-right: 100px;
+	padding-left: 100px;
+	text-align:center;
+	display: inline-block;
+}
+
+.image-content{
+	background-image: url("background-image.jpg");
+	height: 800px;
+	font-size: 31px;
+	width: 100%;
+	text-align:center;
+}
+
+.quote{
+	color: white;
+	font-family: "Helventica New";
+	position: relative;
+	top: 10%;
+}
