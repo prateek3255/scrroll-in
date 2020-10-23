@@ -9,6 +9,32 @@
   src: url("Roboto/Roboto-Bold.ttf") format("truetype");
 }
 
+input[type=text] {
+  padding: 10px;
+  font-size: 17px;
+  border: 1px solid grey;
+  float: left;
+  width: 80%;
+  background: #f1f1f1;
+}
+
+ button {
+  float: left;
+  width: 20%;
+  padding: 10px;
+  background: #2196F3;
+  color: white;
+  font-size: 17px;
+  border: 1px solid grey;
+  border-left: none;
+  cursor: pointer;
+}
+
+button {
+  background: #0b7dda;
+}
+
+
 body {
   background: url("./images/bg.jpg");
   /* background: #242a36; */
