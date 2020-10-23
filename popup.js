@@ -7,7 +7,7 @@ import {
 const root = document.getElementById("root");
 root.innerHTML = "<div> Loading...</div>";
 
-window.addEventListener("click", function(e) {
+window.addEventListener("click", function (e) {
   if (e.target.href !== undefined) {
     chrome.tabs.create({ url: e.target.href });
     chrome.storage.local.set({ "scroll-mark-shortcut-tip": true });
@@ -49,14 +49,14 @@ chrome.tabs.query({ active: true, currentWindow: true }, tabs => {
       `;
       let deleteScroll = document.getElementById("deleteScroll");
 
-      deleteScroll.onclick = function(element) {
+      deleteScroll.onclick = function (element) {
         executeDeleteScroll(tabs[0].id);
         window.close();
       };
 
       let getScroll = document.getElementById("getScroll");
 
-      getScroll.onclick = function(element) {
+      getScroll.onclick = function (element) {
         executeGetScroll(tabs[0].id);
         window.close();
       };
@@ -70,7 +70,7 @@ chrome.tabs.query({ active: true, currentWindow: true }, tabs => {
     }
     let saveScroll = document.getElementById("saveScroll");
 
-    saveScroll.onclick = function(element) {
+    saveScroll.onclick = function (element) {
       executeSaveScroll(tabs[0].id);
       window.close();
     };
