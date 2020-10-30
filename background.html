@@ -1,1 +1,17 @@
 <script type="module" src="background.js"></script>
+<script type="text/javascript">
+      let bg=document.getElementById("bg");
+      let ev1=document.getElementById("event1");
+      let ev2=document.getElementById("event2");
+      let ev3=document.getElementById("event3");
+      let text=document.getElementById("event4");
+
+
+      window.addEventListener('scroll',function(){
+        var value=window.scrollY;
+        bg.style.top=value*0.5+"px";
+        ev1.style.left= -value*1+"px";
+        ev2.style.top=-value*0.15+"px";
+        ev3.style.top=-value*0.1+"px";
+        text.style.top=value*1+"px";
+      })
