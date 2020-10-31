@@ -33,7 +33,7 @@ The functions for adding or updating, reading and deleting are in the files `sav
 
 The `background.js` handles switching icon color whenever a tab is changed, or the URL is updated.
 
-The popup sheet is also handled by `popup.js` by dynamically changing the UI following the availability of the URL in the localStorage object.
+The popup sheet is also handled by `popup.js` by dynamically changing the UI following the availability of the URL in the local storage object.
 
 ## Features 🚀
 
