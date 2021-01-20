@@ -122,3 +122,8 @@ h2 {
 a {
   color: white;
 }
+
+.about {
+  float: right;
+  margin-right: -12px;
+}
