@@ -17,7 +17,7 @@
       const btn = document.createElement("div");
       btn.innerHTML = `
       <div id="delete-button">
-        <div class="btn del" id="delete-all"> <img src='./images/bin.png'> </div>
+        <div class="btn del" id="delete-all"> <img src='../images/bin.png'> </div>
       </div>
       `;
       document.body.appendChild(btn);
@@ -113,8 +113,8 @@
         showCancelButton: true,
         confirmButtonColor: "#3085d6",
         cancelButtonColor: "#d33",
-        confirmButtonText: "Yes, delete it!"
-      }).then(result => {
+        confirmButtonText: "Yes, delete it!",
+      }).then((result) => {
         if (result.value) {
           const { [this.id]: _, ...restData } = urls;
           chrome.storage.local.set({ "scroll-mark": restData }, () => {
@@ -135,10 +135,10 @@
         showCancelButton: true,
         confirmButtonColor: "#3085d6",
         cancelButtonColor: "#d33",
-        confirmButtonText: "Delete All"
-      }).then(result => {
+        confirmButtonText: "Delete All",
+      }).then((result) => {
         if (result.value) {
-          chrome.storage.local.set({ "scroll-mark": {} }, data => { });
+          chrome.storage.local.set({ "scroll-mark": {} }, (data) => {});
           window.location.reload();
         }
       });

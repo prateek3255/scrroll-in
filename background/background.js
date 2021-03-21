@@ -2,7 +2,7 @@ import {
   executeSaveScroll,
   executeGetScroll,
   executeDeleteScroll,
-} from "./helpers.js";
+} from "../contentScripts/index.js";
 
 function getUrlWithoutHash(url) {
   return url.split("?")[0];
@@ -90,11 +90,11 @@ chrome.commands.onCommand.addListener(function (command) {
 const setActiveIcon = () => {
   chrome.browserAction.setIcon({
     path: {
-      "16": "images/icon-16.png",
-      "32": "images/icon-32.png",
-      "48": "images/icon-48.png",
-      "128": "images/icon-128.png",
-      "256": "images/icon-256.png",
+      16: "../images/icon-16.png",
+      32: "../images/icon-32.png",
+      48: "../images/icon-48.png",
+      128: "../images/icon-128.png",
+      256: "../images/icon-256.png",
     },
   });
 };
@@ -102,11 +102,11 @@ const setActiveIcon = () => {
 const setInactiveIcon = () => {
   chrome.browserAction.setIcon({
     path: {
-      "16": "images/icon-16-inactive.png",
-      "32": "images/icon-32-inactive.png",
-      "48": "images/icon-48-inactive.png",
-      "128": "images/icon-128-inactive.png",
-      "256": "images/icon-256-inactive.png",
+      16: "../images/icon-16-inactive.png",
+      32: "../images/icon-32-inactive.png",
+      48: "../images/icon-48-inactive.png",
+      128: "../images/icon-128-inactive.png",
+      256: "../images/icon-256-inactive.png",
     },
   });
 };

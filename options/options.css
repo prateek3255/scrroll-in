@@ -6,11 +6,11 @@
 
 @font-face {
   font-family: "Roboto";
-  src: url("Roboto/Roboto-Bold.ttf") format("truetype");
+  src: url("../Roboto/Roboto-Bold.ttf") format("truetype");
 }
 
 body {
-  background: url("./images/bg.jpg");
+  background: url("../images/bg.jpg");
   /* background: #242a36; */
   min-height: 100vh;
   color: #fff;
@@ -242,7 +242,7 @@ h1 {
   color: #9e0bad;
   font-weight: bold;
   text-decoration: none;
-  transition: transform .2s;
+  transition: transform 0.2s;
 }
 #saved-urls > div a:hover {
   transform: scale(1.05);
