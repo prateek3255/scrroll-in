@@ -2,7 +2,7 @@
     "name": "scrroll-in",
     "version": "1.0.0",
     "scripts": {
-        "build": "rollup -c",
+        "build": "rollup -c && yarn build:popup",
         "build:popup": "cd popup && rollup -c",
         "dev": "concurrently \"rollup -c -w\" \"cd popup && rollup -c -w\""
     },
