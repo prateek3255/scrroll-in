@@ -27,7 +27,7 @@ const compileJSFile = (input, output) => ({
  *   get.js
  *   delete.js
  *  images/
- *  (The options folder would be served via svelte)
+ *  (The options folder would be served via svelte later)
  *  options/
  *   options.html
  *   options.js
@@ -38,7 +38,7 @@ const compileJSFile = (input, output) => ({
  */
 
 export default [
-  compileJSFile("background/background.js", "build/background/background.js"),
+  compileJSFile("background.js", "build/background.js"),
   compileJSFile("contentScripts/save.js", "build/contentScripts/save.js"),
   compileJSFile("contentScripts/get.js", "build/contentScripts/get.js"),
   compileJSFile("contentScripts/delete.js", "build/contentScripts/delete.js"),
@@ -54,10 +54,6 @@ export default [
       uglify(),
       copy({
         targets: [
-          {
-            src: ["background/background.html"],
-            dest: ["build/background"],
-          },
           // The options page is supposed to be rewritten with svelte
           {
             src: ["options/index.html", "options/options.css"],

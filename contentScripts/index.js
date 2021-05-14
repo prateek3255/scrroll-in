@@ -1,6 +1,7 @@
 export const executeScript = (tabId, fileName) => {
-  chrome.tabs.executeScript(tabId, {
-    file: fileName,
+  chrome.scripting.executeScript({
+    target: { tabId },
+    files: [fileName],
   });
 };
 

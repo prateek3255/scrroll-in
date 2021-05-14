@@ -2,7 +2,7 @@ import {
   executeSaveScroll,
   executeGetScroll,
   executeDeleteScroll,
-} from "../contentScripts/index.js";
+} from "./contentScripts/index.js";
 
 function getUrlWithoutHash(url) {
   return url.split("?")[0];
@@ -88,7 +88,7 @@ chrome.commands.onCommand.addListener(function (command) {
 });
 
 const setActiveIcon = () => {
-  chrome.browserAction.setIcon({
+  chrome.action.setIcon({
     path: {
       16: "../images/icon-16.png",
       32: "../images/icon-32.png",
@@ -100,7 +100,7 @@ const setActiveIcon = () => {
 };
 
 const setInactiveIcon = () => {
-  chrome.browserAction.setIcon({
+  chrome.action.setIcon({
     path: {
       16: "../images/icon-16-inactive.png",
       32: "../images/icon-32-inactive.png",
