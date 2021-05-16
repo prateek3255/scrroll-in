@@ -9,11 +9,19 @@
     "main": "index.js",
     "repository": "https://github.com/devfolioco/scrroll-in.git",
     "license": "MIT",
-    "dependencies": {},
+    "dependencies": {
+        "uuid": "8.3.2"
+    },
     "devDependencies": {
         "@rollup/plugin-commonjs": "^17.0.0",
         "@rollup/plugin-node-resolve": "^11.0.0",
         "concurrently": "^6.0.0",
+        "eslint": "^7.26.0",
+        "eslint-config-airbnb-base": "^14.2.1",
+        "eslint-config-prettier": "^8.3.0",
+        "eslint-plugin-import": "^2.23.2",
+        "eslint-plugin-prettier": "^3.4.0",
+        "prettier": "^2.3.0",
         "rollup": "^2.3.4",
         "rollup-plugin-copy": "^3.4.0",
         "rollup-plugin-css-only": "^3.1.0",

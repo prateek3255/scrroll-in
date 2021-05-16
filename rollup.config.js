@@ -22,10 +22,6 @@ const compileJSFile = (input, output) => ({
  *  background/
  *   background.html
  *   background.js
- *  contentScripts/
- *   save.js
- *   get.js
- *   delete.js
  *  images/
  *  (The options folder would be served via svelte later)
  *  options/
@@ -39,9 +35,6 @@ const compileJSFile = (input, output) => ({
 
 export default [
   compileJSFile("background.js", "build/background.js"),
-  compileJSFile("contentScripts/save.js", "build/contentScripts/save.js"),
-  compileJSFile("contentScripts/get.js", "build/contentScripts/get.js"),
-  compileJSFile("contentScripts/delete.js", "build/contentScripts/delete.js"),
   {
     input: "options/options.js",
     output: {
