@@ -4,13 +4,18 @@
     executeSaveScroll,
     executeGetScroll,
     executeDeleteScroll,
-  } from "../contentScripts/index.js";
+    executeUpdateScroll
+  } from "../contentScripts";
 
   let isShortcutVisible = false;
 
   let currentTabID = null;
 
   let doesCurrentTabHasSavedScroll = false;
+
+  let selectedScrollIndex = 0;
+
+  let savedScrolls = [];
 
   $: message = doesCurrentTabHasSavedScroll
     ? "Continue from where you last left or update/delete scrroll for this page."
@@ -44,7 +49,30 @@
       chrome.storage.local.get("scroll-mark", (data) => {
         const scrollMarkData = data["scroll-mark"];
         doesCurrentTabHasSavedScroll =
-          scrollMarkData && scrollMarkData.hasOwnProperty(url);
+          scrollMarkData && scrollMarkData[url] !== undefined;
+
+        if (doesCurrentTabHasSavedScroll) {
+          if (Array.isArray(scrollMarkData[url])) {
+            savedScrolls = scrollMarkData[url];
+            // Update the current index to the last saved scrroll for better UX
+            chrome.storage.local.get("current-scroll-id", lastSavedScroll => {
+              if (lastSavedScroll) {
+                const lastSavedScrollID = lastSavedScroll["current-scroll-id"];
+                const index = savedScrolls.findIndex(item => item.uuid === lastSavedScrollID);
+                selectedScrollIndex = index >= 0 ? index : 0;
+              }
+            })
+          } else {
+            // Fallback for handling the data structure of previous version
+            savedScrolls = [
+              {
+                ...scrollMarkData[url],
+                uuid: null,
+                scrollName: "Untitled Scrroll",
+              },
+            ];
+          }
+        }
       });
     });
 
@@ -55,13 +83,17 @@
     window.removeEventListener("click", handleLinkClick);
   });
 
+  function getCurrentScrollID() {
+    return savedScrolls[selectedScrollIndex].uuid;
+  }
+
   function deleteScroll() {
-    executeDeleteScroll(currentTabID);
+    executeDeleteScroll(currentTabID, getCurrentScrollID());
     window.close();
   }
 
   function getScroll() {
-    executeGetScroll(currentTabID);
+    executeGetScroll(currentTabID, getCurrentScrollID());
     window.close();
   }
 
@@ -69,6 +101,12 @@
     executeSaveScroll(currentTabID);
     window.close();
   }
+
+  function updateScroll() {
+    executeUpdateScroll(currentTabID, getCurrentScrollID());
+    window.close();
+  }
+
 </script>
 
 <div class="controls">
@@ -108,7 +146,7 @@
         </div>
         <div style="display:flex; width:285 px; margin-top:-5px">
           <button
-            on:click={saveScroll}
+            on:click={updateScroll}
             class="btn orange"
             style="width:100%;margin-right:10px">Update</button
           >
@@ -124,6 +162,39 @@
     {/if}
   </div>
 </div>
+
+{#if doesCurrentTabHasSavedScroll}
+  <div>
+    <h4 class="save-scroll-heading">Your saved scrrolls -</h4>
+
+    {#each savedScrolls as savedScroll, i (savedScroll.uuid)}
+      <div class="scroll-item {selectedScrollIndex === i ? "scroll-item-blue" : ""}" on:click="{() => selectedScrollIndex = i}">
+        <img
+          src={i === selectedScrollIndex
+            ? "../images/map-pin-filled.svg"
+            : "../images/map-pin.svg"}
+          alt={savedScroll.scrollName}
+          width="24"
+          height="24"
+        />
+        <div style="margin-left: 8px;">{savedScroll.scrollName}</div>
+      </div>
+    {/each}
+
+    <hr style="margin-bottom: 16px;"/>
+
+    <div class="scroll-item" on:click={saveScroll} >
+      <img
+          src="../images/plus-circle.svg"
+          alt="Add more scrrolls"
+          width="24"
+          height="24"
+        />
+        <div style="margin-left: 8px;">Add more scrrolls</div>
+    </div>
+
+  </div>
+{/if}
 
 {#if isShortcutVisible}
   <div id="tip">
@@ -227,4 +298,28 @@
   a {
     color: white;
   }
+
+  .save-scroll-heading {
+    font-family: "Roboto", sans-serif;
+    font-weight: black;
+    font-size: 18px;
+    color: white;
+    margin-bottom: 16px;
+  }
+
+  .scroll-item {
+    display: flex;
+    margin-bottom: 16px;
+    font-family: "Roboto", sans-serif;
+    font-weight: bold;
+    font-size: 18px;
+    color: white;
+    align-items: center;
+    cursor: pointer;
+  }
+
+  .scroll-item-blue {
+    color: #4E80FF;
+  }
+
 </style>

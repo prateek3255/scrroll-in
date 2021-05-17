@@ -1,15 +1,15 @@
-import commonjs from "@rollup/plugin-commonjs";
-import resolve from "@rollup/plugin-node-resolve";
-import { uglify } from "rollup-plugin-uglify";
-import copy from "rollup-plugin-copy";
+import commonjs from '@rollup/plugin-commonjs';
+import resolve from '@rollup/plugin-node-resolve';
+import { uglify } from 'rollup-plugin-uglify';
+import copy from 'rollup-plugin-copy';
 
 const compileJSFile = (input, output) => ({
-  input: input,
+  input,
   output: {
-    format: "iife",
+    format: 'iife',
     file: output,
   },
-  plugins: [resolve(), commonjs(), uglify()],
+  plugins: [resolve(), commonjs()],
   watch: {
     clearScreen: false,
   },
@@ -22,6 +22,11 @@ const compileJSFile = (input, output) => ({
  *  background/
  *   background.html
  *   background.js
+ * contentScripts/
+ *   save.js
+ *   update.js
+ *   delete.js
+ *   get.js
  *  images/
  *  (The options folder would be served via svelte later)
  *  options/
@@ -34,12 +39,16 @@ const compileJSFile = (input, output) => ({
  */
 
 export default [
-  compileJSFile("background.js", "build/background.js"),
+  compileJSFile('background.js', 'build/background.js'),
+  compileJSFile('contentScripts/save.js', 'build/contentScripts/save.js'),
+  compileJSFile('contentScripts/delete.js', 'build/contentScripts/delete.js'),
+  compileJSFile('contentScripts/update.js', 'build/contentScripts/update.js'),
+  compileJSFile('contentScripts/get.js', 'build/contentScripts/get.js'),
   {
-    input: "options/options.js",
+    input: 'options/options.js',
     output: {
-      format: "iife",
-      file: "build/options/options.js",
+      format: 'iife',
+      file: 'build/options/options.js',
     },
     plugins: [
       resolve(),
@@ -49,12 +58,12 @@ export default [
         targets: [
           // The options page is supposed to be rewritten with svelte
           {
-            src: ["options/index.html", "options/options.css"],
-            dest: ["build/options"],
+            src: ['options/index.html', 'options/options.css'],
+            dest: ['build/options'],
           },
           {
-            src: ["images", "manifest.json", "utils", "Roboto"],
-            dest: ["build"],
+            src: ['images', 'manifest.json', 'utils', 'Roboto'],
+            dest: ['build'],
           },
         ],
         verbose: true,
