@@ -1,4 +1,4 @@
-import { executeSaveScroll, executeGetScroll, executeDeleteScroll } from './contentScripts';
+import { executeSaveScroll, executeGetScroll, getLatestScrollItem } from './contentScripts';
 
 function getUrlWithoutHash(url) {
   return url.split('?')[0];
@@ -76,7 +76,9 @@ chrome.tabs.onUpdated.addListener(tabId => {
         if (!scrollMarkData.hasOwnProperty(url)) {
           setInactiveIcon();
         } else {
-          executeGetScroll(tabId);
+          getLatestScrollItem(url).then(item => {
+            executeGetScroll(tabId, item.uuid);
+          });
           setActiveIcon();
         }
       });
@@ -95,12 +97,18 @@ chrome.runtime.onMessage.addListener(request => {
 chrome.commands.onCommand.addListener(command => {
   chrome.tabs.query({ active: true, currentWindow: true }, tabs => {
     const currentTabId = tabs[0].id;
-    if (command === 'save-or-update-scroll') {
+    if (command === 'save-scroll') {
       executeSaveScroll(currentTabId);
-    } else if (command === 'delete-scroll') {
-      executeDeleteScroll(currentTabId);
     } else if (command === 'fetch-scroll') {
-      executeGetScroll(currentTabId);
+      chrome.tabs.get(currentTabId, tab => {
+        const url = getUrlWithoutHash(tab.url);
+
+        getLatestScrollItem(url).then(item => {
+          if (item !== null) {
+            executeGetScroll(currentTabId, item.uuid);
+          }
+        });
+      });
     }
   });
 });

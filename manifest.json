@@ -35,26 +35,19 @@
         "256": "images/icon-256.png"
     },
     "commands": {
-        "save-or-update-scroll": {
+        "save-scroll": {
             "suggested_key": {
                 "default": "Shift+Ctrl+S",
                 "mac": "Shift+Command+S"
             },
-            "description": "Save or update scroll"
-        },
-        "delete-scroll": {
-            "suggested_key": {
-                "default": "Shift+Ctrl+D",
-                "mac": "Shift+Command+D"
-            },
-            "description": "Delete scroll"
+            "description": "Save scrroll"
         },
         "fetch-scroll": {
             "suggested_key": {
                 "default": "Shift+Ctrl+G",
                 "mac": "Shift+Command+G"
             },
-            "description": "Fetch scroll"
+            "description": "Fetch Latest scrroll"
         }
     },
     "manifest_version": 3

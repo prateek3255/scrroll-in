@@ -17,6 +17,25 @@ export const getItemFromStorage = name =>
     });
   });
 
+export const getLatestScrollItem = url =>
+  new Promise(resolve => {
+    getItemFromStorage('scroll-mark').then(data => {
+      const urlData = data['scroll-mark'][url];
+
+      if (Array.isArray(urlData) && urlData.length > 0) {
+        const itemWithMaximumOffset = urlData.reduce(
+          (prev, current) => (prev.offset > current.offset ? prev : current),
+          { offset: 0 }
+        );
+        resolve(itemWithMaximumOffset);
+      } else if (urlData && urlData.offset) {
+        resolve(urlData);
+      } else {
+        resolve(null);
+      }
+    });
+  });
+
 export const executeSaveScroll = tabId => {
   executeScript(tabId, 'contentScripts/save.js');
 };
