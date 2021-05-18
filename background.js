@@ -1,4 +1,4 @@
-import { executeSaveScroll, executeGetScroll, getLatestScrollItem } from './contentScripts';
+import { executeSaveScroll, executeGetScroll } from './contentScripts';
 
 function getUrlWithoutHash(url) {
   return url.split('?')[0];
@@ -57,10 +57,10 @@ chrome.tabs.onActivated.addListener(() => {
 
     chrome.storage.local.get('scroll-mark', data => {
       const scrollMarkData = data['scroll-mark'];
-      if (!scrollMarkData.hasOwnProperty(url)) {
-        setInactiveIcon();
-      } else {
+      if (scrollMarkData && scrollMarkData[url] !== undefined) {
         setActiveIcon();
+      } else {
+        setInactiveIcon();
       }
     });
   });
@@ -73,13 +73,11 @@ chrome.tabs.onUpdated.addListener(tabId => {
     if (url) {
       chrome.storage.local.get('scroll-mark', data => {
         const scrollMarkData = data['scroll-mark'];
-        if (!scrollMarkData.hasOwnProperty(url)) {
-          setInactiveIcon();
-        } else {
-          getLatestScrollItem(url).then(item => {
-            executeGetScroll(tabId, item.uuid);
-          });
+        if (scrollMarkData && scrollMarkData[url] !== undefined) {
+          executeGetScroll(tabId, null, true);
           setActiveIcon();
+        } else {
+          setInactiveIcon();
         }
       });
     }
@@ -102,10 +100,10 @@ chrome.commands.onCommand.addListener(command => {
     } else if (command === 'fetch-scroll') {
       chrome.tabs.get(currentTabId, tab => {
         const url = getUrlWithoutHash(tab.url);
-
-        getLatestScrollItem(url).then(item => {
-          if (item !== null) {
-            executeGetScroll(currentTabId, item.uuid);
+        chrome.storage.local.get('scroll-mark', data => {
+          const scrollMarkData = data['scroll-mark'];
+          if (scrollMarkData && scrollMarkData[url] !== undefined) {
+            executeGetScroll(currentTabId, null, true);
           }
         });
       });

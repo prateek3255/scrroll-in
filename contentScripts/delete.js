@@ -9,7 +9,9 @@ import { getURL, getItemFromStorage } from './index';
 
   let updatedURLData;
 
-  if (Array.isArray(urlData)) {
+  const shouldClearAll = (await getItemFromStorage('clear-all'))['clear-all'];
+
+  if (Array.isArray(urlData) && !shouldClearAll) {
     const currentScrollData = await getItemFromStorage('current-scroll-id');
     const id = currentScrollData['current-scroll-id'];
 
