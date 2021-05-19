@@ -1,19 +1,19 @@
-import svelte from "rollup-plugin-svelte";
-import commonjs from "@rollup/plugin-commonjs";
-import resolve from "@rollup/plugin-node-resolve";
-import livereload from "rollup-plugin-livereload";
-import { terser } from "rollup-plugin-terser";
-import css from "rollup-plugin-css-only";
-import copy from "rollup-plugin-copy";
+import svelte from 'rollup-plugin-svelte';
+import commonjs from '@rollup/plugin-commonjs';
+import resolve from '@rollup/plugin-node-resolve';
+import livereload from 'rollup-plugin-livereload';
+import { terser } from 'rollup-plugin-terser';
+import css from 'rollup-plugin-css-only';
+import copy from 'rollup-plugin-copy';
 
 const production = !process.env.ROLLUP_WATCH;
 
 export default {
-  input: "./main.js",
+  input: './main.js',
   output: {
-    format: "iife",
-    name: "app",
-    file: "../build/popup/bundle.js",
+    format: 'iife',
+    name: 'app',
+    file: '../build/popup/bundle.js',
   },
   plugins: [
     svelte({
@@ -24,7 +24,7 @@ export default {
     }),
     // we'll extract any component CSS out into
     // a separate file - better for performance
-    css({ output: "bundle.css" }),
+    css({ output: 'bundle.css' }),
 
     // If you have external dependencies installed from
     // npm, you'll most likely need these plugins. In
@@ -33,7 +33,7 @@ export default {
     // https://github.com/rollup/plugins/tree/master/packages/commonjs
     resolve({
       browser: true,
-      dedupe: ["svelte"],
+      dedupe: ['svelte'],
     }),
     commonjs(),
 
@@ -42,15 +42,15 @@ export default {
     copy({
       targets: [
         {
-          src: ["./index.html"],
-          dest: ["../build/popup"],
+          src: ['./index.html'],
+          dest: ['../build/popup'],
         },
       ],
     }),
 
     // Watch the `build` directory and refresh the
     // browser on changes when not in production
-    !production && livereload("build"),
+    !production && livereload('build'),
 
     // If we're building for production (npm run build
     // instead of npm run dev), minify

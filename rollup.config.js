@@ -3,13 +3,15 @@ import resolve from '@rollup/plugin-node-resolve';
 import { uglify } from 'rollup-plugin-uglify';
 import copy from 'rollup-plugin-copy';
 
+const production = !process.env.ROLLUP_WATCH;
+
 const compileJSFile = (input, output) => ({
   input,
   output: {
     format: 'iife',
     file: output,
   },
-  plugins: [resolve(), commonjs()],
+  plugins: [resolve(), commonjs(), production && uglify()],
   watch: {
     clearScreen: false,
   },
@@ -53,7 +55,7 @@ export default [
     plugins: [
       resolve(),
       commonjs(),
-      uglify(),
+      production && uglify(),
       copy({
         targets: [
           // The options page is supposed to be rewritten with svelte
@@ -62,7 +64,7 @@ export default [
             dest: ['build/options'],
           },
           {
-            src: ['images', 'manifest.json', 'utils', 'Roboto'],
+            src: ['images', 'manifest.json', 'utils'],
             dest: ['build'],
           },
         ],

@@ -1,5 +1,5 @@
 import { v4 as uuidv4 } from 'uuid';
-import { getURL } from './index';
+import { getURL, MAX_SCROLLS } from './index';
 
 const url = getURL();
 
@@ -21,11 +21,15 @@ chrome.storage.local.get('scroll-mark', data => {
     items = [{ ...urlData, scrollName: 'Untitled Scrroll', uuid: uuidv4() }];
   }
 
+  if (items.length >= MAX_SCROLLS) {
+    return;
+  }
+
   let scrollName = prompt(
     'Enter the name of the Scrroll (This can help you identify a particular scrroll if you save multiple scrrolls on this page)'
   );
 
-  if (!scrollName) {
+  if (typeof scrollName !== 'string') {
     return;
   }
 

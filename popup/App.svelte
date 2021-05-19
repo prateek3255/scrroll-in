@@ -4,7 +4,8 @@
     executeSaveScroll,
     executeGetScroll,
     executeDeleteScroll,
-    executeUpdateScroll
+    executeUpdateScroll,
+    MAX_SCROLLS,
   } from "../contentScripts";
 
   let isShortcutVisible = false;
@@ -16,10 +17,6 @@
   let selectedScrollIndex = 0;
 
   let savedScrolls = [];
-
-  $: message = doesCurrentTabHasSavedScroll
-    ? "Continue from where you last left or update/delete scrroll for this page."
-    : "In a hurry! Save the scrroll and read this page at your own pace by clicking the button below👇";
 
   $: controlImage = doesCurrentTabHasSavedScroll
     ? "icon-32.png"
@@ -55,13 +52,15 @@
           if (Array.isArray(scrollMarkData[url])) {
             savedScrolls = scrollMarkData[url];
             // Update the current index to the last saved scrroll for better UX
-            chrome.storage.local.get("current-scroll-id", lastSavedScroll => {
+            chrome.storage.local.get("current-scroll-id", (lastSavedScroll) => {
               if (lastSavedScroll) {
                 const lastSavedScrollID = lastSavedScroll["current-scroll-id"];
-                const index = savedScrolls.findIndex(item => item.uuid === lastSavedScrollID);
+                const index = savedScrolls.findIndex(
+                  (item) => item.uuid === lastSavedScrollID
+                );
                 selectedScrollIndex = index >= 0 ? index : 0;
               }
-            })
+            });
           } else {
             // Fallback for handling the data structure of previous version
             savedScrolls = [
@@ -110,7 +109,7 @@
 </script>
 
 <div class="controls">
-  <div id="activeContol">
+  <div class="activeControl">
     <img
       src={`../images/${controlImage}`}
       alt={doesCurrentTabHasSavedScroll
@@ -131,11 +130,17 @@
 </div>
 
 <div class="main">
-  <p id="message">
-    {message}
-  </p>
   <div id="root">
     {#if doesCurrentTabHasSavedScroll}
+      <p class="message">
+        Continue from where you last left or update/delete a scrroll for this
+        page.
+        <br /> <br />
+        Currently selected scrroll -
+        <b style="font-weight: 900;"
+          >{savedScrolls[selectedScrollIndex].scrollName}</b
+        >
+      </p>
       <div style="margin-top:25px">
         <div
           style="margin-bottom:10px;display:flex;justify-content:center;width:100%;"
@@ -156,6 +161,10 @@
         </div>
       </div>
     {:else}
+      <p class="message">
+        In a hurry! Save the scrroll and read this page at your own pace by
+        clicking the button below👇
+      </p>
       <button on:click={saveScroll} style="width:100px;" class="btn"
         >Save</button
       >
@@ -168,7 +177,12 @@
     <h4 class="save-scroll-heading">Your saved scrrolls -</h4>
 
     {#each savedScrolls as savedScroll, i (savedScroll.uuid)}
-      <div class="scroll-item {selectedScrollIndex === i ? "scroll-item-blue" : ""}" on:click="{() => selectedScrollIndex = i}">
+      <div
+        class="scroll-item {selectedScrollIndex === i
+          ? 'scroll-item-blue'
+          : ''}"
+        on:click={() => (selectedScrollIndex = i)}
+      >
         <img
           src={i === selectedScrollIndex
             ? "../images/map-pin-filled.svg"
@@ -181,23 +195,23 @@
       </div>
     {/each}
 
-    <hr style="margin-bottom: 16px;"/>
-
-    <div class="scroll-item" on:click={saveScroll} >
-      <img
+    {#if savedScrolls.length < MAX_SCROLLS}
+      <hr style="margin-bottom: 16px;" />
+      <div class="scroll-item" on:click={saveScroll}>
+        <img
           src="../images/plus-circle.svg"
           alt="Add more scrrolls"
           width="24"
           height="24"
         />
-        <div style="margin-left: 8px;">Add more scrrolls</div>
-    </div>
-
+        <div style="margin-left: 8px;">Add another scrroll</div>
+      </div>
+    {/if}
   </div>
 {/if}
 
 {#if isShortcutVisible}
-  <div id="tip">
+  <div class="tip">
     💡Tip : Add keyboard shortcuts
     <a href="chrome://extensions/shortcuts" target="_blank">here</a> to save, fetch
     or delete scrrolls without having to open the extension popup.
@@ -205,11 +219,6 @@
 {/if}
 
 <style>
-  @font-face {
-    font-family: "Roboto";
-    src: url("../Roboto/Roboto-Bold.ttf") format("truetype");
-  }
-
   .btn {
     width: 100% !important;
     padding: 5px;
@@ -218,6 +227,7 @@
     font-size: 20px;
     overflow: hidden;
     font-family: "Roboto", sans-serif;
+    font-weight: bold;
     border-width: 0;
     outline: none;
     margin-bottom: 0.4em;
@@ -241,11 +251,11 @@
     transition: width 0.2s ease-out, padding-top 0.2s ease-out;
   }
 
-  #message {
+  .message {
     margin: 3.2em 0em 1em 0.5em;
     font-family: "Roboto", sans-serif;
     font-style: normal;
-    font-weight: bold;
+    font-weight: 500;
     font-size: 18px;
     line-height: 21px;
     align-items: center;
@@ -257,7 +267,7 @@
     margin-right: 0.1em;
   }
 
-  #activeContol {
+  .activeControl {
     float: left;
   }
   .main {
@@ -287,7 +297,7 @@
     background-color: #c0392b;
   }
 
-  #tip {
+  .tip {
     text-align: center;
     color: white;
     font-size: 12px;
@@ -301,7 +311,7 @@
 
   .save-scroll-heading {
     font-family: "Roboto", sans-serif;
-    font-weight: black;
+    font-weight: 700;
     font-size: 18px;
     color: white;
     margin-bottom: 16px;
@@ -311,7 +321,7 @@
     display: flex;
     margin-bottom: 16px;
     font-family: "Roboto", sans-serif;
-    font-weight: bold;
+    font-weight: 500;
     font-size: 18px;
     color: white;
     align-items: center;
@@ -319,7 +329,7 @@
   }
 
   .scroll-item-blue {
-    color: #4E80FF;
+    color: #4e80ff;
   }
 
 </style>
