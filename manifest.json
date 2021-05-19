@@ -7,16 +7,18 @@
         "tabs",
         "storage",
         "activeTab",
+        "scripting"
+    ],
+    "host_permissions": [
         "http://*/",
         "https://*/"
     ],
-    "options_page": "options.html",
+    "options_page": "options/index.html",
     "background": {
-        "page": "background.html",
-        "persistent": false
+        "service_worker": "background.js"
     },
-    "browser_action": {
-        "default_popup": "popup.html",
+    "action": {
+        "default_popup": "popup/index.html",
         "default_icon": {
             "16": "images/icon-16.png",
             "32": "images/icon-32.png",
@@ -33,27 +35,20 @@
         "256": "images/icon-256.png"
     },
     "commands": {
-        "save-or-update-scroll": {
+        "save-scroll": {
             "suggested_key": {
                 "default": "Shift+Ctrl+S",
                 "mac": "Shift+Command+S"
             },
-            "description": "Save or update scroll"
-        },
-        "delete-scroll": {
-            "suggested_key": {
-                "default": "Shift+Ctrl+D",
-                "mac": "Shift+Command+D"
-            },
-            "description": "Delete scroll"
+            "description": "Save scrroll"
         },
         "fetch-scroll": {
             "suggested_key": {
                 "default": "Shift+Ctrl+G",
                 "mac": "Shift+Command+G"
             },
-            "description": "Fetch scroll"
+            "description": "Fetch Latest scrroll"
         }
     },
-    "manifest_version": 2
+    "manifest_version": 3
 }

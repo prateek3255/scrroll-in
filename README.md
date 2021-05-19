@@ -29,16 +29,16 @@ I know there are a few extensions that already serve this purpose, but most of t
 
 Under the hood, this extension uses the [chrome localStorage API](https://developer.mozilla.org/en/DOM/Storage#localStorage) to store the scroll positions for different webpages. I avoided using sync storage due to its storage limitations ([read more](https://developer.chrome.com/apps/storage)). This extension creates an object which stores the URL as keys and the scroll position as values.
 
-The functions for adding or updating, reading and deleting are in the files `save.js`, `get.js` and `delete.js` respectively, which are executed as content scripts from `popup.js` whenever the respective button is clicked.
+The functions for adding or updating, reading and deleting are in the files `save.js`, `get.js`, `update.js` and `delete.js` respectively, which are executed as content scripts from popup whenever the respective button is clicked.
 
 The `background.js` handles switching icon color whenever a tab is changed, or the URL is updated.
 
-The popup sheet is also handled by `popup.js` by dynamically changing the UI following the availability of the URL in the localStorage object.
+The popup sheet is a Svelte app in the `popup` folder that controls the UI and the behaviour of the extension popup.
 
 ## Features 🚀
 
 - You can **save** the scroll position of the page and then revisit the page at any time to continue where you left. 
-- Also, extension allows you to save **multiple scrolls** from the page. 
+- The extension also allows you to save **multiple scrolls** for the page. 
 - You can **fetch** the last saved scroll.
 - If you dont want a scroll you can **delete** it.
 - Extension allows you to see all the saved scrolls arranged in the newly first order where you can **delete** any specific scroll or **clear all** the scrolls at once.
@@ -48,12 +48,14 @@ The popup sheet is also handled by `popup.js` by dynamically changing the UI fol
 
 ## Development 💻
 
-To run the extension locally follow these steps:
+The JavaScript files in the extension are compiled using [rollup](https://rollupjs.org), and as of now the extension popup is written with Svelete which is also compiled via rollup. To run the extension locally follow these steps:
 
+- Run `yarn` or `npm install` to install the dependencies.
+- Then run `yarn dev` or `npm run dev` to build the extension in watch mode, you'll see a build folder created with all the necessary files for the extension to run.
 - Visit `chrome://extensions` and turn on developer mode.
-- Click on `Load unpacked` at the top left and select the extension root folder.
-- Now you can go ahead and modify `popup.js` or `popup.html`. Changes would directly be visible in the extension.
-- If you change something in `background.js` or `manifest.json` then you will need to reload the extension.
+- Click on `Load unpacked` at the top left and select the `build` folder that was created with the `dev` command.
+- Now you can go ahead and modify the js files and the Svelte app, the dev command would automatically build the updated files accordingly. You would be able to view the changes in the extension directly.
+- If you change something in `background.js` you'll need to reload the extension for the changes to appear. For other files like `manifest.json` you would need to restart the dev server as well so that a fresh copy can be created.
 
 ## Contributing 🌏
 

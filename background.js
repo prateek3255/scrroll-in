@@ -1,112 +1,112 @@
-import {
-  executeSaveScroll,
-  executeGetScroll,
-  executeDeleteScroll,
-} from "./helpers.js";
+import { executeSaveScroll, executeGetScroll } from './contentScripts';
 
 function getUrlWithoutHash(url) {
-  return url.split("?")[0];
+  return url.split('?')[0];
 }
 
-chrome.runtime.setUninstallURL(
-  "https://prateeksurana3255.typeform.com/to/VMfEV6"
-);
-
-chrome.runtime.onInstalled.addListener((details) => {
-  if (details.reason === "install") {
-    chrome.storage.local.set({ "scroll-mark": {} });
-  }
-});
-
-const updateIcon = () => {
-  chrome.tabs.query({ active: true, currentWindow: true }, (tabs) => {
-    const url = getUrlWithoutHash(tabs[0].url);
-
-    chrome.storage.local.get("scroll-mark", (data) => {
-      const scrollMarkData = data["scroll-mark"];
-      if (!scrollMarkData.hasOwnProperty(url)) {
-        setInactiveIcon();
-      } else {
-        setActiveIcon();
-      }
-    });
+const setActiveIcon = () => {
+  chrome.action.setIcon({
+    path: {
+      16: '../images/icon-16.png',
+      32: '../images/icon-32.png',
+      48: '../images/icon-48.png',
+      128: '../images/icon-128.png',
+      256: '../images/icon-256.png',
+    },
   });
 };
 
+const setInactiveIcon = () => {
+  chrome.action.setIcon({
+    path: {
+      16: '../images/icon-16-inactive.png',
+      32: '../images/icon-32-inactive.png',
+      48: '../images/icon-48-inactive.png',
+      128: '../images/icon-128-inactive.png',
+      256: '../images/icon-256-inactive.png',
+    },
+  });
+};
+
+chrome.runtime.setUninstallURL('https://prateeksurana3255.typeform.com/to/VMfEV6');
+
+chrome.runtime.onInstalled.addListener(details => {
+  if (details.reason === 'install') {
+    chrome.storage.local.set({ 'scroll-mark': {} });
+  }
+});
+
+// const updateIcon = () => {
+//   chrome.tabs.query({ active: true, currentWindow: true }, tabs => {
+//     const url = getUrlWithoutHash(tabs[0].url);
+
+//     chrome.storage.local.get('scroll-mark', data => {
+//       const scrollMarkData = data['scroll-mark'];
+//       if (!scrollMarkData.hasOwnProperty(url)) {
+//         setInactiveIcon();
+//       } else {
+//         setActiveIcon();
+//       }
+//     });
+//   });
+// };
+
 chrome.tabs.onActivated.addListener(() => {
-  chrome.tabs.query({ active: true, currentWindow: true }, (tabs) => {
+  chrome.tabs.query({ active: true, currentWindow: true }, tabs => {
     const url = getUrlWithoutHash(tabs[0].url);
 
-    chrome.storage.local.get("scroll-mark", (data) => {
-      const scrollMarkData = data["scroll-mark"];
-      if (!scrollMarkData.hasOwnProperty(url)) {
-        setInactiveIcon();
-      } else {
+    chrome.storage.local.get('scroll-mark', data => {
+      const scrollMarkData = data['scroll-mark'];
+      if (scrollMarkData && scrollMarkData[url] !== undefined) {
         setActiveIcon();
+      } else {
+        setInactiveIcon();
       }
     });
   });
 });
 
-chrome.tabs.onUpdated.addListener((tabId, updateObj) => {
-  chrome.tabs.get(tabId, (tab) => {
+chrome.tabs.onUpdated.addListener(tabId => {
+  chrome.tabs.get(tabId, tab => {
     const url = getUrlWithoutHash(tab.url);
 
     if (url) {
-      chrome.storage.local.get("scroll-mark", (data) => {
-        const scrollMarkData = data["scroll-mark"];
-        if (!scrollMarkData.hasOwnProperty(url)) {
-          setInactiveIcon();
-        } else {
-          executeGetScroll(tabId);
+      chrome.storage.local.get('scroll-mark', data => {
+        const scrollMarkData = data['scroll-mark'];
+        if (scrollMarkData && scrollMarkData[url] !== undefined) {
+          executeGetScroll(tabId, null, true);
           setActiveIcon();
+        } else {
+          setInactiveIcon();
         }
       });
     }
   });
 });
 
-chrome.runtime.onMessage.addListener((request, sender) => {
-  if (request === "setActive") {
+chrome.runtime.onMessage.addListener(request => {
+  if (request === 'setActive') {
     setActiveIcon();
   } else {
     setInactiveIcon();
   }
 });
 
-chrome.commands.onCommand.addListener(function (command) {
-  chrome.tabs.query({ active: true, currentWindow: true }, (tabs) => {
+chrome.commands.onCommand.addListener(command => {
+  chrome.tabs.query({ active: true, currentWindow: true }, tabs => {
     const currentTabId = tabs[0].id;
-    if (command === "save-or-update-scroll") {
+    if (command === 'save-scroll') {
       executeSaveScroll(currentTabId);
-    } else if (command === "delete-scroll") {
-      executeDeleteScroll(currentTabId);
-    } else if (command === "fetch-scroll") {
-      executeGetScroll(currentTabId);
+    } else if (command === 'fetch-scroll') {
+      chrome.tabs.get(currentTabId, tab => {
+        const url = getUrlWithoutHash(tab.url);
+        chrome.storage.local.get('scroll-mark', data => {
+          const scrollMarkData = data['scroll-mark'];
+          if (scrollMarkData && scrollMarkData[url] !== undefined) {
+            executeGetScroll(currentTabId, null, true);
+          }
+        });
+      });
     }
   });
 });
-
-const setActiveIcon = () => {
-  chrome.browserAction.setIcon({
-    path: {
-      "16": "images/icon-16.png",
-      "32": "images/icon-32.png",
-      "48": "images/icon-48.png",
-      "128": "images/icon-128.png",
-      "256": "images/icon-256.png",
-    },
-  });
-};
-
-const setInactiveIcon = () => {
-  chrome.browserAction.setIcon({
-    path: {
-      "16": "images/icon-16-inactive.png",
-      "32": "images/icon-32-inactive.png",
-      "48": "images/icon-48-inactive.png",
-      "128": "images/icon-128-inactive.png",
-      "256": "images/icon-256-inactive.png",
-    },
-  });
-};
