@@ -1,4 +1,4 @@
-# Scrroll In <img src = "https://github.com/devfolioco/scrroll-in/blob/master/images/icon-32.png?raw=true">
+# Scrroll In <img src = "/images/icon-32.png">
 <p align = "center">
 <img src = "https://forthebadge.com/images/badges/uses-html.svg"> <img src = "https://forthebadge.com/images/badges/uses-css.svg"> <img src = "https://forthebadge.com/images/badges/made-with-javascript.svg"> <br> <img src = "https://forthebadge.com/images/badges/built-with-love.svg">
 
@@ -10,7 +10,7 @@ Never forget where you left a page.
 <p float="left">
 
 <a href="https://chrome.google.com/webstore/detail/scrroll-in/cjgjbjogfodppempgdlppgefojbcmjom?hl=en&gl=IN" target="_blank">
-<img src="https://developer.chrome.com/webstore/images/ChromeWebStore_Badge_v2_496x150.png" alt="Scrroll In - An extension to save scroll position of any webpage | Product Hunt Embed" style="height:64px;margin-right:20px;" height="64px" /></a>
+<img src="/images/chromewebstore.png" alt="Scrroll In - An extension to save scroll position of any webpage | Product Hunt Embed" style="height:64px;margin-right:20px;" height="64px" /></a>
 <a href="https://www.producthunt.com/posts/scrroll-in?utm_source=badge-featured&utm_medium=badge&utm_souce=badge-scrroll-in" target="_blank"><img src="https://api.producthunt.com/widgets/embed-image/v1/featured.svg?post_id=169127&theme=light" alt="Scrroll In - An extension to save scroll position of any webpage | Product Hunt Embed" style="width: 250px; height: 54px;" width="250px" height="54px" /></a>
 
 </p>
