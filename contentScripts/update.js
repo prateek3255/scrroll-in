@@ -1,5 +1,5 @@
 import { v4 as uuidv4 } from 'uuid';
-import { getURL, getItemFromStorage } from './index';
+import { getURL, getItemFromStorage, showToast } from './index';
 
 (async function () {
   const url = getURL();
@@ -22,8 +22,11 @@ import { getURL, getItemFromStorage } from './index';
   const currentScrollData = await getItemFromStorage('current-scroll-id');
   const id = currentScrollData['current-scroll-id'];
 
+  let scrollName = '';
+
   items = items.map(currentItem => {
     if (currentItem.uuid === id) {
+      scrollName = currentItem.scrollName;
       return {
         ...currentItem,
         offset,
@@ -36,5 +39,6 @@ import { getURL, getItemFromStorage } from './index';
   const newData = { ...scrollMarkData, [url]: items };
   chrome.storage.local.set({ 'scroll-mark': newData }, () => {
     chrome.runtime.sendMessage('setActive');
+    showToast(`Updated scrroll <b>${scrollName}</b>`, 'orange');
   });
 })();

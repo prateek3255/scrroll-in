@@ -51,6 +51,9 @@ chrome.runtime.onInstalled.addListener(details => {
 //   });
 // };
 
+// This updates the popup icon based on whether
+// the tab has a saved scroll or not when the user
+// is switching between tabs
 chrome.tabs.onActivated.addListener(() => {
   chrome.tabs.query({ active: true, currentWindow: true }, tabs => {
     const url = getUrlWithoutHash(tabs[0].url);
@@ -66,13 +69,22 @@ chrome.tabs.onActivated.addListener(() => {
   });
 });
 
-chrome.tabs.onUpdated.addListener(tabId => {
+// This runs when a page on a tab is loaded and
+// if it has a saved scroll then fetch the latest
+// scroll
+chrome.tabs.onUpdated.addListener((tabId, changeInfo) => {
   chrome.tabs.get(tabId, tab => {
     const url = getUrlWithoutHash(tab.url);
 
-    if (url) {
+    if (url && changeInfo.status === 'complete') {
       chrome.storage.local.get('scroll-mark', data => {
         const scrollMarkData = data['scroll-mark'];
+
+        chrome.scripting.insertCSS({
+          target: { tabId },
+          files: ['contentScripts/index.css'],
+        });
+
         if (scrollMarkData && scrollMarkData[url] !== undefined) {
           executeGetScroll(tabId, null, true);
           setActiveIcon();
@@ -84,6 +96,8 @@ chrome.tabs.onUpdated.addListener(tabId => {
   });
 });
 
+// This listens for messages from content scripts
+// and updates popup icon accordingly
 chrome.runtime.onMessage.addListener(request => {
   if (request === 'setActive') {
     setActiveIcon();
@@ -92,6 +106,8 @@ chrome.runtime.onMessage.addListener(request => {
   }
 });
 
+// This listends for keyboard shortcuts and
+// performs actions accordingly
 chrome.commands.onCommand.addListener(command => {
   chrome.tabs.query({ active: true, currentWindow: true }, tabs => {
     const currentTabId = tabs[0].id;

@@ -1,5 +1,5 @@
 import { v4 as uuidv4 } from 'uuid';
-import { getURL, MAX_SCROLLS } from './index';
+import { getURL, MAX_SCROLLS, showToast } from './index';
 
 const url = getURL();
 
@@ -52,5 +52,6 @@ chrome.storage.local.get('scroll-mark', data => {
   const newData = scrollMarkData ? { ...scrollMarkData, [url]: updatedURLData } : { [url]: updatedURLData };
   chrome.storage.local.set({ 'scroll-mark': newData }, () => {
     chrome.runtime.sendMessage('setActive');
+    showToast(`Saved scrroll <b>${scrollName}</b>`, 'green');
   });
 });

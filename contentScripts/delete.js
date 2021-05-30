@@ -1,4 +1,4 @@
-import { getURL, getItemFromStorage } from './index';
+import { getURL, getItemFromStorage, showToast } from './index';
 
 (async function () {
   const url = getURL();
@@ -9,12 +9,15 @@ import { getURL, getItemFromStorage } from './index';
 
   let updatedURLData;
 
+  let scrollName = '';
+
   const shouldClearAll = (await getItemFromStorage('clear-all'))['clear-all'];
 
   if (Array.isArray(urlData) && !shouldClearAll) {
     const currentScrollData = await getItemFromStorage('current-scroll-id');
     const id = currentScrollData['current-scroll-id'];
 
+    scrollName = urlData.find(item => item.uuid === id).scrollName;
     updatedURLData = urlData.filter(item => item.uuid !== id);
 
     if (updatedURLData.length === 0) {
@@ -28,6 +31,7 @@ import { getURL, getItemFromStorage } from './index';
       if (updatedURLData === undefined) {
         chrome.runtime.sendMessage('setInactive');
       }
+      showToast(`Deleted Scrroll <b>${scrollName}</b>`, 'red');
     });
   }
 })();

@@ -67,6 +67,10 @@ export default [
             src: ['images', 'manifest.json', 'utils'],
             dest: ['build'],
           },
+          {
+            src: ['contentScripts/index.css'],
+            dest: ['build/contentScripts'],
+          },
         ],
         verbose: true,
       }),

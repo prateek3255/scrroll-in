@@ -1,4 +1,4 @@
-import { getURL, getItemFromStorage } from './index';
+import { getURL, getItemFromStorage, showToast } from './index';
 
 (async function () {
   const url = getURL();
@@ -6,6 +6,7 @@ import { getURL, getItemFromStorage } from './index';
 
   const scrollMarkData = data['scroll-mark'];
   let offset = null;
+  let item = null;
   const urlData = scrollMarkData[url];
 
   if (typeof urlData.offset === 'number') {
@@ -13,8 +14,6 @@ import { getURL, getItemFromStorage } from './index';
   } else if (Array.isArray(urlData)) {
     const latestScroll = await getItemFromStorage('fetch-latest-item');
     const shouldFetchLatestItem = latestScroll['fetch-latest-item'];
-
-    let item = null;
 
     if (shouldFetchLatestItem) {
       item = urlData.reduce((prev, current) => (prev.offset > current.offset ? prev : current), { offset: 0 });
@@ -31,5 +30,6 @@ import { getURL, getItemFromStorage } from './index';
 
   if (offset) {
     window.scrollTo({ left: 0, top: offset, behavior: 'smooth' });
+    showToast(`Fetching scrroll <b>${item && item.scrollName ? item.scrollName : ''}</b>`, 'green');
   }
 })();
