@@ -1,7 +1,7 @@
 {
     "name": "Scrroll In",
     "short_name": "scrroll-in",
-    "version": "3.1",
+    "version": "3.2",
     "description": "An extension to save scroll position of a webpage",
     "permissions": [
         "tabs",
