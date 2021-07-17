@@ -18,6 +18,8 @@
 
   let savedScrolls = [];
 
+  let showToastNotifications = false;
+
   $: controlImage = doesCurrentTabHasSavedScroll
     ? "icon-32.png"
     : "icon-32-inactive.png";
@@ -35,6 +37,10 @@
       if (!data["scroll-mark-shortcut-tip"]) {
         isShortcutVisible = true;
       }
+    });
+
+    chrome.storage.local.get("show-toast-notification", (data) => {
+      showToastNotifications  = !!data["show-toast-notification"];
     });
 
     // Check whether the current tab has a saved scrroll or not
@@ -106,6 +112,10 @@
     window.close();
   }
 
+  function handleShowToastNotificationClick() {
+    showToastNotifications = !showToastNotifications;
+    chrome.storage.local.set({ "show-toast-notification": showToastNotifications });
+  }
 </script>
 
 <div class="controls">
@@ -170,6 +180,11 @@
       >
     {/if}
   </div>
+</div>
+
+<div class="checkbox-container">
+  <input on:click={handleShowToastNotificationClick} checked={showToastNotifications} id="toast-checkbox" type="checkbox" />
+  <label for="toast-checkbox">Show toast notifications for every action performed with a scrroll (Experimental)</label>
 </div>
 
 {#if doesCurrentTabHasSavedScroll}
@@ -332,4 +347,16 @@
     color: #4e80ff;
   }
 
+  .checkbox-container {
+    display: flex;
+    align-items: flex-start;
+    margin: 12px 0px;
+  }
+
+  .checkbox-container label {
+    color: white;
+    font-family: "Roboto", sans-serif;
+    font-size: 13px;
+    margin-left: 8px;
+  }
 </style>
