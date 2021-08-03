@@ -48,7 +48,7 @@ The popup sheet is a Svelte app in the `popup` folder that controls the UI and t
 
 ## Development 💻
 
-The JavaScript files in the extension are compiled using [rollup](https://rollupjs.org), and as of now the extension popup is written with Svelete which is also compiled via rollup. To run the extension locally follow these steps:
+The JavaScript files in the extension are compiled using [rollup](https://rollupjs.org), and as of now the extension popup is written with Svelte which is also compiled via rollup. To run the extension locally follow these steps:
 
 - Run `yarn` or `npm install` to install the dependencies.
 - Then run `yarn dev` or `npm run dev` to build the extension in watch mode, you'll see a build folder created with all the necessary files for the extension to run.
